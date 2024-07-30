@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CspContainer initial="S1">
+	<ProcessAssignment>
+		<Process name="S1" type="ID"/>
+		<Prefix>
+			<Event name="serverReceiveAlert"/>
+			<Process name="S2"/>
+		</Prefix>
+	</ProcessAssignment>
+	<ProcessAssignment>
+		<Process name="S2" type="ID"/>
+		<Prefix>
+			<Event name="getDriverPhoneData"/>
+			<Process name="S3"/>
+		</Prefix>
+	</ProcessAssignment>
+	<ProcessAssignment>
+		<Process name="S3" type="ID"/>
+		<Prefix>
+			<Event name="callDriver"/>
+			<Process name="S4"/>
+		</Prefix>
+	</ProcessAssignment>
+	<ProcessAssignment>
+		<Process name="S4" type="ID"/>
+		<Condition expression="askhelp">
+			<Process name="D2" type="LEFT"/>
+			<Condition expression="nohelp" type="RIGHT">
+				<Process name="M1" type="LEFT"/>
+				<Process name="D1a" type="RIGHT"/>
+			</Condition>
+		</Condition>
+	</ProcessAssignment>
+	<ProcessAssignment>
+		<Process name="D1b" type="ID"/>
+		<Process name="DM"/>
+	</ProcessAssignment>
+	<ProcessAssignment>
+		<Process name="D2" type="ID"/>
+		<Process name="DM"/>
+	</ProcessAssignment>
+	<ProcessAssignment>
+		<Process name="DM" type="ID"/>
+		<Condition expression="real">
+			<Process name="D3" type="LEFT"/>
+			<Process name="M2" type="RIGHT"/>
+		</Condition>
+	</ProcessAssignment>
+	<ProcessAssignment>
+		<Process name="M1" type="ID"/>
+		<Process name="C1"/>
+	</ProcessAssignment>
+	<ProcessAssignment>
+		<Process name="D1a" type="ID"/>
+		<Prefix>
+			<Event name="assessDescription"/>
+			<Process name="D1b"/>
+		</Prefix>
+	</ProcessAssignment>
+	<ProcessAssignment>
+		<Process name="C1" type="ID"/>
+		<Prefix>
+			<Event name="cancelAlert"/>
+			<Process name="C2"/>
+		</Prefix>
+	</ProcessAssignment>
+	<ProcessAssignment>
+		<Process name="C2" type="ID"/>
+		<SKIP/>
+	</ProcessAssignment>
+	<ProcessAssignment>
+		<Process name="M2" type="ID"/>
+		<Process name="C1"/>
+	</ProcessAssignment>
+	<ProcessAssignment>
+		<Process name="F1" type="ID"/>
+		<Prefix>
+			<Event name="getMapLocation"/>
+			<Process name="J1"/>
+		</Prefix>
+	</ProcessAssignment>
+	<ProcessAssignment>
+		<Process name="F2" type="ID"/>
+		<Prefix>
+			<Event name="processAlert"/>
+			<Process name="J2"/>
+		</Prefix>
+	</ProcessAssignment>
+	<ProcessAssignment>
+		<Process name="F3" type="ID"/>
+		<Prefix>
+			<Event name="getServiceFormat"/>
+			<Process name="J3"/>
+		</Prefix>
+	</ProcessAssignment>
+	<ProcessAssignment>
+		<Process name="J1" type="ID"/>
+		<Prefix>
+			<Event name="processJoin"/>
+			<Process name="E1"/>
+		</Prefix>
+	</ProcessAssignment>
+	<ProcessAssignment>
+		<Process name="J2" type="ID"/>
+		<Prefix>
+			<Event name="processJoin"/>
+			<SKIP/>
+		</Prefix>
+	</ProcessAssignment>
+	<ProcessAssignment>
+		<Process name="J3" type="ID"/>
+		<Prefix>
+			<Event name="processJoin"/>
+			<SKIP/>
+		</Prefix>
+	</ProcessAssignment>
+	<ProcessAssignment>
+		<Process name="E1" type="ID"/>
+		<Prefix>
+			<Event name="createServiceDescription"/>
+			<Process name="E2"/>
+		</Prefix>
+	</ProcessAssignment>
+	<ProcessAssignment>
+		<Process name="E2" type="ID"/>
+		<SKIP/>
+	</ProcessAssignment>
+	<ProcessAssignment>
+		<Process name="D3" type="ID"/>
+		<Concurrency>
+			<Process name="F1" type="LEFT"/>
+			<Concurrency type="RIGHT">
+				<Process name="F2" type="LEFT"/>
+				<Process name="F3" type="RIGHT"/>
+			</Concurrency>
+		</Concurrency>
+	</ProcessAssignment>
+</CspContainer>

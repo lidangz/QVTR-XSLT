@@ -1,0 +1,36 @@
+A {
+	COLOR: #333333; TEXT-DECORATION: underline
+}
+A.readon {
+	COLOR: #333333
+}
+#ja-container2 UL.menu LI LI A:hover {
+	COLOR: #333333
+}
+#ja-container2 UL.menu LI LI A:active {
+	COLOR: #333333
+}
+#ja-container2 UL.menu LI LI A:focus {
+	COLOR: #333333
+}
+#ja-container2 UL.menu LI.active A SPAN {
+	BACKGROUND: url(../../../images/bullet.gif) no-repeat 5px 50%
+}
+.bignumber {
+	COLOR: #333333
+}
+#ja-container2 UL.menu LI.active A {
+	COLOR: #333333
+}
+DIV.moduletable H3 {
+	COLOR: #333333
+}
+DIV.moduletable_menu H3 {
+	COLOR: #333333
+}
+DIV.moduletable_text H3 {
+	COLOR: #333333
+}
+DIV.module H3 {
+	COLOR: #333333
+}

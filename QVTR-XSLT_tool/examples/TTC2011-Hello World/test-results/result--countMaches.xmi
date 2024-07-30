@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result:Result xmlns:result="result" xmlns:xmi="http://www.omg.org/XMI">
+   <ints result="8" text="The number of nodes"/>
+   <ints result="1" text="The number of looping edges"/>
+   <ints result="2" text="The number of isolated nodes"/>
+   <ints result="2" text="The number of circles of three nodes"/>
+   <ints result="0" text="The number of dangling edges"/>
+</result:Result>

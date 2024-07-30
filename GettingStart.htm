@@ -1,0 +1,493 @@
+﻿<html lang="en-gb" xml:lang="en-gb" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>QVTR-XSLT Getting Start</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta content="index, follow" name="robots">
+<meta content="rCOS, MDA, MDD, UML, verification" name="keywords">
+<meta content="QVTR-XSLT Getting Start" name="title">
+<meta content="Li Dan" name="author">
+<meta content="rCOS - Refinement of Component and Object Systems" name="description">
+<meta content="MSHTML 6.00.6000.17063" name="GENERATOR">
+<link href="include_files/system.css" type="text/css" rel="stylesheet">
+<link href="include_files/general.css" type="text/css" rel="stylesheet">
+<link href="include_files/template.css" type="text/css" rel="stylesheet">
+<link href="include_files/menu.css" type="text/css" rel="stylesheet">
+<link href="include_files/style.css" type="text/css" rel="stylesheet">
+<link href="include_files/style(1).css" type="text/css" rel="stylesheet">
+<link href="include_files/style(2).css" type="text/css" rel="stylesheet">
+<!--[if IE 7.0]>
+<style type="text/css">.clearfix {
+	DISPLAY: inline-block
+}
+</style>
+<![endif]-->
+<style type="text/css">#ja-header {
+	MARGIN: 0px auto; WIDTH: 97%
+}
+#ja-mainnav {
+	MARGIN: 0px auto; WIDTH: 97%
+}
+#ja-container {
+	MARGIN: 0px auto; WIDTH: 97%
+}
+#ja-botsl {
+	MARGIN: 0px auto; WIDTH: 97%
+}
+#ja-footer {
+	MARGIN: 0px auto; WIDTH: 97%
+}
+#ja-wrapper {
+	MIN-WIDTH: 100%
+}
+</style>
+</head>
+
+<body class="fs3 IE7" id="bd">
+
+<div id="ja-wrapper">
+	<!-- BEGIN: HEADER -->
+	<div id="ja-headerwrap">
+		<div class="clearfix" id="ja-header" style="BACKGROUND: url(pics/header2.jpg) no-repeat right top">
+			<div class="ja-headermask">
+			</div>
+			<h1 class="logo-text">
+			<a title="rCOS" href="http://rcos.iist.unu.edu/index.php"><span>QVTR-XSLT</span></a>
+			</h1>
+			<p class="site-slogan">Model Transformation with QVTR and XSLT</p>
+			</div>
+	</div>
+	<!-- END: HEADER -->
+	<!-- BEGIN: MAIN NAVIGATION -->
+	<!-- END: MAIN NAVIGATION -->
+	<div id="ja-containerwrap-fr">
+		<div id="ja-containerwrap2">
+			<div id="ja-container">
+				<div class="clearfix" id="ja-container2">
+					<div class="clearfix" id="ja-mainbody-fr">
+						<!-- BEGIN: CONTENT -->
+						<div id="ja-contentwrap">
+							<div id="ja-content">
+								<div id="ja-pathway">
+								</div>
+								<h2 class="contentheading">Getting Start with QVTR-XSLT</h2>
+								<div class="article-tools">
+									<div class="buttonheading">
+										<span>&nbsp;&nbsp; </span></div>
+								</div>
+								<div class="article-content">
+									<p>QVTR-XSLT&nbsp; is a model transformation tool 
+									that provides support for QVT Relations in 
+									graphical notation and automatic 
+									transformation execution. It&nbsp; consists of&nbsp; a 
+									QVT Relations graphical editor and a code 
+									generator.&nbsp; The graphical editor&nbsp; supports 
+									the design of&nbsp; QVT transformations by 
+									defining&nbsp; metamodels, specifying QVT rules 
+									as UML object diagrams with OCL expressions, 
+									and validating the the transformations. The 
+									code generator translates the 
+									transformations&nbsp; into executable XSLT 
+									programs</p>
+									<p>The QVTR-XSLT tool supports 
+									transformation parameters, transformation 
+									inheritance through rules overriding, and 
+									multiple input and output models. 
+									Furthermore, <i>in-place</i>&nbsp; 
+									transformations are defined as modification 
+									(insert, remove, replace) of the existing 
+									model elements.</p>
+									<div id="ja-wrapper0">
+										<div id="ja-containerwrap-fr0">
+											<div id="ja-containerwrap3">
+												<div id="ja-container3">
+													<div id="ja-container4" class="clearfix">
+														<div id="ja-mainbody-fr0" class="clearfix">
+															<div id="ja-contentwrap0">
+																<div id="ja-content0">
+																	<div class="article-content">
+																		<h2>What 
+																		inside 
+																		the tool 
+																		package</h2>
+																		<p style="LINE-HEIGHT: 200%">
+																		The 
+																		follwoing 
+																		files 
+																		and 
+																		directories 
+																		are 
+																		included 
+																		in the 
+																		tool 
+																		archive:</p>
+																		<div id="ja-wrapper1">
+																			<div id="ja-containerwrap-fr1">
+																				<div id="ja-containerwrap4">
+																					<div id="ja-container5">
+																						<div id="ja-container6" class="clearfix">
+																							<div id="ja-mainbody-fr1" class="clearfix">
+																								<div id="ja-contentwrap1">
+																									<div id="ja-content1">
+																										<div class="article-content">
+																											<li>
+																											<p style="LINE-HEIGHT: 200%"><b>QVTRtoXSLT.jar :&nbsp; </b>The XSLT code generator.</li>
+																											<li>
+																											<p style="LINE-HEIGHT: 200%"><b>QVTR_Profile.mdzip:&nbsp; </b>The QVTR UML profile.</li>
+																											<li>
+																											<p style="LINE-HEIGHT: 200%"><b>QVTRelation Diagram descriptor.xml </b>: The toolbar definition file for the QVTR editor</li>
+																											<li>
+																											<p style="LINE-HEIGHT: 200%"><b>XSLTrunner.jar </b>: The transformation runner.</li>
+																											<li>
+																											<p style="LINE-HEIGHT: 200%"><b>my_XMI_Merge.xslt</b>: Additional common functions for transformation execution. This file may need to be put in the same directory with the generated XSLT files.</li>
+																											<li>
+																											<p style="LINE-HEIGHT: 200%"><b>UMLtoDB_example</b> : The directory contains files for the famous <a target="_blank" href="http://rcos.iist.unu.edu/qvttoxslt/UMLtoDB-example.htm">UML to RDBMS transformation </a>case study, including:
+ 																											<p style="LINE-HEIGHT: 200%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><font face="Arial">▪&nbsp; UMLtoDB-transfor.xml</font></b> :&nbsp; The transformation model file.</p>
+																											<p style="LINE-HEIGHT: 200%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><font face="Arial">▪&nbsp; library.mdzip</font></b> :&nbsp; The example UML model prepared in MagicDraw UML</p>
+																											<p style="LINE-HEIGHT: 200%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><font face="Arial">▪&nbsp; library.uml</font></b> :&nbsp; The example UML model exported in Eclipse UML 2 (v3.x)&nbsp; XMI format
+																											<li><p style="LINE-HEIGHT: 200%"><b>SimpleUMLtoSimpleRDBMS</b> : Another UML to RDBMS case study, for comparision with Medini QVT:
+ 																											
+ 																											<p style="LINE-HEIGHT: 200%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><font face="Arial">▪&nbsp; SimpleUMLtoSimpleRDBMS.xml</font></b> :&nbsp; The transformation model file.</p>
+																											<p style="LINE-HEIGHT: 200%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><font face="Arial">▪&nbsp; source.xmi</font></b> :&nbsp; An example input model (ecore format)</p>
+																											<p style="LINE-HEIGHT: 200%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><font face="Arial">▪&nbsp; umlTOrdbms_trace.xslt,&nbsp; umlTOrdbms_Notrace.xslt</font></b> :&nbsp; Generated XSLT stylesheets, with and without trace output<p style="LINE-HEIGHT: 200%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><font face="Arial">▪&nbsp; target_QVTR.xmi, target_medini.xmi</font></b> :&nbsp; The target models, from QVTR-XSLT and Medini QVT.</p>
+																											<p style="LINE-HEIGHT: 200%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><font face="Arial">▪&nbsp; trace_QVTR.xml, trace_medini.xml</font></b>:&nbsp; The trace models, from QVTR-XSLT and Medini QVT.</p>
+																											<p style="LINE-HEIGHT: 200%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><font face="Arial">▪&nbsp; SimpleUML2RDBMS_Medini</font></b> :&nbsp; The Medini QVT project for the case</li>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																		<div id="ja-wrapper2">
+																			<div id="ja-containerwrap-fr2">
+																				<div id="ja-containerwrap5">
+																					<div id="ja-container7">
+																						<div id="ja-container8" class="clearfix">
+																							<div id="ja-mainbody-fr2" class="clearfix">
+																								<div id="ja-contentwrap2">
+																									<div id="ja-content2">
+																										<div class="article-content">
+																											<h2>Use the QVTR Graphical Editor</h2>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																		<p style="LINE-HEIGHT: 200%">
+																		To use 
+																		the QVTR 
+																		grphical 
+																		editor,
+																		<a target="_blank" href="http://www.magicdraw.com/">
+																		MagicDraw 
+																		UML</a> 
+																		v16.5 or 
+																		later is 
+																		required.&nbsp; 
+																		Open the 
+																		example 
+																		tranformation 
+																		file <i>
+																		<font face="Arial">
+																		UMLtoDB-transfor.xml</font>
+																		</i>&nbsp;with 
+																		MagicDraw, 
+																		when the 
+																		profile 
+																		is 
+																		asked, 
+																		select 
+																		the <i>
+																		QVTR_Profile.mdzip</i> 
+																		file. 
+																		Then you 
+																		can see 
+																		the 
+																		interface 
+																		of the 
+																		editor:<p style="LINE-HEIGHT: 200%">
+									<span style="FONT-FAMILY: Arial, sans-serif">
+									<img height="650" src="pics/ToolInterface.jpg" width="1013" border="2"></span><p style="LINE-HEIGHT: 200%">
+																		&nbsp;<p style="LINE-HEIGHT: 200%">
+																		You can 
+																		design 
+																		metamodels,&nbsp; 
+																		define 
+																		QVTR 
+																		transformations/relations/queries/functions&nbsp; 
+																		using 
+																		the 
+																		editor.&nbsp; 
+																		To 
+																		validate 
+																		you 
+																		design,&nbsp; 
+																		press 
+																		the
+																		<font face="Arial">
+																		√ button 
+																		in 
+																		upper-left 
+																		, then 
+																		select 
+																		the 
+																		&quot;QVTR_Validate&quot; 
+																		for 
+																		Validation 
+																		Suite, 
+																		press 
+																		the 
+																		&quot;Validate&quot; 
+																		button.</font><p style="LINE-HEIGHT: 200%">
+																		<img border="0" src="pics/ModelValidate.jpg" width="540" height="259"><p style="LINE-HEIGHT: 200%">
+																		If f you 
+																		have 
+																		made 
+																		some 
+																		changes 
+																		to the 
+																		model, 
+																		save the 
+																		project 
+																		as xml 
+																		file.<div id="ja-wrapper3">
+																			<div id="ja-containerwrap-fr3">
+																				<div id="ja-containerwrap6">
+																					<div id="ja-container9">
+																						<div id="ja-container10" class="clearfix">
+																							<div id="ja-mainbody-fr3" class="clearfix">
+																								<div id="ja-contentwrap3">
+																									<div id="ja-content3">
+																										<div class="article-content">
+																											<h2>Generate XSLT Code</h2>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																		<p style="LINE-HEIGHT: 200%">
+																		If 
+																		necessary, 
+																		download 
+																		and 
+																		install 
+																		recent&nbsp; 
+																		version&nbsp; 
+																		of&nbsp;&nbsp; 
+																		JRE 
+																		(Java 
+																		Runtime 
+																		Environment) 
+																		or&nbsp; 
+																		JDK ( 
+																		Java SE 
+																		Development 
+																		Kit ) 
+																		first.&nbsp; 
+																		(JDK) 
+																		for your 
+																		platform 
+																		first.<p style="LINE-HEIGHT: 200%">
+																		Double 
+																		clicks 
+																		on&nbsp; 
+																		file <i>
+																		QVTRtoXSLT.jar
+																		</i><b>&nbsp;
+																		</b>or 
+																		input&nbsp; 
+																		&quot; <i>
+																		java 
+																		-jar 
+																		QVTRtoXSLT.jar&quot;&nbsp;&nbsp;
+																		</i>from&nbsp; 
+																		the 
+																		command 
+																		line,&nbsp; 
+																		open the 
+																		code 
+																		generator:<p style="LINE-HEIGHT: 200%">
+																		<img border="0" src="pics/codegenerator.jpg" width="526" height="448"><p style="LINE-HEIGHT: 200%">
+																		Select 
+																		the <i>
+																		UMLtoDB-transfor.xml
+																		</i>for 
+																		the 
+																		Input 
+																		QVT-R 
+																		model, 
+																		then 
+																		push the 
+																		Load 
+																		button.&nbsp; 
+																		After 
+																		that, 
+																		select 
+																		the 
+																		transformation
+																		<i>
+																		umlTordbms 
+																		to 
+																		generate,
+																		</i>and<i>
+																		</i>
+																		select 
+																		the path 
+																		to 
+																		output 
+																		XSLT 
+																		stylesheet. 
+																		Press 
+																		the 
+																		START 
+																		button, 
+																		an XSLT 
+																		stylesheet
+																		<i>
+																		umlTOrdbms.xslt
+																		</i>will&nbsp; 
+																		be 
+																		generated<i>.&nbsp;
+																		</i>It 
+																		is a 
+																		pure 
+																		XSLT 
+																		program 
+																		which 
+																		can be 
+																		executed 
+																		in any 
+																		XSLT 
+																		processor.<div id="ja-wrapper4">
+																			<div id="ja-containerwrap-fr4">
+																				<div id="ja-containerwrap7">
+																					<div id="ja-container11">
+																						<div id="ja-container12" class="clearfix">
+																							<div id="ja-mainbody-fr4" class="clearfix" style="width: 918px; height: 53px">
+																								<div id="ja-contentwrap4">
+																									<div id="ja-content4">
+																										<div class="article-content">
+																											<h2>Execute the Transformation</h2>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																		<p style="LINE-HEIGHT: 200%">
+																		Run the
+																		<i>XSLTrunner.jar</i><b> </b>
+																		, open 
+																		the transformation runner.<p style="LINE-HEIGHT: 200%">
+																		<img border="0" src="pics/XSLTrunner.jpg" width="526" height="458"><p style="LINE-HEIGHT: 200%">
+																		Select 
+																		the<i> 
+																		umlTOrdbms.xslt
+																		</i>&nbsp; 
+																		as the 
+																		XSLT 
+																		transformation 
+																		file,&nbsp; 
+																		press 
+																		the Load 
+																		button, 
+																		then 
+																		select 
+																		the 
+																		library.uml 
+																		as the 
+																		input 
+																		source 
+																		model, 
+																		select 
+																		the 
+																		output 
+																		target 
+																		model, 
+																		finally 
+																		press 
+																		the 
+																		START 
+																		button 
+																		to 
+																		complete 
+																		the 
+																		transformation.<p style="LINE-HEIGHT: 200%">
+																		There is 
+																		another 
+																		transformation, 
+																		rdbmsToSQL, 
+																		in the 
+																		example 
+																		transformation 
+																		model. 
+																		This 
+																		transformation 
+																		produces 
+																		SQL 
+																		scripts
+																		<br>
+																		from the 
+																		RDBMS 
+																		model. 
+																		The 
+																		input of 
+																		the 
+																		transformation 
+																		is the 
+																		output 
+																		of the <i> 
+																		umlTOrdbms.xslt
+																		</i>&nbsp; 
+																		stylesheet, 
+																		and it 
+																		will 
+																		output a 
+																		html 
+																		document. </div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<span class="modifydate">Last Updated on 2 June..2011</span><span class="article_separator">&nbsp;</span>
+							</div>
+						</div>
+						<!-- END: CONTENT -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- BEGIN: FOOTER -->
+	<div id="ja-footerwrap">
+		<div class="clearfix" id="ja-footer">
+			<div id="ja-footnav">
+			</div>
+			<div class="copyright">
+			</div>
+			<br>
+		</div>
+	</div>
+	<!-- END: FOOTER --></div>
+
+</body>
+
+</html>

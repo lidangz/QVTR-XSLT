@@ -1,0 +1,84 @@
+#ja-headerwrap {
+	BACKGROUND: #006699; COLOR: #c3dfed
+}
+.ja-headermask {
+	BACKGROUND: url(images/header-mask.png) no-repeat right top
+}
+#ja-header A {
+	COLOR: #c3dfed
+}
+H1.logo-text A {
+	COLOR: #c3dfed! important
+}
+P.site-slogan {
+	BACKGROUND: #1e7cab
+}
+#ja-search {
+	BACKGROUND: url(images/icon-search.gif) no-repeat left center
+}
+#ja-search .inputbox {
+	BORDER-RIGHT: #005a87 1px solid; BORDER-TOP: #005a87 1px solid; BACKGROUND: #1e7cab; BORDER-LEFT: #005a87 1px solid; COLOR: #c3dfed; BORDER-BOTTOM: #005a87 1px solid
+}
+.sectiontableheader {
+	BACKGROUND: #1374a5
+}
+#ja-botslwrap {
+	BACKGROUND: #006699; COLOR: #c3dfed
+}
+.ja-box-right DIV.moduletable {
+	BACKGROUND: url(images/vdot2.gif) repeat-y left 50%
+}
+.ja-box-center DIV.moduletable {
+	BACKGROUND: url(images/vdot2.gif) repeat-y left 50%
+}
+#ja-botsl A {
+	COLOR: #c3dfed
+}
+#ja-mainnavwrap {
+	BORDER-TOP: #4394bd 1px solid; BACKGROUND: #1374a5
+}
+#ja-mainnav UL {
+	BACKGROUND-IMAGE: none; LIST-STYLE-TYPE: none
+}
+#ja-mainnav LI {
+	BACKGROUND-IMAGE: none; LIST-STYLE-TYPE: none
+}
+#ja-mainnav SPAN.separator {
+	DISPLAY: none
+}
+#ja-mainnav > UL {
+	PADDING-LEFT: 20px; BACKGROUND-COLOR: #1374a5
+}
+#ja-mainnav > UL > LI {
+	BORDER-RIGHT: #005a87 1px solid; BORDER-LEFT: #4394bd 1px solid; MARGIN-RIGHT: 1px; BACKGROUND-COLOR: #1374a5
+}
+#ja-mainnav > UL > LI.active {
+	BACKGROUND: url(../../../images/arrow2.png) #1374a5 no-repeat center bottom; COLOR: #c3dfed
+}
+#ja-mainnav > UL > LI:hover {
+	BACKGROUND: url(../../../images/arrow2.png) #2a84b1 no-repeat center bottom; COLOR: #c3dfed
+}
+#ja-mainnav > UL > LI:active {
+	BACKGROUND: url(../../../images/arrow2.png) #2a84b1 no-repeat center bottom; COLOR: #c3dfed
+}
+#ja-mainnav > UL > LI:focus {
+	BACKGROUND: url(../../../images/arrow2.png) #2a84b1 no-repeat center bottom; COLOR: #c3dfed
+}
+#ja-mainnav UL UL LI {
+	BORDER-RIGHT: #005a87 1px solid; BORDER-TOP: #4394bd 1px solid; MARGIN-BOTTOM: 1px; BORDER-LEFT: #4394bd 1px solid; BORDER-BOTTOM: #005a87 1px solid
+}
+#ja-mainnav LI UL {
+	BACKGROUND-COLOR: #2a84b1
+}
+#ja-mainnav LI A {
+	FONT-WEIGHT: bold; COLOR: #c3dfed; TEXT-DECORATION: none
+}
+#ja-mainnav UL UL LI:hover {
+	BACKGROUND: #006699; COLOR: #c3dfed
+}
+#ja-mainnav UL UL LI:active {
+	BACKGROUND: #006699; COLOR: #c3dfed
+}
+#ja-mainnav UL UL LI:focus {
+	BACKGROUND: #006699; COLOR: #c3dfed
+}

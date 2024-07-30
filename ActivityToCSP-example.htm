@@ -1,0 +1,264 @@
+﻿<html lang="en-gb" xml:lang="en-gb" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>UML Activity Diagram to CSP</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta content="index, follow" name="robots">
+<meta content="rCOS, MDA, MDD, UML, verification" name="keywords">
+<meta content="Installation" name="title">
+<meta content="Li Dan" name="author">
+<meta content="rCOS - Refinement of Component and Object Systems" name="description">
+<meta content="MSHTML 6.00.6000.17063" name="GENERATOR">
+<link href="/templates/ja_purity/favicon.ico" type="image/x-icon" rel="shortcut icon">
+<link href="include_files/system.css" type="text/css" rel="stylesheet">
+<link href="include_files/general.css" type="text/css" rel="stylesheet">
+<link href="include_files/template.css" type="text/css" rel="stylesheet">
+<link href="include_files/menu.css" type="text/css" rel="stylesheet">
+<link href="include_files/style.css" type="text/css" rel="stylesheet">
+<link href="include_files/style(1).css" type="text/css" rel="stylesheet">
+<link href="include_files/style(2).css" type="text/css" rel="stylesheet">
+<!--[if IE 7.0]>
+<style type="text/css">.clearfix {
+	DISPLAY: inline-block
+}
+</style>
+<![endif]-->
+<style type="text/css">#ja-header {
+	MARGIN: 0px auto; WIDTH: 97%
+}
+#ja-mainnav {
+	MARGIN: 0px auto; WIDTH: 97%
+}
+#ja-container {
+	MARGIN: 0px auto; WIDTH: 97%
+}
+#ja-botsl {
+	MARGIN: 0px auto; WIDTH: 97%
+}
+#ja-footer {
+	MARGIN: 0px auto; WIDTH: 97%
+}
+#ja-wrapper {
+	MIN-WIDTH: 100%
+}
+</style>
+</head>
+
+<body class="fs3 IE7" id="bd">
+
+<div id="ja-wrapper">
+	<!-- BEGIN: HEADER -->
+	<div id="ja-headerwrap">
+		<div class="clearfix" id="ja-header" style="BACKGROUND: url(http://rcos.iist.unu.edu/templates/ja_purity/images/header/header2.jpg) no-repeat right top">
+			<div class="ja-headermask">
+			</div>
+			<h1 class="logo-text">
+			<a title="rCOS" href="http://rcos.iist.unu.edu/index.php"><span>rCOS</span></a>
+			</h1>
+			<p class="site-slogan">Refinement of Component and Object Systems</p>
+			<ul class="ja-usertools-font">
+				<li>
+				<img id="ja-tool-increase" title="Increase font size" style="CURSOR: pointer" onclick="switchFontSize('ja_purity_ja_font','inc'); return false;" alt="Increase font size" src="include_files/user-increase.png">
+				</li>
+				<li>
+				<img id="ja-tool-reset" title="Default font size" style="CURSOR: pointer" onclick="switchFontSize('ja_purity_ja_font',3); return false;" alt="Default font size" src="include_files/user-reset.png">
+				</li>
+				<li>
+				<img id="ja-tool-decrease" title="Decrease font size" style="CURSOR: pointer" onclick="switchFontSize('ja_purity_ja_font','dec'); return false;" alt="Decrease font size" src="include_files/user-decrease.png">
+				</li>
+			</ul>
+			</div>
+	</div>
+	<!-- END: HEADER -->
+	<!-- BEGIN: MAIN NAVIGATION -->
+	<!-- END: MAIN NAVIGATION -->
+	<div id="ja-containerwrap-fr">
+		<div id="ja-containerwrap2">
+			<div id="ja-container">
+				<div class="clearfix" id="ja-container2">
+					<div class="clearfix" id="ja-mainbody-fr">
+						<!-- BEGIN: CONTENT -->
+						<div id="ja-contentwrap">
+							<div id="ja-content">
+								<div id="ja-pathway">
+								</div>
+								<h2 class="contentheading">UML Activity Diagram to 
+								CSP 
+								transformation</h2>
+								<div class="article-tools">
+									<div class="buttonheading">
+										<span>&nbsp;&nbsp; </span></div>
+								</div>
+								<div class="article-content">
+									<p>
+									This example is taken from the
+									<a href="http://www.informatik.uni-marburg.de/~swt/agtive-contest/UML-to-CSP.pdf">
+									AGTIVE 2007 Tool Contest.</a>&nbsp; The 
+									transformation definition has 14 rules that can be grouped as follows:</p>
+									<p><LI></LI><font color="#0055BB"><b><i>CspContainer</i></b>:</font> the&nbsp; 
+									initial rule that maps for the activity 
+									diagram and generates the root node of the CSP model;</p>
+									<p><LI><font color="#0055BB"><b><i>EdgeToPA:</i></b></font> 
+									the rule is used to generate a <i>
+									ProcessAssignment</i> for each <i>ActivityEdge </i>node.&nbsp;</LI></p>
+									<p><LI></LI><font color="#0055BB"><b><i>
+									ActionToPrefix</i></b></font> : the rule 
+									generates a Prefix process (starts with an 
+									event)&nbsp; for each <i>Action</i> node;</p>
+									<p><LI><b><font color="#0055BB"><i>MergeNode</i></font><span style="FONT-FAMILY: Arial, sans-serif">:
+									</span></b>the rule processes the <i>
+									MergeNode</i> node of the activity model;&nbsp;</LI></p>
+									<p><LI><b><font color="#0055BB"><i>DecisionNode, 
+									DecisionNodeNext, DecisionNodeLast</i></font></b>:&nbsp; 
+									three rules are used to process <i>
+									DecisionNode</i>s of the activity model;</p>
+									<p><LI><b><font color="#0055BB"><i>ForkNode, 
+									ForkNodeNext, ForkNodeLast</i></font></b>&nbsp;</LI>:&nbsp; 
+									three rules are used to process <i>ForkNodes</i>&nbsp; 
+									of the activity model;</p>
+									<p><LI><b><font color="#0055BB"><i>JoinNode, 
+									JoinNodeGo, JoinNodeSKIP</i></font></b>&nbsp;</LI>:&nbsp; 
+									three rules are used to process <i>JoinNodes</i>&nbsp; 
+									of the activity model;</p>
+									<p><LI><b><font color="#0055BB"><i>
+									FinalToSKIP</i></font></b>&nbsp;</LI>:&nbsp; 
+									the rule generates a <i>SKIP</i> for each <i>
+									ActivityEdge</i> that points to a <i>
+									FinalNode</i> .<p>
+									<a target="_blank" href="examples/ActivityToCSP/ActivityToCSP-transfor.xml">QVTR model</a>&nbsp;&nbsp;
+									</p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: ; mso-bidi-font-size: 10.5pt; font-size:12px">
+									<span style="mso-list: Ignore">&nbsp;</span>Metamodel: 
+									<b>UML Activity</b></span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">
+									<img height="232" src="examples/ActivityToCSP/pics/ActivityMetaModel.jpg" width="517" border="2"><br>Metamodel: 
+									<b>CSP</b></span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">
+									<img height="329" src="examples/ActivityToCSP/pics/CSPMetaModel.jpg" width="484" border="1"><br>
+									</span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">relation:<b> ActivitityToCSP</b></span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">
+									<img height="329" src="examples/ActivityToCSP/pics/ActivitityToCSP.jpg" width="377" border="0"><br>&nbsp;&nbsp;
+									</span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">relation : 
+									<b>EdgeToPA</b></span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">
+									<img height="370" src="examples/ActivityToCSP/pics/EdgeToPA.jpg" width="363" border="0"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">relation: 
+									<b>ActionToPrefix</b></span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">
+									<img height="307" src="examples/ActivityToCSP/pics/ActionToPrefix.jpg" width="475" border="0"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">relation: 
+									<b>MergeNode</b></span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">
+									<img src="examples/ActivityToCSP/pics/MergeNode.jpg" border="0" width="398" height="307"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="font-family: Arial, sans-serif">&nbsp;
+									</span>
+									<span style="FONT-FAMILY: Arial, sans-serif">relation: 
+									</span>
+									<span style="font-family: Arial, sans-serif; font-weight: 700">DecisionNode</span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">
+									<img height="447" src="examples/ActivityToCSP/pics/DecisionNode.jpg" width="433" border="0"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="font-family: Arial, sans-serif">&nbsp; 
+									relation:<b> </b></span><b>
+									<span style="font-family: Arial, sans-serif">DecisionNodeNext</span></b></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<img border="0" src="examples/ActivityToCSP/pics/DecisionNodeNext.jpg" width="517" height="433"></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">relation: 
+									<b>DecisionNodeLast</b></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">
+									<img style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" height="335" src="examples/ActivityToCSP/pics/DecisionNodeLast.jpg" width="404" border="0"><br>
+									</span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">relation: 
+									<b>ForkNode</b></span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<img border="0" src="examples/ActivityToCSP/pics/ForkNode.jpg" width="426" height="377"></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">relation: 
+									<b>ForkNodeNext</b></span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<img border="0" src="examples/ActivityToCSP/pics/ForkNodeNext.jpg" width="496" height="391"></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">relation: 
+									<b>ForkNodeLast</b></span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<img border="0" src="examples/ActivityToCSP/pics/ForkNodeLast.jpg" width="412" height="293"></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">relation: 
+									<b>JoinNode</b></span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<img border="0" src="examples/ActivityToCSP/pics/JoinNode.jpg" width="461" height="335"></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">relation: 
+									<b>JoinNodeGo</b></span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<img border="0" src="examples/ActivityToCSP/pics/JoinNodeGo.jpg" width="454" height="293"></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">relation: 
+									<b>JoinNodeSKIP</b></span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<img border="0" src="examples/ActivityToCSP/pics/JoinNodeSKIP.jpg" width="412" height="286"></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">relation:
+									</span>
+									<span style="font-family: Arial, sans-serif; font-weight: 700">FinalToSKIP</span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<img border="0" src="examples/ActivityToCSP/pics/FinalToSKIP.jpg" width="398" height="223"></p>
+									<p class="MsoNormal"><span lang="EN-US">
+									<a target="_blank" href="examples/ActivityToCSP/ActivityToCSP.xslt">generated XSLT stylesheet
+									</a></span></p>
+									<p class="MsoNormal"><span lang="EN-US">input model :
+									<a target="_blank" href="examples/ActivityToCSP/ActivityDiagram-example.uml">&nbsp;an 
+									activity diagram (in uml)</a>&nbsp;&nbsp;&nbsp;&nbsp;
+									<a target="_blank" href="examples/ActivityToCSP/ActivityDiagram-example.mdzip">(in mdzip)</a></span></p>
+									<p class="MsoNormal"><span lang="en-us">&nbsp;&nbsp;
+									<img border="0" src="examples/ActivityToCSP/pics/Activity_example.jpg" width="549" height="793">
+									</span></p>
+									<p>&nbsp;<a target="_blank" href="examples/ActivityToCSP/output-CSP-Model.xml">output 
+									model</a>&nbsp;&nbsp;
+									<a target="_blank" href="examples/ActivityToCSP/output-CSP-Html.html">(in html)</a></p>
+									<p>&nbsp;</p>
+								</div>
+								<span class="modifydate">Last Updated on 13 May..2011</span><span class="article_separator">&nbsp;</span>
+							</div>
+						</div>
+						<!-- END: CONTENT -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- BEGIN: FOOTER -->
+	<div id="ja-footerwrap">
+		<div class="clearfix" id="ja-footer">
+			<div id="ja-footnav">
+			</div>
+			<div class="copyright">
+			</div>
+			<br>
+		</div>
+	</div>
+	<!-- END: FOOTER --></div>
+
+</body>
+
+</html>

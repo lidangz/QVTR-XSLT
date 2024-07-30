@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="umlTOrdbms" nsURI="urn:umlTOrdbms.ecore" nsPrefix="umlTOrdbms">
+  <eClassifiers xsi:type="ecore:EClass" name="PackageToSchema">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="p">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleUML.ecore#//Package"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="s">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleRDBMS.ecore#//Schema"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pn">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassToTable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="c">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleUML.ecore#//Class"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="t">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleRDBMS.ecore#//Table"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cn">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="p">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleUML.ecore#//Package"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="s">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleRDBMS.ecore#//Schema"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cl">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleRDBMS.ecore#//Column"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="k">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleRDBMS.ecore#//Key"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeToColumn">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="c">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleUML.ecore#//Class"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="t">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleRDBMS.ecore#//Table"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveAttributeToColumn">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="c">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleUML.ecore#//Class"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="t">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleRDBMS.ecore#//Table"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="an">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pn">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cn">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sqltype">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="a">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleUML.ecore#//Attribute"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="p">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleUML.ecore#//PrimitiveDataType"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cl">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleRDBMS.ecore#//Column"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComplexAttributeToColumn">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="c">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleUML.ecore#//Class"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="t">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleRDBMS.ecore#//Table"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="an">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newPrefix">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="a">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleUML.ecore#//Attribute"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tc">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleUML.ecore#//Class"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SuperAttributeToColumn">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="c">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleUML.ecore#//Class"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="t">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleRDBMS.ecore#//Table"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sc">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleUML.ecore#//Class"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssocToFKey">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="a">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleUML.ecore#//Association"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fk">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleRDBMS.ecore#//ForeignKey"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="an">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scn">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dcn">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fkn">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="p">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleUML.ecore#//Package"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sc">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleUML.ecore#//Class"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dc">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleUML.ecore#//Class"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destTbl">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleRDBMS.ecore#//Table"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="srcTbl">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleRDBMS.ecore#//Table"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="s">
+      <eType xsi:type="ecore:EClass" href="../metamodel/SimpleRDBMS.ecore#//Schema"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

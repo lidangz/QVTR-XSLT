@@ -1,0 +1,205 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML lang=en-gb xml:lang="en-gb" 
+xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>QVTR-XSLT Tool</TITLE>
+<META http-equiv=content-type content="text/html; charset=utf-8">
+<META content="index, follow" name=robots>
+<META content="rCOS, MDA, MDD, UML, verification" name=keywords>
+<META content="QVTR-XSLT Tool" name=title>
+<META content="LI Dan" name=author>
+<META content="rCOS - Refinement of Component and Object Systems" 
+name=description>
+<META content="MSHTML 6.00.6000.17063" name=GENERATOR><LINK 
+href="/templates/ja_purity/favicon.ico" type=image/x-icon rel="shortcut icon">
+<SCRIPT src="include_files/mootools.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="include_files/caption.js" 
+type=text/javascript></SCRIPT>
+<LINK href="include_files/system.css" type=text/css 
+rel=stylesheet><LINK href="include_files/general.css" type=text/css 
+rel=stylesheet><LINK href="include_files/template.css" 
+type=text/css rel=stylesheet>
+<SCRIPT language=javascript src="include_files/ja.script.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT language=javascript type=text/javascript>
+var rightCollapseDefault='show';
+var excludeModules='38';
+</SCRIPT>
+
+<SCRIPT language=javascript src="include_files/ja.rightcol.js" 
+type=text/javascript></SCRIPT>
+<LINK href="include_files/menu.css" type=text/css 
+rel=stylesheet><LINK href="include_files/style.css" type=text/css 
+rel=stylesheet><LINK href="include_files/style(1).css" 
+type=text/css rel=stylesheet><LINK 
+href="include_files/style(2).css" type=text/css rel=stylesheet><!--[if IE 7.0]>
+<STYLE type=text/css>.clearfix {
+	DISPLAY: inline-block
+}
+</STYLE>
+<![endif]-->
+<STYLE type=text/css>#ja-header {
+	MARGIN: 0px auto; WIDTH: 97%
+}
+#ja-mainnav {
+	MARGIN: 0px auto; WIDTH: 97%
+}
+#ja-container {
+	MARGIN: 0px auto; WIDTH: 97%
+}
+#ja-botsl {
+	MARGIN: 0px auto; WIDTH: 97%
+}
+#ja-footer {
+	MARGIN: 0px auto; WIDTH: 97%
+}
+#ja-wrapper {
+	MIN-WIDTH: 100%
+}
+</STYLE>
+</HEAD>
+<BODY class="fs3 IE7" id=bd><A id=Top name=Top></A>
+<UL class=accessibility>
+  <LI><A title="Skip to content" 
+  href="http://rcos.iist.unu.edu/index.php/rcos-modeler#ja-content">Skip to 
+  content</A> 
+  <LI><A title="Skip to main navigation" 
+  href="http://rcos.iist.unu.edu/index.php/rcos-modeler#ja-mainnav">Skip to main 
+  navigation</A> 
+  <LI><A title="Skip to first column" 
+  href="http://rcos.iist.unu.edu/index.php/rcos-modeler#ja-col1">Skip to first 
+  column</A> 
+  <LI><A title="Skip to second column" 
+  href="http://rcos.iist.unu.edu/index.php/rcos-modeler#ja-col2">Skip to second 
+  column</A> </LI></UL>
+<DIV id=ja-wrapper><!-- BEGIN: HEADER -->
+<DIV id=ja-headerwrap>
+<DIV class=clearfix id=ja-header 
+style="BACKGROUND: url(http://rcos.iist.unu.edu/templates/ja_purity/images/header/header2.jpg) no-repeat right top">
+<DIV class=ja-headermask></DIV>
+<H1 class=logo-text><A title=rCOS 
+href="http://rcos.iist.unu.edu/index.php"><SPAN>rCOS</SPAN></A> </H1>
+<P class=site-slogan>Refinement of Component and Object Systems</P>
+<UL class=ja-usertools-font>
+  <LI><IMG id=ja-tool-increase title="Increase font size" 
+  style="CURSOR: pointer" 
+  onclick="switchFontSize('ja_purity_ja_font','inc'); return false;" 
+  alt="Increase font size" src="include_files/user-increase.png"> 
+  <LI><IMG id=ja-tool-reset title="Default font size" style="CURSOR: pointer" 
+  onclick="switchFontSize('ja_purity_ja_font',3); return false;" 
+  alt="Default font size" src="include_files/user-reset.png"> 
+  <LI><IMG id=ja-tool-decrease title="Decrease font size" 
+  style="CURSOR: pointer" 
+  onclick="switchFontSize('ja_purity_ja_font','dec'); return false;" 
+  alt="Decrease font size" src="include_files/user-decrease.png"> 
+  </LI></UL>
+<SCRIPT type=text/javascript>var CurrentFontSize=parseInt('3');</SCRIPT>
+</DIV></DIV><!-- END: HEADER --><!-- BEGIN: MAIN NAVIGATION --><!-- END: MAIN NAVIGATION -->
+<DIV id=ja-containerwrap-fr>
+<DIV id=ja-containerwrap2>
+<DIV id=ja-container>
+<DIV class=clearfix id=ja-container2>
+<DIV class=clearfix id=ja-mainbody-fr><!-- BEGIN: CONTENT -->
+<DIV id=ja-contentwrap>
+<DIV id=ja-content>
+<DIV id=ja-pathway></DIV>
+<H1 class=contentheading>QVTR-XSLT: Model Transformation with QVT-R and XSLT</H1>
+<DIV class=article-tools>
+<DIV class=article-meta><span class="createdate">May. 13, 2011&nbsp; </span><SPAN class=createby>LI Dan </SPAN></DIV>
+<DIV class=buttonheading><SPAN>&nbsp;&nbsp; </SPAN></DIV></DIV>
+<DIV class=article-content>
+<H2>Tool Description</H2>
+<P style="line-height: 200%">QVTR-XSLT&nbsp; is a model transformation tool that provides support for QVT 
+Relations in graphical notation and automatic transformation execution. It&nbsp; 
+consists of&nbsp; a QVT Relations graphical editor and a code generator.&nbsp; 
+The graphical editor&nbsp; supports design of&nbsp; QVT transformations by 
+defining&nbsp; metamodels, specifying QVT rules as UML object diagrams with OCL 
+expressions. The code generator translates the transformations&nbsp; into 
+executable XSLT programs. </P>
+<P style="line-height: 200%">Currently, the tool supports complex pattern matching of QVT object template, 
+collection template (member selection only), not template, and execution trace 
+output. The source and target models can share the same metamodel, or have different 
+metamodels. The OCL navigation expressions can start from an object template of 
+source domain pattern, navigate along the links to collect objects or 
+attributes. We also support a set of OCL operations, such as <i>forAll, select, 
+including, size()</i>, etc.</P>
+<H2>Examples</H2>
+<p><LI>
+<p style="line-height: 200%"><a target="_blank" href="UMLtoDB-example.htm">UML to RDBMS transformation</LI></a></p>
+<p style="line-height: 200%"></p>
+<p style="line-height: 200%"><LI>
+<p style="line-height: 200%"><a target="_blank" href="MultiToOCL-example.htm">Multiplicity to 
+OCL transformation</LI></a></p>
+<p style="line-height: 200%"></p>
+<p style="line-height: 200%"><LI>
+<p style="line-height: 200%">
+<a target="_blank" href="ActivityToCSP-example.htm">UML Activity 
+Diagrams to CSP transformation</LI></a></p>
+<p style="line-height: 200%"></p>
+<p style="line-height: 200%"><LI>
+<p style="line-height: 200%"><a target="_blank" href="CSPtoHtml-example.htm">CSP to Html transformation</LI></a></p>
+<p style="line-height: 200%"></p>
+<p style="line-height: 200%"><LI>
+<p style="line-height: 200%">
+<a target="_blank" href="ClassToComponent-example.htm">Class to Component transformation</LI></a></p>
+<p style="line-height: 200%"></p>
+<p style="line-height: 200%"><LI>
+<p style="line-height: 200%"><a target="_blank" href="SeqDToCSP-example.htm">UML Sequence Diagrams To CSP transformation</LI></a></p>
+<p style="line-height: 200%"></p>
+<p style="line-height: 200%"><LI>
+<p style="line-height: 200%"><a target="_blank" href="qvtquery-example.html">
+Examples of Model Querying with QVT-R graphical notation</a><a target="_blank" href="SeqDToCSP-example.htm"></LI></a></p>
+</p>
+
+<H2><a target="_blank" href="screenshots.htm">Screenshots</a></H2>
+<H2><a target="_blank" href="GettingStart.htm">Getting Start</a></H2>
+<H2><a target="_blank" href="QVTR-XSLT_tool.zip">Download</a></H2>
+</DIV>
+<p>&nbsp;<p>&nbsp;<p>&nbsp;<p><SPAN class=article_separator>&nbsp;</SPAN> </DIV></DIV><!-- END: CONTENT --><!-- BEGIN: LEFT COLUMN -->
+<!-- START:LEFT Column -->
+<DIV id=ja-col1>
+<DIV class=moduletable_menu>
+<UL class=menu>
+  <LI class=item1><SPAN><A href="http://rcos.iist.unu.edu/"><font face="Arial">●&nbsp;</font>Home</A></SPAN>
+  <LI class="parent item100"><A 
+  href="http://rcos.iist.unu.edu/index.php/rcos-modeler"><SPAN><font face="Arial">●&nbsp;</font>rCOS 
+  Modeler</SPAN></A>
+  <UL>
+    <LI class=item80><A 
+    href="http://rcos.iist.unu.edu/index.php/rcos-modeler/rcos-modeler-release-notes-v125"><SPAN><font face="Arial">●&nbsp;</font>Release 
+    Notes (v1.2.5)</SPAN></A>
+    <LI class=item54><A 
+    href="http://rcos.iist.unu.edu/index.php/rcos-modeler/installation"><SPAN><font face="Arial">●&nbsp;</font>Installation</SPAN></A>
+    <LI class=item96><A 
+    href="http://rcos.iist.unu.edu/index.php/rcos-modeler/examples"><SPAN><font face="Arial">●&nbsp;</font>Examples</SPAN></A>
+    <LI class=item55><A 
+    href="http://rcos.iist.unu.edu/index.php/rcos-modeler/screenshots"><SPAN><font face="Arial">●&nbsp;</font>Screenshots</SPAN></A>
+    <LI class=item94><A 
+    href="http://rcos.iist.unu.edu/index.php/rcos-modeler/plugin-and-metamodel-structure"><SPAN><font face="Arial">●&nbsp;</font>Plugin 
+    and metamodel structure</SPAN></A></LI></UL>
+  <LI class="parent item100"><A 
+  href="http://rcos.iist.unu.edu/index.php/autopa"><SPAN><font face="Arial">●&nbsp;</font>AutoPA</SPAN></A>
+  <UL>
+    <LI class=item101><A 
+    href="http://rcos.iist.unu.edu/index.php/autopa/installation"><SPAN><font face="Arial">●&nbsp;</font>Installation</SPAN></A>
+    <LI class=item102><A 
+    href="http://rcos.iist.unu.edu/index.php/autopa/example"><SPAN><font face="Arial">●&nbsp;</font>Example</SPAN></A></LI></UL>
+ <LI class="parent active item81" id=current><A 
+  href="http://rcos.iist.unu.edu/qvttoxslt/"><SPAN><font face="Arial">●&nbsp;</font>QVTR-XSLT</SPAN></A>
+  <LI class=item72><A 
+  href="http://rcos.iist.unu.edu/index.php/team-members"><SPAN><font face="Arial">●&nbsp;</font>Team 
+  members</SPAN></A>
+  <LI class=item76><A href="http://www.iist.unu.edu/"><SPAN><font face="Arial">●&nbsp;</font>UNU-IIST</SPAN></A>
+  <LI class=item93><A 
+  href="http://rcos.iist.unu.edu/index.php/component/user/login"><SPAN><font face="Arial">●&nbsp;</font>Login</SPAN></A></LI></UL></DIV>
+<DIV class=moduletable>
+&nbsp;</DIV></DIV>
+<BR>
+<!-- END: LEFT COLUMN -->
+</DIV></DIV></DIV></DIV></DIV><!-- BEGIN: FOOTER -->
+<DIV id=ja-footerwrap>
+<DIV class=clearfix id=ja-footer>
+<DIV id=ja-footnav></DIV>
+<DIV class=copyright></DIV>
+<BR></DIV></DIV><!-- END: FOOTER --></DIV></BODY></HTML>

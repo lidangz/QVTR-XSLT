@@ -1,0 +1,139 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>SQL generated from RDBMS model</title>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td>CREATE SCHEMA Library；</td>
+			</tr>
+			<tr>
+				<td>CREATE  TABLE Library.Copy ( </td>
+			</tr>
+			<tr>
+				<td>Copy_tid integer not null ,</td>
+			</tr>
+			<tr>
+				<td>barcode varchar(60),</td>
+			</tr>
+			<tr>
+				<td>available tinyint,</td>
+			</tr>
+			<tr>
+				<td>Copy_borrowedBy_Loan_tid integer,</td>
+			</tr>
+			<tr>
+				<td>Copy_copyOf_Publication_tid integer,</td>
+			</tr>
+			<tr>
+				<td>Copy_heldBy_Reservation_tid integer,</td>
+			</tr>
+			<tr>
+				<td>CONSTRAINT Copy_pk PRIMARY  KEY  ( Copy_tid ))；</td>
+			</tr>
+			<tr>
+				<td>CREATE  TABLE Library.Reservation ( </td>
+			</tr>
+			<tr>
+				<td>Reservation_tid integer not null ,</td>
+			</tr>
+			<tr>
+				<td>Reservation_hold_Copy_tid integer,</td>
+			</tr>
+			<tr>
+				<td>Reservation_reserve_Publication_tid integer,</td>
+			</tr>
+			<tr>
+				<td>Reservation_makedBy_Reader_tid integer,</td>
+			</tr>
+			<tr>
+				<td>CONSTRAINT Reservation_pk PRIMARY  KEY  ( Reservation_tid ))；</td>
+			</tr>
+			<tr>
+				<td>CREATE  TABLE Library.Reader ( </td>
+			</tr>
+			<tr>
+				<td>Reader_tid integer not null ,</td>
+			</tr>
+			<tr>
+				<td>eligible tinyint,</td>
+			</tr>
+			<tr>
+				<td>copyNum integer,</td>
+			</tr>
+			<tr>
+				<td>name varchar(60),</td>
+			</tr>
+			<tr>
+				<td>addr_city varchar(60),</td>
+			</tr>
+			<tr>
+				<td>addr_eMail varchar(60),</td>
+			</tr>
+			<tr>
+				<td>addr_phone varchar(60),</td>
+			</tr>
+			<tr>
+				<td>CONSTRAINT Reader_pk PRIMARY  KEY  ( Reader_tid ))；</td>
+			</tr>
+			<tr>
+				<td>CREATE  TABLE Library.Loan ( </td>
+			</tr>
+			<tr>
+				<td>Loan_tid integer not null ,</td>
+			</tr>
+			<tr>
+				<td>dueDate varchar(60),</td>
+			</tr>
+			<tr>
+				<td>Loan_borrow_Copy_tid integer,</td>
+			</tr>
+			<tr>
+				<td>Loan_takenBy_Reader_tid integer,</td>
+			</tr>
+			<tr>
+				<td>CONSTRAINT Loan_pk PRIMARY  KEY  ( Loan_tid ))；</td>
+			</tr>
+			<tr>
+				<td>CREATE  TABLE Library.Publication ( </td>
+			</tr>
+			<tr>
+				<td>Publication_tid integer not null ,</td>
+			</tr>
+			<tr>
+				<td>name varchar(60),</td>
+			</tr>
+			<tr>
+				<td>info varchar(60),</td>
+			</tr>
+			<tr>
+				<td>CONSTRAINT Publication_pk PRIMARY  KEY  ( Publication_tid ))；</td>
+			</tr>
+			<tr>
+				<td>ALTER TABLE Library.Copy ADD  CONSTRAINT Copy_borrowedBy_Loan FOREIGN  KEY ( Copy_borrowedBy_Loan_tid) REFERENCES Library.Loan；</td>
+			</tr>
+			<tr>
+				<td>ALTER TABLE Library.Copy ADD  CONSTRAINT Copy_copyOf_Publication FOREIGN  KEY ( Copy_copyOf_Publication_tid) REFERENCES Library.Publication；</td>
+			</tr>
+			<tr>
+				<td>ALTER TABLE Library.Copy ADD  CONSTRAINT Copy_heldBy_Reservation FOREIGN  KEY ( Copy_heldBy_Reservation_tid) REFERENCES Library.Reservation；</td>
+			</tr>
+			<tr>
+				<td>ALTER TABLE Library.Reservation ADD  CONSTRAINT Reservation_hold_Copy FOREIGN  KEY ( Reservation_hold_Copy_tid) REFERENCES Library.Copy；</td>
+			</tr>
+			<tr>
+				<td>ALTER TABLE Library.Reservation ADD  CONSTRAINT Reservation_reserve_Publication FOREIGN  KEY ( Reservation_reserve_Publication_tid) REFERENCES Library.Publication；</td>
+			</tr>
+			<tr>
+				<td>ALTER TABLE Library.Reservation ADD  CONSTRAINT Reservation_makedBy_Reader FOREIGN  KEY ( Reservation_makedBy_Reader_tid) REFERENCES Library.Reader；</td>
+			</tr>
+			<tr>
+				<td>ALTER TABLE Library.Loan ADD  CONSTRAINT Loan_borrow_Copy FOREIGN  KEY ( Loan_borrow_Copy_tid) REFERENCES Library.Copy；</td>
+			</tr>
+			<tr>
+				<td>ALTER TABLE Library.Loan ADD  CONSTRAINT Loan_takenBy_Reader FOREIGN  KEY ( Loan_takenBy_Reader_tid) REFERENCES Library.Reader；</td>
+			</tr>
+		</table>
+	</body>
+</html>

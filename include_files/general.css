@@ -1,0 +1,138 @@
+.invalid {
+	BORDER-LEFT-COLOR: #ff0000; BORDER-BOTTOM-COLOR: #ff0000; BORDER-TOP-COLOR: #ff0000; BORDER-RIGHT-COLOR: #ff0000
+}
+LABEL.invalid {
+	COLOR: #ff0000
+}
+#editor-xtd-buttons {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+.button2-left {
+	FLOAT: left
+}
+.button2-right {
+	FLOAT: left
+}
+.button2-left DIV {
+	FLOAT: left
+}
+.button2-right DIV {
+	FLOAT: left
+}
+.button2-left A {
+	DISPLAY: block; FONT-SIZE: 11px; FLOAT: left; CURSOR: pointer; COLOR: #666; LINE-HEIGHT: 22px; HEIGHT: 22px
+}
+.button2-right A {
+	DISPLAY: block; FONT-SIZE: 11px; FLOAT: left; CURSOR: pointer; COLOR: #666; LINE-HEIGHT: 22px; HEIGHT: 22px
+}
+.button2-left SPAN {
+	DISPLAY: block; FONT-SIZE: 11px; FLOAT: left; CURSOR: pointer; COLOR: #666; LINE-HEIGHT: 22px; HEIGHT: 22px
+}
+.button2-right SPAN {
+	DISPLAY: block; FONT-SIZE: 11px; FLOAT: left; CURSOR: pointer; COLOR: #666; LINE-HEIGHT: 22px; HEIGHT: 22px
+}
+.button2-left SPAN {
+	CURSOR: default; COLOR: #999
+}
+.button2-right SPAN {
+	CURSOR: default; COLOR: #999
+}
+.button2-left .page A {
+	PADDING-RIGHT: 6px; PADDING-LEFT: 6px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.button2-right .page A {
+	PADDING-RIGHT: 6px; PADDING-LEFT: 6px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.button2-left .page SPAN {
+	PADDING-RIGHT: 6px; PADDING-LEFT: 6px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.button2-right .page SPAN {
+	PADDING-RIGHT: 6px; PADDING-LEFT: 6px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.page SPAN {
+	FONT-WEIGHT: bold; COLOR: #000
+}
+.button2-left A:hover {
+	COLOR: #0b55c4; TEXT-DECORATION: none
+}
+.button2-right A:hover {
+	COLOR: #0b55c4; TEXT-DECORATION: none
+}
+.button2-left A {
+	PADDING-RIGHT: 24px; PADDING-LEFT: 6px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.button2-left SPAN {
+	PADDING-RIGHT: 24px; PADDING-LEFT: 6px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.button2-right A {
+	PADDING-RIGHT: 6px; PADDING-LEFT: 24px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.button2-right SPAN {
+	PADDING-RIGHT: 6px; PADDING-LEFT: 24px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.button2-left {
+	BACKGROUND: url(../images/j_button2_left.png) no-repeat; FLOAT: left; MARGIN-LEFT: 5px
+}
+.button2-right {
+	BACKGROUND: url(../images/j_button2_right.png) no-repeat 100% 0px; FLOAT: left; MARGIN-LEFT: 5px
+}
+.button2-left .image {
+	BACKGROUND: url(../images/j_button2_image.png) no-repeat 100% 0px
+}
+.button2-left .readmore {
+	BACKGROUND: url(../images/j_button2_readmore.png) no-repeat 100% 0px
+}
+.button2-left .pagebreak {
+	BACKGROUND: url(../images/j_button2_pagebreak.png) no-repeat 100% 0px
+}
+.button2-left .blank {
+	BACKGROUND: url(../images/j_button2_blank.png) no-repeat 100% 0px
+}
+DIV.tooltip {
+	BORDER-RIGHT: #d4d5aa 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #d4d5aa 1px solid; PADDING-LEFT: 5px; Z-INDEX: 13000; BACKGROUND: #ffc; FLOAT: left; MAX-WIDTH: 200px; PADDING-BOTTOM: 5px; BORDER-LEFT: #d4d5aa 1px solid; PADDING-TOP: 5px; BORDER-BOTTOM: #d4d5aa 1px solid
+}
+DIV.tooltip H4 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 95%; BACKGROUND: url(../images/selector-arrow.png) no-repeat; PADDING-BOTTOM: 5px; MARGIN: -15px 0px 0px; PADDING-TOP: 15px
+}
+DIV.tooltip P {
+	FONT-SIZE: 90%; MARGIN: 0px
+}
+.left.img_caption {
+	FLOAT: left; MARGIN-RIGHT: 1em
+}
+.right.img_caption {
+	FLOAT: right; MARGIN-LEFT: 1em
+}
+.left.img_caption P {
+	CLEAR: left; TEXT-ALIGN: center
+}
+.right.img_caption P {
+	CLEAR: right; TEXT-ALIGN: center
+}
+.img_caption {
+	TEXT-ALIGN: center! important
+}
+.none.img_caption {
+	MARGIN-LEFT: auto; MARGIN-RIGHT: auto
+}
+.left.caption {
+	FLOAT: left; MARGIN-RIGHT: 1em
+}
+.right.caption {
+	FLOAT: right; MARGIN-LEFT: 1em
+}
+.left.caption P {
+	CLEAR: left; TEXT-ALIGN: center
+}
+.right.caption P {
+	CLEAR: right; TEXT-ALIGN: center
+}
+.none.caption {
+	MARGIN-LEFT: auto; MARGIN-RIGHT: auto
+}
+.caption {
+	TEXT-ALIGN: center! important
+}
+A IMG.calendar {
+	BACKGROUND: url(../images/calendar.png) no-repeat; MARGIN-LEFT: 3px; VERTICAL-ALIGN: middle; WIDTH: 16px; CURSOR: pointer; HEIGHT: 16px
+}

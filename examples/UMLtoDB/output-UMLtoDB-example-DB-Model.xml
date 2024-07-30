@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Schema name="Library">
+	<Table name="Copy">
+		<Column name="Copy_tid" type="integer" key="Copy_pk"/>
+		<Key name="Copy_pk" column="Copy_tid"/>
+		<Column name="barcode" type="varchar"/>
+		<Column name="available" type="tinyint"/>
+		<ForeignKey name="Copy_borrowedBy_Loan" refersTo="Loan_pk" column="Copy_borrowedBy_Loan_tid"/>
+		<Column name="Copy_borrowedBy_Loan_tid" type="integer" foreignkey="Copy_borrowedBy_Loan"/>
+		<ForeignKey name="Copy_copyOf_Publication" refersTo="Publication_pk" column="Copy_copyOf_Publication_tid"/>
+		<Column name="Copy_copyOf_Publication_tid" type="integer" foreignkey="Copy_copyOf_Publication"/>
+		<ForeignKey name="Copy_heldBy_Reservation" refersTo="Reservation_pk" column="Copy_heldBy_Reservation_tid"/>
+		<Column name="Copy_heldBy_Reservation_tid" type="integer" foreignkey="Copy_heldBy_Reservation"/>
+	</Table>
+	<Table name="Reservation">
+		<Column name="Reservation_tid" type="integer" key="Reservation_pk"/>
+		<Key name="Reservation_pk" column="Reservation_tid"/>
+		<ForeignKey name="Reservation_hold_Copy" refersTo="Copy_pk" column="Reservation_hold_Copy_tid"/>
+		<Column name="Reservation_hold_Copy_tid" type="integer" foreignkey="Reservation_hold_Copy"/>
+		<ForeignKey name="Reservation_reserve_Publication" refersTo="Publication_pk" column="Reservation_reserve_Publication_tid"/>
+		<Column name="Reservation_reserve_Publication_tid" type="integer" foreignkey="Reservation_reserve_Publication"/>
+		<ForeignKey name="Reservation_makedBy_Reader" refersTo="Reader_pk" column="Reservation_makedBy_Reader_tid"/>
+		<Column name="Reservation_makedBy_Reader_tid" type="integer" foreignkey="Reservation_makedBy_Reader"/>
+	</Table>
+	<Table name="Reader">
+		<Column name="Reader_tid" type="integer" key="Reader_pk"/>
+		<Key name="Reader_pk" column="Reader_tid"/>
+		<Column name="eligible" type="tinyint"/>
+		<Column name="copyNum" type="integer"/>
+		<Column name="name" type="varchar"/>
+		<Column name="addr_city" type="varchar"/>
+		<Column name="addr_eMail" type="varchar"/>
+		<Column name="addr_phone" type="varchar"/>
+	</Table>
+	<Table name="Loan">
+		<Column name="Loan_tid" type="integer" key="Loan_pk"/>
+		<Key name="Loan_pk" column="Loan_tid"/>
+		<Column name="dueDate" type="varchar"/>
+		<ForeignKey name="Loan_borrow_Copy" refersTo="Copy_pk" column="Loan_borrow_Copy_tid"/>
+		<Column name="Loan_borrow_Copy_tid" type="integer" foreignkey="Loan_borrow_Copy"/>
+		<ForeignKey name="Loan_takenBy_Reader" refersTo="Reader_pk" column="Loan_takenBy_Reader_tid"/>
+		<Column name="Loan_takenBy_Reader_tid" type="integer" foreignkey="Loan_takenBy_Reader"/>
+	</Table>
+	<Table name="Publication">
+		<Column name="Publication_tid" type="integer" key="Publication_pk"/>
+		<Key name="Publication_pk" column="Publication_tid"/>
+		<Column name="name" type="varchar"/>
+		<Column name="info" type="varchar"/>
+	</Table>
+</Schema>

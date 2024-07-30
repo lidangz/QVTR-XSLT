@@ -1,0 +1,55 @@
+<html>
+	<body>
+		<table>
+			<tr>
+				<td>context Reservation</td>
+			</tr>
+			<tr>
+				<td>  inv I_Reservation_hold_size: self.hold-&gt;size()= 1</td>
+			</tr>
+			<tr>
+				<td>  inv I_Reservation_reserve_size: self.reserve-&gt;size()= 1</td>
+			</tr>
+			<tr>
+				<td>  inv I_Reservation_makedBy_size: self.makedBy-&gt;size()= 1</td>
+			</tr>
+			<tr>
+				<td>context Loan</td>
+			</tr>
+			<tr>
+				<td>  inv I_Loan_borrow_size: self.borrow-&gt;size()= 1</td>
+			</tr>
+			<tr>
+				<td>  inv I_Loan_takenBy_size: self.takenBy-&gt;size()= 1</td>
+			</tr>
+			<tr>
+				<td>context User</td>
+			</tr>
+			<tr>
+				<td>  inv I_User_take_size: self.take-&gt;size()&lt;=10</td>
+			</tr>
+			<tr>
+				<td>  inv I_User_make_size: self.make-&gt;size()&gt;=1 and self.make-&gt;size()&lt;=3</td>
+			</tr>
+			<tr>
+				<td>context Publication</td>
+			</tr>
+			<tr>
+				<td>context Copy</td>
+			</tr>
+			<tr>
+				<td>  inv I_Copy_borrowedBy_size: self.borrowedBy-&gt;size()&lt;=1</td>
+			</tr>
+			<tr>
+				<td>  inv I_Copy_copyOf_size: self.copyOf-&gt;size()= 1</td>
+			</tr>
+			<tr>
+				<td>  inv I_Copy_heldBy_size: self.heldBy-&gt;size()&lt;=1</td>
+			</tr>
+		</table>
+	</body>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Generate OCL constrains from association multiplicity :NewLibrary</title>
+	</head>
+</html>

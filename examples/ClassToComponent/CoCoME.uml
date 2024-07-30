@@ -1,0 +1,1009 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:rCOS="http://rcos.iist.unu.edu/rCOS.profile.uml" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:version="2.1">
+	<uml:Model xmi:id="eee_1045467100313_135436_1" name="CoCoME" viewpoint="">
+		<packageImport xmi:id="_8hNGYDkrEd6srYlCRgbx-A">
+			<importedPackage xmi:type="uml:Model" href="pathmap://RCOS_LIBRARIES/Collections.uml#eee_1045467100313_135436_1"/>
+		</packageImport>
+		<packagedElement xmi:type="uml:Package" xmi:id="_15_0EAPbeta1_2a80154_1193283365296_998310_568" name="CoCoME_ClassModel">
+			<ownedComment xmi:id="_-aMgsJkEEd6QaqTNydBN8A" annotatedElement="_cEYIgH2kEd6yV_HbtxhdVw">
+				<body>In order to obtain a fully executable model, right click on this class, select rCOS-&gt;run chain of operations.
+
+The *Refine commands are in the bottom right corner of this diagram.</body>
+			</ownedComment>
+			<ownedComment xmi:id="_VpPqQMhlEd6ZYdXAKj4hJA" annotatedElement="_JEZh4MgeEd6Xl--qp5PAsA">
+				<body>This command will integrate the state-machine into the Cashdesk in true multi-view style. It will apply further refinements to remove CHAOS with RETURN for a robust design. A CSP snapshot is taken before and after, and a CSP model with both definitions for the Cashdesk (before and after refining CHAOS) is produced. The snapshot contains a few interesting assertions, like showing that a true FD-refinement took place.
+
+This observations is rather trivial, but the keypoint here is the automation.</body>
+			</ownedComment>
+			<ownedComment xmi:id="_PklYIMhwEd6nM-8MoDpzRg" annotatedElement="_x-ATgPzJEd2Bw8-gzpyqaA">
+				<body>This command integrates the state machine into the design, and applies the necessary abstractions to make the result amenable to CSP output.</body>
+			</ownedComment>
+			<ownedComment xmi:id="_EZi4wNtYEd6c5MiWDooOKg" annotatedElement="_034JYNtREd6lReLZ7za1pw _CeC_oKAMEd-b-65YVdtgiA">
+				<body>Applies a larger version of the Expert Pattern on finishSale(). Two alternatives: as DesignDelegation, and manually.
+
+Interesting features include 1) creating a new operation programatically, and 2) selecting the resulting operation of this command as the target for the next command.</body>
+			</ownedComment>
+			<packagedElement xmi:type="uml:Class" xmi:id="_V0k_QKfwEdyy8P4OYI-5Dg" name="Cashdesk" clientDependency="_x5EUUH2BEd2_Ef9ZQv9eYQ _uW7uQJaDEd2dRPyAMyC60Q">
+				<ownedRule xmi:id="2RlKhMEdyKi8OnHuLrDAOCL_aJ" name="Inv_Cashdesk_line_size" constrainedElement="_V0k_QKfwEdyy8P4OYI-5Dg">
+					<specification xmi:type="uml:OpaqueExpression" xmi:id="lKhMEdyKi8OnHuLrDAOCL_aJ2R">
+						<language>OCL 2.0</language>
+						<body>self.line-&gt;size()&lt;=1</body>
+					</specification>
+				</ownedRule>
+				<ownedRule xmi:id="GOTKhNEdyKi8OnHuLrDAOCL_Br" name="Inv_Cashdesk_sale_size" constrainedElement="_V0k_QKfwEdyy8P4OYI-5Dg">
+					<specification xmi:type="uml:OpaqueExpression" xmi:id="TKhNEdyKi8OnHuLrDAOCL_BrGO">
+						<language>OCL 2.0</language>
+						<body>self.sale-&gt;size()&lt;=1</body>
+					</specification>
+				</ownedRule>
+				<ownedRule xmi:id="_qf74Rbg8EdyhWKAazFIcPA" name="invariants">
+					<specification xmi:type="uml:OpaqueExpression" xmi:id="_qf74Rrg8EdyhWKAazFIcPA">
+						<body>store != null ∧ store.catalog != null ∧ clock != null ∧ bank != null</body>
+					</specification>
+				</ownedRule>
+				<ownedAttribute xmi:id="_6QhK8LjSEdyX44DA38FixQ" name="exmode">
+					<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Boolean"/>
+				</ownedAttribute>
+				<interfaceRealization xmi:id="_uW7uQJaDEd2dRPyAMyC60Q" supplier="_MAPtEItuEd29vaKB72n5RA" client="_V0k_QKfwEdyy8P4OYI-5Dg" contract="_MAPtEItuEd29vaKB72n5RA"/>
+				<nestedClassifier xmi:type="uml:Association" xmi:id="_qLRfEKhSEdyKi8OnHuLrDA" name="clock" memberEnd="_qLRfEahSEdyKi8OnHuLrDA _qLRfFKhSEdyKi8OnHuLrDA" navigableOwnedEnd="_qLRfFKhSEdyKi8OnHuLrDA">
+					<ownedEnd xmi:id="_qLRfEahSEdyKi8OnHuLrDA" name="" type="_V0k_QKfwEdyy8P4OYI-5Dg" association="_qLRfEKhSEdyKi8OnHuLrDA"/>
+					<ownedEnd xmi:id="_qLRfFKhSEdyKi8OnHuLrDA" name="clock" type="_5eL0oKfzEdyy8P4OYI-5Dg" association="_qLRfEKhSEdyKi8OnHuLrDA"/>
+				</nestedClassifier>
+				<nestedClassifier xmi:type="uml:Association" xmi:id="_aJ2RkKhMEdyKi8OnHuLrDA" name="line" memberEnd="_aJ2RkahMEdyKi8OnHuLrDA _aJ2RlKhMEdyKi8OnHuLrDA" navigableOwnedEnd="_aJ2RlKhMEdyKi8OnHuLrDA">
+					<ownedEnd xmi:id="_aJ2RkahMEdyKi8OnHuLrDA" name="" type="_V0k_QKfwEdyy8P4OYI-5Dg" association="_aJ2RkKhMEdyKi8OnHuLrDA">
+						<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aJ2RkqhMEdyKi8OnHuLrDA" value="1"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="_aJ2Rk6hMEdyKi8OnHuLrDA" value="1"/>
+					</ownedEnd>
+					<ownedEnd xmi:id="_aJ2RlKhMEdyKi8OnHuLrDA" name="line" type="_ohBI4KfzEdyy8P4OYI-5Dg" association="_aJ2RkKhMEdyKi8OnHuLrDA">
+						<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aJ2RlahMEdyKi8OnHuLrDA" value="1"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="_aJ2RlqhMEdyKi8OnHuLrDA"/>
+					</ownedEnd>
+				</nestedClassifier>
+				<nestedClassifier xmi:type="uml:Association" xmi:id="_BrGOSKhNEdyKi8OnHuLrDA" name="sale" memberEnd="_BrGOSahNEdyKi8OnHuLrDA _BrGOTKhNEdyKi8OnHuLrDA" navigableOwnedEnd="_BrGOTKhNEdyKi8OnHuLrDA">
+					<ownedEnd xmi:id="_BrGOSahNEdyKi8OnHuLrDA" name="" type="_V0k_QKfwEdyy8P4OYI-5Dg" association="_BrGOSKhNEdyKi8OnHuLrDA">
+						<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BrGOSqhNEdyKi8OnHuLrDA" value="1"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BrGOS6hNEdyKi8OnHuLrDA" value="1"/>
+					</ownedEnd>
+					<ownedEnd xmi:id="_BrGOTKhNEdyKi8OnHuLrDA" name="sale" type="_unMc8KfzEdyy8P4OYI-5Dg" association="_BrGOSKhNEdyKi8OnHuLrDA">
+						<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BrGOTahNEdyKi8OnHuLrDA" value="1"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BrGOTqhNEdyKi8OnHuLrDA"/>
+					</ownedEnd>
+				</nestedClassifier>
+				<nestedClassifier xmi:type="uml:Association" xmi:id="_veznhKhNEdyKi8OnHuLrDA" name="bank" memberEnd="_veznhahNEdyKi8OnHuLrDA _vezniKhNEdyKi8OnHuLrDA" navigableOwnedEnd="_vezniKhNEdyKi8OnHuLrDA">
+					<ownedEnd xmi:id="_veznhahNEdyKi8OnHuLrDA" name="" type="_V0k_QKfwEdyy8P4OYI-5Dg" association="_veznhKhNEdyKi8OnHuLrDA"/>
+					<ownedEnd xmi:id="_vezniKhNEdyKi8OnHuLrDA" name="bank" type="_3rIioKfzEdyy8P4OYI-5Dg" association="_veznhKhNEdyKi8OnHuLrDA"/>
+				</nestedClassifier>
+				<ownedOperation xmi:id="_TgH-cKfyEdyy8P4OYI-5Dg" name="enableExpress">
+					<ownedRule xmi:id="_AD8CQAbLEd29C_fALYo4sQ" name="design">
+						<specification xmi:type="uml:OpaqueExpression" xmi:id="_AD8CQQbLEd29C_fALYo4sQ">
+							<body>[ ⊢exmode' = true ]</body>
+						</specification>
+					</ownedRule>
+				</ownedOperation>
+				<ownedOperation xmi:id="_VCOqYKfyEdyy8P4OYI-5Dg" name="disableExpress">
+					<ownedRule xmi:id="_T82bgAbNEd29C_fALYo4sQ" name="design">
+						<specification xmi:type="uml:OpaqueExpression" xmi:id="_T82bgQbNEd29C_fALYo4sQ">
+							<body>[ ⊢exmode' = false ]</body>
+						</specification>
+					</ownedRule>
+				</ownedOperation>
+				<ownedOperation xmi:id="_eyVSgKfyEdyy8P4OYI-5Dg" name="startSale">
+					<ownedRule xmi:id="_Z0gycAbNEd29C_fALYo4sQ" name="design">
+						<specification xmi:type="uml:OpaqueExpression" xmi:id="_Z0gycQbNEd29C_fALYo4sQ">
+							<body>var Date date = clock.date();
+[ ⊢sale' = Sale.new(false, date) ]</body>
+						</specification>
+					</ownedRule>
+				</ownedOperation>
+				<ownedOperation xmi:id="_frGtkKfyEdyy8P4OYI-5Dg" name="finishSale">
+					<ownedRule xmi:id="_SfwV8AbOEd29C_fALYo4sQ" name="design">
+						<specification xmi:type="uml:OpaqueExpression" xmi:id="_SfwV8QbOEd29C_fALYo4sQ">
+							<body>[ sale != null ⊢true];
+[ ⊢sale.complete' = true ];
+var double sum;
+sum := 0;
+for (LineItem l : sale.lines) {
+	[ ⊢sum' = sum + l.subtotal ]
+};
+[ ⊢sale.total' = sum ];
+end sum</body>
+						</specification>
+					</ownedRule>
+				</ownedOperation>
+				<ownedOperation xmi:id="_jmjPcqfyEdyy8P4OYI-5Dg" name="cardPay">
+					<eAnnotations xmi:id="_5tGakHBKEd2-2YAJDbyncw" source="CSP">
+						<details xmi:id="_5tGakXBKEd2-2YAJDbyncw" key="channelType" value=""/>
+					</eAnnotations>
+					<ownedRule xmi:id="_alH6kAbOEd29C_fALYo4sQ" name="design">
+						<specification xmi:type="uml:OpaqueExpression" xmi:id="_alH6kQbOEd29C_fALYo4sQ">
+							<body>[ sale != null |- true];
+var boolean auth = bank.authorize(c, sale.total);
+[ auth ⊢sale.pay' = CardPayment.new(c) ];
+[ ⊢store.sales.add(sale) ];
+[ ⊢∀ LineItem l:∀ Item p:sale.lines.contains(l) ⇒ (store.catalog.contains(p) ⇒ (p.barcode = l.barcode ⇒ p.stock' = p.stock - l.quantity)) ]</body>
+						</specification>
+					</ownedRule>
+					<ownedParameter xmi:id="_tWt3EKf0Edyy8P4OYI-5Dg" name="c" type="_4oUjoKfzEdyy8P4OYI-5Dg"/>
+				</ownedOperation>
+				<ownedOperation xmi:id="_k0sdkKfyEdyy8P4OYI-5Dg" name="cashPay">
+					<eAnnotations xmi:id="_6qvHgHBKEd2-2YAJDbyncw" source="CSP">
+						<details xmi:id="_6qvHgXBKEd2-2YAJDbyncw" key="channelType" value=""/>
+						<details xmi:id="_sxDQQL-GEd6eN_I7yXDV4g" key="ret_hint" value=""/>
+						<details xmi:id="_1AnSsL-GEd6eN_I7yXDV4g" key="ret_channelType" value=""/>
+					</eAnnotations>
+					<ownedRule xmi:id="_qABiUAbOEd29C_fALYo4sQ" name="design">
+						<specification xmi:type="uml:OpaqueExpression" xmi:id="_qABiUQbOEd29C_fALYo4sQ">
+							<body>[ sale != null |- true];
+[ a &gt;= sale.total ⊢sale.pay' = CashPayment.new(a, (a - sale.total)) ];
+[ ⊢store.sales.add(sale) ];
+[ ⊢∀ LineItem l:∀ Item p:sale.lines.contains(l) ⇒ store.catalog.contains(p) ⇒ (p.barcode = l.barcode ⇒ p.stock' = p.stock - l.quantity) ];
+[ ⊢c' = a - sale.total ]</body>
+						</specification>
+					</ownedRule>
+					<ownedParameter xmi:id="_vxXUkKf0Edyy8P4OYI-5Dg" name="a">
+						<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Double"/>
+					</ownedParameter>
+					<ownedParameter xmi:id="_yT4UoKf0Edyy8P4OYI-5Dg" name="c" direction="out">
+						<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Double"/>
+					</ownedParameter>
+				</ownedOperation>
+				<ownedOperation xmi:id="_2j9KQDrrEd6Nu_oB6txIuQ" name="enterItem">
+					<eAnnotations xmi:id="_Fn6cIL-HEd6eN_I7yXDV4g" source="CSP">
+						<details xmi:id="_HN7-wL-HEd6eN_I7yXDV4g" key="channelType" value=""/>
+					</eAnnotations>
+					<ownedRule xmi:id="_AT_g8DrsEd6Nu_oB6txIuQ" name="design">
+						<specification xmi:type="uml:OpaqueExpression" xmi:id="_AT_g8TrsEd6Nu_oB6txIuQ">
+							<body>var Item j;
+[ ∃ Item i:store.catalog.contains(i) ∧ i.barcode = code ⊢ ∃ Item i:store.catalog.contains(i) ∧ i.barcode = code ∧ j' = i];
+[ j != null ∧ qty &gt; 0 ∧ sale != null ⊢ line' = LineItem.new(code, qty) ];
+[ ⊢line.subtotal' = j.price * qty ];
+[ ⊢sale.lines.add(line) ]</body>
+						</specification>
+					</ownedRule>
+					<ownedParameter xmi:id="_4iSfMDrrEd6Nu_oB6txIuQ" name="code" type="_GgfNUKf0Edyy8P4OYI-5Dg"/>
+					<ownedParameter xmi:id="_69wcEDrrEd6Nu_oB6txIuQ" name="qty">
+						<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Integer"/>
+					</ownedParameter>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="_ohBI4KfzEdyy8P4OYI-5Dg" name="LineItem">
+				<ownedAttribute xmi:id="_ukNyEqhOEdyKi8OnHuLrDA" name="quantity">
+					<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Integer"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:id="_u6u0oKhOEdyKi8OnHuLrDA" name="subtotal">
+					<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Double"/>
+				</ownedAttribute>
+				<nestedClassifier xmi:type="uml:Association" xmi:id="_OYqz2KGlEd2QtqWxFLzXIA" name="lineItem_barcode" memberEnd="_OYqz2aGlEd2QtqWxFLzXIA _OYqz3KGlEd2QtqWxFLzXIA" navigableOwnedEnd="_OYqz3KGlEd2QtqWxFLzXIA">
+					<ownedEnd xmi:id="_OYqz2aGlEd2QtqWxFLzXIA" name="" type="_ohBI4KfzEdyy8P4OYI-5Dg" association="_OYqz2KGlEd2QtqWxFLzXIA">
+						<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OYqz2qGlEd2QtqWxFLzXIA" value="1"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OYqz26GlEd2QtqWxFLzXIA" value="1"/>
+					</ownedEnd>
+					<ownedEnd xmi:id="_OYqz3KGlEd2QtqWxFLzXIA" name="barcode" type="_GgfNUKf0Edyy8P4OYI-5Dg" association="_OYqz2KGlEd2QtqWxFLzXIA">
+						<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OYqz3aGlEd2QtqWxFLzXIA" value="1"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OYqz3qGlEd2QtqWxFLzXIA" value="1"/>
+					</ownedEnd>
+				</nestedClassifier>
+				<ownedOperation xmi:id="_inyoAOkAEd2fML1ABS9uzA" name="LineItem">
+					<ownedRule xmi:id="_y3qI4OkAEd2fML1ABS9uzA" name="design">
+						<specification xmi:type="uml:OpaqueExpression" xmi:id="_y3qI4ekAEd2fML1ABS9uzA">
+							<body>barcode := b;
+quantity := q</body>
+						</specification>
+					</ownedRule>
+					<ownedParameter xmi:id="_k5zG4OkAEd2fML1ABS9uzA" name="b" type="_GgfNUKf0Edyy8P4OYI-5Dg"/>
+					<ownedParameter xmi:id="_mf8lUOkAEd2fML1ABS9uzA" name="q">
+						<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Integer"/>
+					</ownedParameter>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="_scop4KfzEdyy8P4OYI-5Dg" name="Store">
+				<nestedClassifier xmi:type="uml:Association" xmi:id="_FGhzUKhNEdyKi8OnHuLrDA" name="store" memberEnd="_FGhzUahNEdyKi8OnHuLrDA _FGhzVKhNEdyKi8OnHuLrDA" navigableOwnedEnd="_FGhzVKhNEdyKi8OnHuLrDA">
+					<ownedEnd xmi:id="_FGhzUahNEdyKi8OnHuLrDA" name="" type="_V0k_QKfwEdyy8P4OYI-5Dg" association="_FGhzUKhNEdyKi8OnHuLrDA"/>
+					<ownedEnd xmi:id="_FGhzVKhNEdyKi8OnHuLrDA" name="store" type="_scop4KfzEdyy8P4OYI-5Dg" association="_FGhzUKhNEdyKi8OnHuLrDA"/>
+				</nestedClassifier>
+				<ownedOperation xmi:id="_IB4BwN8cEd-FF7h0e22Cmg" name="find">
+					<ownedParameter xmi:id="_aIyj0N8cEd-FF7h0e22Cmg" name="code" type="_GgfNUKf0Edyy8P4OYI-5Dg"/>
+					<ownedParameter xmi:id="_zk_4cN8cEd-FF7h0e22Cmg" name="itm" type="_2RtRkKfzEdyy8P4OYI-5Dg" direction="return"/>
+				</ownedOperation>
+				<ownedOperation xmi:id="_OL4Qct8dEd-FF7h0e22Cmg" name="getPrice">
+					<ownedParameter xmi:id="_QwSt8N8dEd-FF7h0e22Cmg" name="code" type="_GgfNUKf0Edyy8P4OYI-5Dg"/>
+					<ownedParameter xmi:id="_T_z98N8dEd-FF7h0e22Cmg" name="prc" direction="return">
+						<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Double"/>
+					</ownedParameter>
+				</ownedOperation>
+				<ownedOperation xmi:id="_qq09Ut8dEd-FF7h0e22Cmg" name="addSale">
+					<ownedParameter xmi:id="_sZjI8N8dEd-FF7h0e22Cmg" name="sale" type="_unMc8KfzEdyy8P4OYI-5Dg"/>
+				</ownedOperation>
+				<ownedOperation xmi:id="_gYwbIN8eEd-FF7h0e22Cmg" name="update">
+					<ownedParameter xmi:id="_h1KuwN8eEd-FF7h0e22Cmg" name="code" type="_GgfNUKf0Edyy8P4OYI-5Dg"/>
+					<ownedParameter xmi:id="_k8Aj4N8eEd-FF7h0e22Cmg" name="amount">
+						<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Integer"/>
+					</ownedParameter>
+				</ownedOperation>
+				<ownedOperation xmi:id="_ycsZEAH5EeCm0ubwz_LAXQ" name="OtherFun">
+					<ownedParameter xmi:id="_07mrgAH5EeCm0ubwz_LAXQ" name="name">
+						<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#String"/>
+					</ownedParameter>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="_unMc8KfzEdyy8P4OYI-5Dg" name="Sale">
+				<ownedAttribute xmi:id="_YAmwUKhQEdyKi8OnHuLrDA" name="complete">
+					<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Boolean"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:id="_Ynvo0KhQEdyKi8OnHuLrDA" name="total">
+					<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Double"/>
+				</ownedAttribute>
+				<nestedClassifier xmi:type="uml:Association" xmi:id="_dOZ5CKGlEd2QtqWxFLzXIA" name="sale_date" memberEnd="_dOZ5CaGlEd2QtqWxFLzXIA _dOZ5DKGlEd2QtqWxFLzXIA" navigableOwnedEnd="_dOZ5DKGlEd2QtqWxFLzXIA">
+					<ownedEnd xmi:id="_dOZ5CaGlEd2QtqWxFLzXIA" name="" type="_unMc8KfzEdyy8P4OYI-5Dg" association="_dOZ5CKGlEd2QtqWxFLzXIA">
+						<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dOZ5CqGlEd2QtqWxFLzXIA" value="1"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dOZ5C6GlEd2QtqWxFLzXIA" value="1"/>
+					</ownedEnd>
+					<ownedEnd xmi:id="_dOZ5DKGlEd2QtqWxFLzXIA" name="date" type="_vs1YALUoEdyxAq315t1iyQ" association="_dOZ5CKGlEd2QtqWxFLzXIA">
+						<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dOZ5DaGlEd2QtqWxFLzXIA" value="1"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dOZ5DqGlEd2QtqWxFLzXIA" value="1"/>
+					</ownedEnd>
+				</nestedClassifier>
+				<nestedClassifier xmi:type="uml:Association" xmi:id="_Dl2DuKhNEdyKi8OnHuLrDA" name="pay" memberEnd="_Dl2DuahNEdyKi8OnHuLrDA _Dl2DvKhNEdyKi8OnHuLrDA" navigableOwnedEnd="_Dl2DvKhNEdyKi8OnHuLrDA">
+					<ownedEnd xmi:id="_Dl2DuahNEdyKi8OnHuLrDA" name="" type="_unMc8KfzEdyy8P4OYI-5Dg" association="_Dl2DuKhNEdyKi8OnHuLrDA">
+						<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Dl2DuqhNEdyKi8OnHuLrDA" value="1"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Dl2Du6hNEdyKi8OnHuLrDA" value="1"/>
+					</ownedEnd>
+					<ownedEnd xmi:id="_Dl2DvKhNEdyKi8OnHuLrDA" name="pay" type="_yoiygKfzEdyy8P4OYI-5Dg" association="_Dl2DuKhNEdyKi8OnHuLrDA">
+						<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Dl2DvahNEdyKi8OnHuLrDA" value="1"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Dl2DvqhNEdyKi8OnHuLrDA"/>
+					</ownedEnd>
+				</nestedClassifier>
+				<ownedOperation xmi:id="_rOcY8Oj5Ed2mEP-VBmIFqQ" name="Sale">
+					<ownedRule xmi:id="_EXlAkOj6Ed2mEP-VBmIFqQ" name="design">
+						<specification xmi:type="uml:OpaqueExpression" xmi:id="_EXlAkej6Ed2mEP-VBmIFqQ">
+							<body>complete := c;
+date := d</body>
+						</specification>
+					</ownedRule>
+					<ownedParameter xmi:id="_uxoy4Oj5Ed2mEP-VBmIFqQ" name="c">
+						<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Boolean"/>
+					</ownedParameter>
+					<ownedParameter xmi:id="_y6xLcOj5Ed2mEP-VBmIFqQ" name="d" type="_vs1YALUoEdyxAq315t1iyQ"/>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="_yoiygKfzEdyy8P4OYI-5Dg" name="Payment"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="_zYOjAKfzEdyy8P4OYI-5Dg" name="CardPayment">
+				<ownedRule xmi:id="0y66hQEdyKi8OnHuLrDAOCL_rb" name="Inv_CardPayment_card_size" constrainedElement="_zYOjAKfzEdyy8P4OYI-5Dg">
+					<specification xmi:type="uml:OpaqueExpression" xmi:id="66hQEdyKi8OnHuLrDAOCL_rb0y">
+						<language>OCL 2.0</language>
+						<body>self.card-&gt;size()= 1</body>
+					</specification>
+				</ownedRule>
+				<generalization xmi:id="_QKnEcKhQEdyKi8OnHuLrDA" general="_yoiygKfzEdyy8P4OYI-5Dg"/>
+				<nestedClassifier xmi:type="uml:Association" xmi:id="_rb0y56hQEdyKi8OnHuLrDA" name="card" memberEnd="_rb0y6KhQEdyKi8OnHuLrDA _rb0y66hQEdyKi8OnHuLrDA" navigableOwnedEnd="_rb0y66hQEdyKi8OnHuLrDA">
+					<ownedEnd xmi:id="_rb0y6KhQEdyKi8OnHuLrDA" name="source" type="_zYOjAKfzEdyy8P4OYI-5Dg" association="_rb0y56hQEdyKi8OnHuLrDA">
+						<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rb0y6ahQEdyKi8OnHuLrDA" value="1"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rb0y6qhQEdyKi8OnHuLrDA" value="1"/>
+					</ownedEnd>
+					<ownedEnd xmi:id="_rb0y66hQEdyKi8OnHuLrDA" name="card" type="_4oUjoKfzEdyy8P4OYI-5Dg" association="_rb0y56hQEdyKi8OnHuLrDA">
+						<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rb0y7KhQEdyKi8OnHuLrDA" value="1"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rb0y7ahQEdyKi8OnHuLrDA" value="1"/>
+					</ownedEnd>
+				</nestedClassifier>
+				<ownedOperation xmi:id="_rkOsoOkCEd2fML1ABS9uzA" name="CardPayment">
+					<ownedParameter xmi:id="_uA_C8OkCEd2fML1ABS9uzA" name="c" type="_4oUjoKfzEdyy8P4OYI-5Dg"/>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="_0cD-kKfzEdyy8P4OYI-5Dg" name="CashPayment">
+				<generalization xmi:id="_QrKMw6hQEdyKi8OnHuLrDA" general="_yoiygKfzEdyy8P4OYI-5Dg"/>
+				<ownedAttribute xmi:id="_hznQkahSEdyKi8OnHuLrDA" name="amount">
+					<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Double"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:id="_iRJhIKhSEdyKi8OnHuLrDA" name="change">
+					<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Double"/>
+				</ownedAttribute>
+				<ownedOperation xmi:id="_9vFWsOkGEd2fML1ABS9uzA" name="CashPayment">
+					<ownedRule xmi:id="_FWgbEOkHEd2fML1ABS9uzA" name="design">
+						<specification xmi:type="uml:OpaqueExpression" xmi:id="_FWhCIOkHEd2fML1ABS9uzA">
+							<body>amount := a;
+change := c</body>
+						</specification>
+					</ownedRule>
+					<ownedParameter xmi:id="__GnxYOkGEd2fML1ABS9uzA" name="a">
+						<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Double"/>
+					</ownedParameter>
+					<ownedParameter xmi:id="__8Px0OkGEd2fML1ABS9uzA" name="c">
+						<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Double"/>
+					</ownedParameter>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="_2RtRkKfzEdyy8P4OYI-5Dg" name="Item">
+				<ownedAttribute xmi:id="_5OHI8KhOEdyKi8OnHuLrDA" name="price">
+					<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Double"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:id="_5jBB8KhOEdyKi8OnHuLrDA" name="stock">
+					<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Integer"/>
+				</ownedAttribute>
+				<nestedClassifier xmi:type="uml:Association" xmi:id="_VyObWKGlEd2QtqWxFLzXIA" name="item_barcode" memberEnd="_VyObWaGlEd2QtqWxFLzXIA _VyObXKGlEd2QtqWxFLzXIA" navigableOwnedEnd="_VyObXKGlEd2QtqWxFLzXIA">
+					<ownedEnd xmi:id="_VyObWaGlEd2QtqWxFLzXIA" name="" type="_2RtRkKfzEdyy8P4OYI-5Dg" association="_VyObWKGlEd2QtqWxFLzXIA">
+						<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VyObWqGlEd2QtqWxFLzXIA" value="1"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VyObW6GlEd2QtqWxFLzXIA" value="1"/>
+					</ownedEnd>
+					<ownedEnd xmi:id="_VyObXKGlEd2QtqWxFLzXIA" name="barcode" type="_GgfNUKf0Edyy8P4OYI-5Dg" association="_VyObWKGlEd2QtqWxFLzXIA">
+						<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VyObXaGlEd2QtqWxFLzXIA" value="1"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VyObXqGlEd2QtqWxFLzXIA" value="1"/>
+					</ownedEnd>
+				</nestedClassifier>
+				<ownedOperation xmi:id="_-WBOMN8gEd-FF7h0e22Cmg" name="doFind">
+					<ownedParameter xmi:id="_-WBOMd8gEd-FF7h0e22Cmg" name="code" type="_GgfNUKf0Edyy8P4OYI-5Dg"/>
+					<ownedParameter xmi:id="_-WBOMt8gEd-FF7h0e22Cmg" name="itm" type="_2RtRkKfzEdyy8P4OYI-5Dg" direction="return"/>
+				</ownedOperation>
+				<ownedOperation xmi:id="_-WBOM98gEd-FF7h0e22Cmg" name="DoGetPrice">
+					<ownedParameter xmi:id="_-WHU0N8gEd-FF7h0e22Cmg" name="code" type="_GgfNUKf0Edyy8P4OYI-5Dg"/>
+					<ownedParameter xmi:id="_-WHU0d8gEd-FF7h0e22Cmg" name="prc" direction="return">
+						<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Double"/>
+					</ownedParameter>
+				</ownedOperation>
+				<ownedOperation xmi:id="_bPOM4AH5EeCm0ubwz_LAXQ" name="Makeface">
+					<ownedParameter xmi:id="_orSwcAH5EeCm0ubwz_LAXQ" name="out">
+						<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#String"/>
+					</ownedParameter>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="_3rIioKfzEdyy8P4OYI-5Dg" name="Bank">
+				<ownedOperation xmi:id="_W1aHwLjTEdyX44DA38FixQ" name="authorize" isQuery="true">
+					<eAnnotations xmi:id="_9q5s4HBKEd2-2YAJDbyncw" source="CSP">
+						<details xmi:id="_9q5s4XBKEd2-2YAJDbyncw" key="channelType" value=""/>
+						<details xmi:id="_9q5s4nBKEd2-2YAJDbyncw" key="hint" value="$EV"/>
+					</eAnnotations>
+					<ownedParameter xmi:id="_f6SBkLjTEdyX44DA38FixQ" name="c" type="_4oUjoKfzEdyy8P4OYI-5Dg"/>
+					<ownedParameter xmi:id="_phpkcLjTEdyX44DA38FixQ" name="t">
+						<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Double"/>
+					</ownedParameter>
+					<ownedParameter xmi:id="_q6VpsPHXEd2fypZ1i2jAOA" name="b" direction="return">
+						<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Boolean"/>
+					</ownedParameter>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="_4oUjoKfzEdyy8P4OYI-5Dg" name="Card"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="_5eL0oKfzEdyy8P4OYI-5Dg" name="Clock">
+				<ownedOperation xmi:id="_69V_QLjTEdydk74YgV5Wfw" name="date" isQuery="true">
+					<eAnnotations xmi:id="_-7ej8HBKEd2-2YAJDbyncw" source="CSP">
+						<details xmi:id="_-7ej8XBKEd2-2YAJDbyncw" key="channelType" value=""/>
+						<details xmi:id="_-7ej8nBKEd2-2YAJDbyncw" key="hint" value="$EV"/>
+					</eAnnotations>
+					<ownedParameter xmi:id="_8fhjsLjTEdydk74YgV5Wfw" name="result" type="_vs1YALUoEdyxAq315t1iyQ" direction="out"/>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="_GgfNUKf0Edyy8P4OYI-5Dg" name="Barcode"/>
+			<packagedElement xmi:type="uml:Association" xmi:id="_W12p6KhPEdyKi8OnHuLrDA" name="lines" memberEnd="_W12p6ahPEdyKi8OnHuLrDA _W12p7KhPEdyKi8OnHuLrDA" navigableOwnedEnd="_W12p7KhPEdyKi8OnHuLrDA">
+				<ownedEnd xmi:id="_W12p6ahPEdyKi8OnHuLrDA" name="" type="_unMc8KfzEdyy8P4OYI-5Dg" association="_W12p6KhPEdyKi8OnHuLrDA">
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_W12p6qhPEdyKi8OnHuLrDA" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="_W12p66hPEdyKi8OnHuLrDA"/>
+				</ownedEnd>
+				<ownedEnd xmi:id="_W12p7KhPEdyKi8OnHuLrDA" name="lines" type="_ohBI4KfzEdyy8P4OYI-5Dg" isUnique="false" aggregation="composite" association="_W12p6KhPEdyKi8OnHuLrDA">
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_W12p7ahPEdyKi8OnHuLrDA" value="*"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="_W12p7qhPEdyKi8OnHuLrDA"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="_vs1YALUoEdyxAq315t1iyQ" name="Date"/>
+			<packagedElement xmi:type="uml:Association" xmi:id="_y-QNEKhREdyKi8OnHuLrDA" name="sales" memberEnd="_y-QNEahREdyKi8OnHuLrDA _y-QNFKhREdyKi8OnHuLrDA" navigableOwnedEnd="_y-QNFKhREdyKi8OnHuLrDA">
+				<ownedEnd xmi:id="_y-QNEahREdyKi8OnHuLrDA" name="" type="_scop4KfzEdyy8P4OYI-5Dg" association="_y-QNEKhREdyKi8OnHuLrDA">
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_y-QNEqhREdyKi8OnHuLrDA" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="_y-QNE6hREdyKi8OnHuLrDA"/>
+				</ownedEnd>
+				<ownedEnd xmi:id="_y-QNFKhREdyKi8OnHuLrDA" name="sales" type="_unMc8KfzEdyy8P4OYI-5Dg" isUnique="false" aggregation="composite" association="_y-QNEKhREdyKi8OnHuLrDA">
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_y-QNFahREdyKi8OnHuLrDA" value="*"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="_y-QNFqhREdyKi8OnHuLrDA"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Association" xmi:id="_0-SAmKhQEdyKi8OnHuLrDA" name="catalog" memberEnd="_0-SAmahQEdyKi8OnHuLrDA _0-SAnKhQEdyKi8OnHuLrDA" navigableOwnedEnd="_0-SAnKhQEdyKi8OnHuLrDA">
+				<ownedEnd xmi:id="_0-SAmahQEdyKi8OnHuLrDA" name="" type="_scop4KfzEdyy8P4OYI-5Dg" association="_0-SAmKhQEdyKi8OnHuLrDA">
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0-SAmqhQEdyKi8OnHuLrDA" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0-SAm6hQEdyKi8OnHuLrDA"/>
+				</ownedEnd>
+				<ownedEnd xmi:id="_0-SAnKhQEdyKi8OnHuLrDA" name="catalog" type="_2RtRkKfzEdyy8P4OYI-5Dg" isUnique="false" aggregation="composite" association="_0-SAmKhQEdyKi8OnHuLrDA">
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0-SAnahQEdyKi8OnHuLrDA" value="*"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0-SAnqhQEdyKi8OnHuLrDA"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Association" xmi:id="_BDcnEAH6EeCm0ubwz_LAXQ" name="A_&lt;cashdesk&gt;_&lt;item&gt;" memberEnd="_BDcnEQH6EeCm0ubwz_LAXQ _BDcnFAH6EeCm0ubwz_LAXQ" navigableOwnedEnd="_BDcnFAH6EeCm0ubwz_LAXQ">
+				<ownedEnd xmi:id="_BDcnEQH6EeCm0ubwz_LAXQ" name="cashdesk" type="_V0k_QKfwEdyy8P4OYI-5Dg" association="_BDcnEAH6EeCm0ubwz_LAXQ">
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BDcnEgH6EeCm0ubwz_LAXQ" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BDcnEwH6EeCm0ubwz_LAXQ" value="1"/>
+				</ownedEnd>
+				<ownedEnd xmi:id="_BDcnFAH6EeCm0ubwz_LAXQ" name="item" type="_2RtRkKfzEdyy8P4OYI-5Dg" association="_BDcnEAH6EeCm0ubwz_LAXQ">
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BDcnFQH6EeCm0ubwz_LAXQ" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BDcnFgH6EeCm0ubwz_LAXQ" value="1"/>
+				</ownedEnd>
+			</packagedElement>
+		</packagedElement>
+		<packagedElement xmi:type="uml:Package" xmi:id="_15_0EAPbeta1_2a80154_1193283517515_360825_600" name="CoCoME_UsecaseModel">
+			<packagedElement xmi:type="uml:Actor" xmi:id="_7otIQKfvEdyy8P4OYI-5Dg" name="Cashier"/>
+			<packagedElement xmi:type="uml:UseCase" xmi:id="_8qVkYKfvEdyy8P4OYI-5Dg" name="ProcessSale"/>
+			<packagedElement xmi:type="uml:Association" xmi:id="__EU6lqfvEdyy8P4OYI-5Dg" name="Association1" memberEnd="__EU6l6fvEdyy8P4OYI-5Dg __EU6mqfvEdyy8P4OYI-5Dg">
+				<ownedEnd xmi:id="__EU6l6fvEdyy8P4OYI-5Dg" name="source" type="_7otIQKfvEdyy8P4OYI-5Dg" association="__EU6lqfvEdyy8P4OYI-5Dg">
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__EU6mKfvEdyy8P4OYI-5Dg" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="__EU6mafvEdyy8P4OYI-5Dg" value="1"/>
+				</ownedEnd>
+				<ownedEnd xmi:id="__EU6mqfvEdyy8P4OYI-5Dg" name="target" type="_8qVkYKfvEdyy8P4OYI-5Dg" association="__EU6lqfvEdyy8P4OYI-5Dg">
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__EU6m6fvEdyy8P4OYI-5Dg" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="__EU6nKfvEdyy8P4OYI-5Dg" value="1"/>
+				</ownedEnd>
+			</packagedElement>
+		</packagedElement>
+		<packagedElement xmi:type="uml:Package" xmi:id="_15_0EAPbeta1_2a80154_1195159555218_419200_877" name="CoCoME_ComponentModel">
+			<packagedElement xmi:type="uml:Interface" name="RInter_Store_L_Store" xmi:id="N8bEd-FF7h0e22CmgL_Store_Dynog"/>
+			<packagedElement xmi:type="uml:Interface" name="Inter_Store_L_Store" xmi:id="ogN8bEd-FF7h0e22CmgL_Store_Dyn">
+				<ownedOperation name="find" xmi:id="B4BwN8cEd-FF7h0e22CmgL_Store_I">
+					<ownedParameter name="code" direction="in" xmi:id="Iyj0N8cEd-FF7h0e22CmgL_Store_a" type="_GgfNUKf0Edyy8P4OYI-5Dg"/>
+					<ownedParameter name="itm" direction="return" xmi:id="k_4cN8cEd-FF7h0e22CmgL_Store_z" type="_2RtRkKfzEdyy8P4OYI-5Dg"/>
+				</ownedOperation>
+				<ownedOperation name="getPrice" xmi:id="L4Qct8dEd-FF7h0e22CmgL_Store_O">
+					<ownedParameter name="code" direction="in" xmi:id="wSt8N8dEd-FF7h0e22CmgL_Store_Q" type="_GgfNUKf0Edyy8P4OYI-5Dg"/>
+					<ownedParameter name="prc" direction="return" xmi:id="_z98N8dEd-FF7h0e22CmgL_Store_T">
+						<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Double"/>
+					</ownedParameter>
+				</ownedOperation>
+				<ownedOperation name="addSale" xmi:id="q09Ut8dEd-FF7h0e22CmgL_Store_q">
+					<ownedParameter name="sale" direction="in" xmi:id="ZjI8N8dEd-FF7h0e22CmgL_Store_s" type="_unMc8KfzEdyy8P4OYI-5Dg"/>
+				</ownedOperation>
+				<ownedOperation name="Makeface" xmi:id="POM4AH5EeCm0ubwz_LAXQL_Store_b">
+					<ownedParameter name="out" direction="in" xmi:id="rSwcAH5EeCm0ubwz_LAXQL_Store_o">
+						<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#String"/>
+					</ownedParameter>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Interface" name="ConInter_Store_L_Store" xmi:id="nogN8bEd-FF7h0e22CmgL_Store_Dy">
+				<ownedOperation name="find" xmi:id="B4BwN8cEd-FF7h0e22CmgL_Store_I">
+					<ownedRule xmi:id="L_Store">
+						<specification xmi:type="uml:OpaqueExpression" xmi:id="L_Store" name="design">
+							<body></body>
+							<language>rCOS</language>
+						</specification>
+					</ownedRule>
+					<ownedParameter name="code" direction="in" xmi:id="Iyj0N8cEd-FF7h0e22CmgL_Store_a" type="_GgfNUKf0Edyy8P4OYI-5Dg"/>
+					<ownedParameter name="itm" direction="return" xmi:id="k_4cN8cEd-FF7h0e22CmgL_Store_z" type="_2RtRkKfzEdyy8P4OYI-5Dg"/>
+				</ownedOperation>
+				<ownedOperation name="getPrice" xmi:id="L4Qct8dEd-FF7h0e22CmgL_Store_O">
+					<ownedRule xmi:id="L_Store">
+						<specification xmi:type="uml:OpaqueExpression" xmi:id="L_Store" name="design">
+							<body></body>
+							<language>rCOS</language>
+						</specification>
+					</ownedRule>
+					<ownedParameter name="code" direction="in" xmi:id="wSt8N8dEd-FF7h0e22CmgL_Store_Q" type="_GgfNUKf0Edyy8P4OYI-5Dg"/>
+					<ownedParameter name="prc" direction="return" xmi:id="_z98N8dEd-FF7h0e22CmgL_Store_T">
+						<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Double"/>
+					</ownedParameter>
+				</ownedOperation>
+				<ownedOperation name="addSale" xmi:id="q09Ut8dEd-FF7h0e22CmgL_Store_q">
+					<ownedRule xmi:id="L_Store">
+						<specification xmi:type="uml:OpaqueExpression" xmi:id="L_Store" name="design">
+							<body></body>
+							<language>rCOS</language>
+						</specification>
+					</ownedRule>
+					<ownedParameter name="sale" direction="in" xmi:id="ZjI8N8dEd-FF7h0e22CmgL_Store_s" type="_unMc8KfzEdyy8P4OYI-5Dg"/>
+				</ownedOperation>
+				<ownedOperation name="Makeface" xmi:id="POM4AH5EeCm0ubwz_LAXQL_Store_b">
+					<ownedRule xmi:id="L_Store">
+						<specification xmi:type="uml:OpaqueExpression" xmi:id="L_Store" name="design">
+							<body></body>
+							<language>rCOS</language>
+						</specification>
+					</ownedRule>
+					<ownedParameter name="out" direction="in" xmi:id="rSwcAH5EeCm0ubwz_LAXQL_Store_o">
+						<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#String"/>
+					</ownedParameter>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Component" name="COM_Store_L_Store" xmi:id="ynogN8bEd-FF7h0e22CmgL_Store_D" clientDependency="gN8bEd-FF7h0e22CmgL_Store_Dyno 8bEd-FF7h0e22CmgL_Store_DynogN">
+				<interfaceRealization name="InterRealiz_Store_L_Store" xmi:id="gN8bEd-FF7h0e22CmgL_Store_Dyno" client="_scop4KfzEdyy8P4OYI-5Dg ynogN8bEd-FF7h0e22CmgL_Store_D" contract="nogN8bEd-FF7h0e22CmgL_Store_Dy" supplier="nogN8bEd-FF7h0e22CmgL_Store_Dy"/>
+				<packagedElement xmi:type="uml:Usage" xmi:id="8bEd-FF7h0e22CmgL_Store_DynogN" supplier="N8bEd-FF7h0e22CmgL_Store_Dynog" client="ynogN8bEd-FF7h0e22CmgL_Store_D"/>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Package" xmi:id="_8cj8MKfxEdyy8P4OYI-5Dg" name="Protocol_CD">
+				<packagedElement xmi:type="uml:Collaboration" xmi:id="_8clKUKfxEdyy8P4OYI-5Dg" name="CashDesk_SequenceDiagram">
+					<ownedBehavior xmi:type="uml:Interaction" xmi:id="_8clKUafxEdyy8P4OYI-5Dg" name="c1">
+						<ownedAttribute xmi:id="_BHFKkKfyEdyy8P4OYI-5Dg" name="Property1" type="_7otIQKfvEdyy8P4OYI-5Dg"/>
+						<ownedAttribute xmi:id="_wCaTMKfyEdyy8P4OYI-5Dg" name="Property3" type="_fSaLoKfwEdyy8P4OYI-5Dg"/>
+						<ownedAttribute xmi:id="_P8iAoN8bEd-FF7h0e22Cmg" name="Property2" type="_unMc8KfzEdyy8P4OYI-5Dg"/>
+						<ownedAttribute xmi:id="_5GzpQN8eEd-FF7h0e22Cmg" name="Property4" type="ynogN8bEd-FF7h0e22CmgL_Store_D"/>
+						<ownedAttribute xmi:id="_LPzkEN8hEd-FF7h0e22Cmg" name="Property5" type="_2RtRkKfzEdyy8P4OYI-5Dg"/>
+						<ownedConnector xmi:id="_P99kAN8bEd-FF7h0e22Cmg" name="Connector1">
+							<end xmi:id="_P-V-gN8bEd-FF7h0e22Cmg" role="_P8iAoN8bEd-FF7h0e22Cmg"/>
+							<end xmi:id="_5GzpQd8eEd-FF7h0e22Cmg" role="_5GzpQN8eEd-FF7h0e22Cmg"/>
+							<end xmi:id="_LPzkEd8hEd-FF7h0e22Cmg" role="_LPzkEN8hEd-FF7h0e22Cmg"/>
+						</ownedConnector>
+						<lifeline xmi:id="_9uYwcKfxEdyy8P4OYI-5Dg" name="L_Cashier" represents="_BHFKkKfyEdyy8P4OYI-5Dg" coveredBy="_I8PBkKf1Edyy8P4OYI-5Dg _JdHhEKf1Edyy8P4OYI-5Dg _6F00s6f5EdyWztKvO-eigA _JjG7sKfyEdyy8P4OYI-5Dg _LrY20KfyEdyy8P4OYI-5Dg _NE4ZU6fyEdyy8P4OYI-5Dg _BTGtA6f1Edyy8P4OYI-5Dg _5iCyM6f5EdyWztKvO-eigA _6-cewKf5EdyWztKvO-eigA _86psw6f5EdyWztKvO-eigA _8DHAw6f5EdyWztKvO-eigA _4nDwoKf5EdyWztKvO-eigA _8k_68Kf7EdyWztKvO-eigA _wwX2UKf7EdyWztKvO-eigA _sfGOYqf7EdyWztKvO-eigA _ohP4wKf7EdyWztKvO-eigA _BmOOkKf7EdyWztKvO-eigA _7QVDgKf6EdyWztKvO-eigA _YLjcsKf7EdyWztKvO-eigA _tS5fUKf6EdyWztKvO-eigA _lbwj8Kf6EdyWztKvO-eigA"/>
+						<lifeline xmi:id="_Cl55AqfyEdyy8P4OYI-5Dg" name="L_CashDesk" represents="_wCaTMKfyEdyy8P4OYI-5Dg" coveredBy="_hKT7QN8bEd-FF7h0e22Cmg _oS6Y0N8fEd-FF7h0e22Cmg _I8PBkaf1Edyy8P4OYI-5Dg _JdHhEaf1Edyy8P4OYI-5Dg _LcRIMN8gEd-FF7h0e22Cmg _6F1bwKf5EdyWztKvO-eigA _VmlAEN8gEd-FF7h0e22Cmg _Z7JMkN8gEd-FF7h0e22Cmg _gYRoEN8gEd-FF7h0e22Cmg _m0MPcAH6EeCm0ubwz_LAXQ _KpwasafyEdyy8P4OYI-5Dg _LrY20afyEdyy8P4OYI-5Dg _NE4ZVKfyEdyy8P4OYI-5Dg _BTGtBKf1Edyy8P4OYI-5Dg _5iDZQKf5EdyWztKvO-eigA _6-dF0Kf5EdyWztKvO-eigA _86qT0Kf5EdyWztKvO-eigA _8DHn0Kf5EdyWztKvO-eigA _4nIpIKf5EdyWztKvO-eigA _8k_68Kf7EdyWztKvO-eigA _wwX2UKf7EdyWztKvO-eigA _sfGOYqf7EdyWztKvO-eigA _ohP4wKf7EdyWztKvO-eigA _BmOOkKf7EdyWztKvO-eigA _7QVDgKf6EdyWztKvO-eigA _YLjcsKf7EdyWztKvO-eigA _tS5fUKf6EdyWztKvO-eigA _lbwj8Kf6EdyWztKvO-eigA"/>
+						<lifeline xmi:id="_DynogN8bEd-FF7h0e22Cmg" represents="_5GzpQN8eEd-FF7h0e22Cmg" coveredBy="_hKT7Qd8bEd-FF7h0e22Cmg _oTAfcN8fEd-FF7h0e22Cmg _LcRIMd8gEd-FF7h0e22Cmg _VmlAEd8gEd-FF7h0e22Cmg _Z7JMkd8gEd-FF7h0e22Cmg _gYXusN8gEd-FF7h0e22Cmg _uLZGgAH6EeCm0ubwz_LAXQ _ahzugN8hEd-FF7h0e22Cmg _Ye3mYN8hEd-FF7h0e22Cmg _VKrRwN8hEd-FF7h0e22Cmg _Sw2ToN8hEd-FF7h0e22Cmg _hINpgN8bEd-FF7h0e22Cmg _LbgTMt8gEd-FF7h0e22Cmg _Vl0LEt8gEd-FF7h0e22Cmg _gXgzEt8gEd-FF7h0e22Cmg" name="COM_L_Store"/>
+						<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_hKT7QN8bEd-FF7h0e22Cmg" name="MessageOccurrenceSpecification1" covered="_Cl55AqfyEdyy8P4OYI-5Dg" event="_hI4X4N8bEd-FF7h0e22Cmg" message="_hJ1aIN8bEd-FF7h0e22Cmg"/>
+						<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_hKT7Qd8bEd-FF7h0e22Cmg" name="MessageOccurrenceSpecification1" covered="_DynogN8bEd-FF7h0e22Cmg" event="_hI4X4N8bEd-FF7h0e22Cmg" message="_hJ1aIN8bEd-FF7h0e22Cmg"/>
+						<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_oS6Y0N8fEd-FF7h0e22Cmg" name="MessageOccurrenceSpecification2" covered="_Cl55AqfyEdyy8P4OYI-5Dg" event="_oSb3sN8fEd-FF7h0e22Cmg" message="_oSh-UN8fEd-FF7h0e22Cmg"/>
+						<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_oTAfcN8fEd-FF7h0e22Cmg" name="MessageOccurrenceSpecification2" covered="_DynogN8bEd-FF7h0e22Cmg" event="_oSb3sN8fEd-FF7h0e22Cmg" message="_oSh-UN8fEd-FF7h0e22Cmg"/>
+						<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_I8PBkKf1Edyy8P4OYI-5Dg" name="MessageOccurrenceSpecification7" covered="_9uYwcKfxEdyy8P4OYI-5Dg" event="_I8PBkqf1Edyy8P4OYI-5Dg" message="_I8QPsKf1Edyy8P4OYI-5Dg"/>
+						<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_I8PBkaf1Edyy8P4OYI-5Dg" name="MessageOccurrenceSpecification8" covered="_Cl55AqfyEdyy8P4OYI-5Dg" event="_I8PBkqf1Edyy8P4OYI-5Dg" message="_I8QPsKf1Edyy8P4OYI-5Dg"/>
+						<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_JdHhEKf1Edyy8P4OYI-5Dg" name="MessageOccurrenceSpecification9" covered="_9uYwcKfxEdyy8P4OYI-5Dg" event="_JdIIIKf1Edyy8P4OYI-5Dg" message="_JdMZkKf1Edyy8P4OYI-5Dg"/>
+						<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_JdHhEaf1Edyy8P4OYI-5Dg" name="MessageOccurrenceSpecification10" covered="_Cl55AqfyEdyy8P4OYI-5Dg" event="_JdIIIKf1Edyy8P4OYI-5Dg" message="_JdMZkKf1Edyy8P4OYI-5Dg"/>
+						<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_LcRIMN8gEd-FF7h0e22Cmg" name="MessageOccurrenceSpecification3" covered="_Cl55AqfyEdyy8P4OYI-5Dg" event="_LbmZ0N8gEd-FF7h0e22Cmg" message="_LbsgcN8gEd-FF7h0e22Cmg"/>
+						<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_LcRIMd8gEd-FF7h0e22Cmg" name="MessageOccurrenceSpecification3" covered="_DynogN8bEd-FF7h0e22Cmg" event="_LbmZ0N8gEd-FF7h0e22Cmg" message="_LbsgcN8gEd-FF7h0e22Cmg"/>
+						<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_6F00s6f5EdyWztKvO-eigA" name="MessageOccurrenceSpecification15" covered="_9uYwcKfxEdyy8P4OYI-5Dg" event="_BTGtBaf1Edyy8P4OYI-5Dg" message="_6F6UQKf5EdyWztKvO-eigA"/>
+						<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_6F1bwKf5EdyWztKvO-eigA" name="MessageOccurrenceSpecification16" covered="_Cl55AqfyEdyy8P4OYI-5Dg" event="_BTGtBaf1Edyy8P4OYI-5Dg" message="_6F6UQKf5EdyWztKvO-eigA"/>
+						<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_VmlAEN8gEd-FF7h0e22Cmg" name="MessageOccurrenceSpecification4" covered="_Cl55AqfyEdyy8P4OYI-5Dg" event="_VmAYUN8gEd-FF7h0e22Cmg" message="_VmAYUd8gEd-FF7h0e22Cmg"/>
+						<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_VmlAEd8gEd-FF7h0e22Cmg" name="MessageOccurrenceSpecification4" covered="_DynogN8bEd-FF7h0e22Cmg" event="_VmAYUN8gEd-FF7h0e22Cmg" message="_VmAYUd8gEd-FF7h0e22Cmg"/>
+						<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Z7JMkN8gEd-FF7h0e22Cmg" name="MessageOccurrenceSpecification5" covered="_Cl55AqfyEdyy8P4OYI-5Dg" event="_Z6kk0N8gEd-FF7h0e22Cmg" message="_Z6kk0d8gEd-FF7h0e22Cmg"/>
+						<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Z7JMkd8gEd-FF7h0e22Cmg" name="MessageOccurrenceSpecification5" covered="_DynogN8bEd-FF7h0e22Cmg" event="_Z6kk0N8gEd-FF7h0e22Cmg" message="_Z6kk0d8gEd-FF7h0e22Cmg"/>
+						<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_m0MPcAH6EeCm0ubwz_LAXQ" name="MessageOccurrenceSpecification17" covered="_Cl55AqfyEdyy8P4OYI-5Dg" event="_mzJtoAH6EeCm0ubwz_LAXQ" message="_mzMw8AH6EeCm0ubwz_LAXQ"/>
+						<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_m0ULQAH6EeCm0ubwz_LAXQ" name="MessageOccurrenceSpecification17" covered="_Huc9MN8hEd-FF7h0e22Cmg" event="_mzJtoAH6EeCm0ubwz_LAXQ" message="_mzMw8AH6EeCm0ubwz_LAXQ"/>
+						<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_gYRoEN8gEd-FF7h0e22Cmg" name="MessageOccurrenceSpecification6" covered="_Cl55AqfyEdyy8P4OYI-5Dg" event="_gXm5sN8gEd-FF7h0e22Cmg" message="_gXm5sd8gEd-FF7h0e22Cmg"/>
+						<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_gYXusN8gEd-FF7h0e22Cmg" name="MessageOccurrenceSpecification6" covered="_DynogN8bEd-FF7h0e22Cmg" event="_gXm5sN8gEd-FF7h0e22Cmg" message="_gXm5sd8gEd-FF7h0e22Cmg"/>
+						<fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_JjG7sKfyEdyy8P4OYI-5Dg" name="BehaviorExecutionSpecification1" covered="_9uYwcKfxEdyy8P4OYI-5Dg" start="_LrY20KfyEdyy8P4OYI-5Dg" finish="_86psw6f5EdyWztKvO-eigA"/>
+						<fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_KpwasafyEdyy8P4OYI-5Dg" name="BehaviorExecutionSpecification2" covered="_Cl55AqfyEdyy8P4OYI-5Dg" start="_LrY20afyEdyy8P4OYI-5Dg" finish="_gYRoEN8gEd-FF7h0e22Cmg"/>
+						<fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_hINpgN8bEd-FF7h0e22Cmg" name="BehaviorExecutionSpecification3" covered="_DynogN8bEd-FF7h0e22Cmg" start="_hKT7Qd8bEd-FF7h0e22Cmg" finish="_VKrRwN8hEd-FF7h0e22Cmg"/>
+						<fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_SwLlQt8hEd-FF7h0e22Cmg" name="BehaviorExecutionSpecification7" covered="_Huc9MN8hEd-FF7h0e22Cmg" start="_Sw8aQN8hEd-FF7h0e22Cmg" finish="_uLMSMAH6EeCm0ubwz_LAXQ"/>
+						<fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_LbgTMt8gEd-FF7h0e22Cmg" name="BehaviorExecutionSpecification4" covered="_DynogN8bEd-FF7h0e22Cmg" start="_uLZGgAH6EeCm0ubwz_LAXQ" finish="_LcRIMd8gEd-FF7h0e22Cmg"/>
+						<fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_Vl0LEt8gEd-FF7h0e22Cmg" name="BehaviorExecutionSpecification5" covered="_DynogN8bEd-FF7h0e22Cmg" start="_VmlAEd8gEd-FF7h0e22Cmg" finish="_ahzugN8hEd-FF7h0e22Cmg"/>
+						<fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_YeM4At8hEd-FF7h0e22Cmg" name="BehaviorExecutionSpecification8" covered="_Huc9MN8hEd-FF7h0e22Cmg" start="_Ye9tAN8hEd-FF7h0e22Cmg" finish="_ahzugd8hEd-FF7h0e22Cmg"/>
+						<fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_my6dEAH6EeCm0ubwz_LAXQ" name="BehaviorExecutionSpecification9" covered="_Huc9MN8hEd-FF7h0e22Cmg" start="_m0ULQAH6EeCm0ubwz_LAXQ" finish="_m0ULQAH6EeCm0ubwz_LAXQ"/>
+						<fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_gXgzEt8gEd-FF7h0e22Cmg" name="BehaviorExecutionSpecification6" covered="_DynogN8bEd-FF7h0e22Cmg" start="_gYXusN8gEd-FF7h0e22Cmg" finish="_gYXusN8gEd-FF7h0e22Cmg"/>
+						<fragment xmi:type="uml:CombinedFragment" xmi:id="_8k_68Kf7EdyWztKvO-eigA" name="L1" covered="_Cl55AqfyEdyy8P4OYI-5Dg _9uYwcKfxEdyy8P4OYI-5Dg" interactionOperator="loop">
+							<operand xmi:id="_8k_68af7EdyWztKvO-eigA">
+								<guard xmi:id="_Lk0_QGqnEd2B759oPko6Pg">
+									<specification xmi:type="uml:LiteralString" xmi:id="_3PzxcGqnEd2B759oPko6Pg" value=""/>
+								</guard>
+								<fragment xmi:type="uml:CombinedFragment" xmi:id="_wwX2UKf7EdyWztKvO-eigA" name="Alt1" covered="_Cl55AqfyEdyy8P4OYI-5Dg _9uYwcKfxEdyy8P4OYI-5Dg" interactionOperator="alt">
+									<operand xmi:id="_wwX2Uaf7EdyWztKvO-eigA" name="nExMode">
+										<guard xmi:id="_liiQ4GrHEd2B759oPko6Pg">
+											<specification xmi:type="uml:LiteralString" xmi:id="_m5sREGrHEd2B759oPko6Pg" value="exmode"/>
+										</guard>
+										<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_4nDwoKf5EdyWztKvO-eigA" name="MessageOccurrenceSpecification11" covered="_9uYwcKfxEdyy8P4OYI-5Dg" event="_4nJQMKf5EdyWztKvO-eigA" message="_4nsp0Kf5EdyWztKvO-eigA"/>
+										<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_4nIpIKf5EdyWztKvO-eigA" name="MessageOccurrenceSpecification12" covered="_Cl55AqfyEdyy8P4OYI-5Dg" event="_4nJQMKf5EdyWztKvO-eigA" message="_4nsp0Kf5EdyWztKvO-eigA"/>
+										<fragment xmi:type="uml:CombinedFragment" xmi:id="_sfGOYqf7EdyWztKvO-eigA" name="Sequence2" covered="_Cl55AqfyEdyy8P4OYI-5Dg _9uYwcKfxEdyy8P4OYI-5Dg">
+											<operand xmi:id="_sfGOY6f7EdyWztKvO-eigA">
+												<fragment xmi:type="uml:CombinedFragment" xmi:id="_YLjcsKf7EdyWztKvO-eigA" name="L3" covered="_Cl55AqfyEdyy8P4OYI-5Dg _9uYwcKfxEdyy8P4OYI-5Dg" interactionOperator="loop">
+													<operand xmi:id="_YLjcsaf7EdyWztKvO-eigA">
+														<guard xmi:id="_zbrsoGq0Ed2B759oPko6Pg">
+															<specification xmi:type="uml:LiteralString" xmi:id="_0WLmAGq0Ed2B759oPko6Pg" value="+"/>
+														</guard>
+														<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_5iDZQKf5EdyWztKvO-eigA" name="MessageOccurrenceSpecification14" covered="_Cl55AqfyEdyy8P4OYI-5Dg" event="_NE5AYKfyEdyy8P4OYI-5Dg" message="_5iNxUKf5EdyWztKvO-eigA"/>
+														<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_5iCyM6f5EdyWztKvO-eigA" name="MessageOccurrenceSpecification13" covered="_9uYwcKfxEdyy8P4OYI-5Dg" event="_NE5AYKfyEdyy8P4OYI-5Dg" message="_5iNxUKf5EdyWztKvO-eigA"/>
+														<fragment xmi:type="uml:CombinedFragment" xmi:id="_tS5fUKf6EdyWztKvO-eigA" name="Lplus" covered="_Cl55AqfyEdyy8P4OYI-5Dg _9uYwcKfxEdyy8P4OYI-5Dg" interactionOperator="loop">
+															<operand xmi:id="_tS5fUaf6EdyWztKvO-eigA" name="vs1">
+																<guard xmi:id="_ZXDtIGq0Ed2B759oPko6Pg">
+																	<specification xmi:type="uml:LiteralString" xmi:id="_aXAuQGq0Ed2B759oPko6Pg" value="+"/>
+																</guard>
+															</operand>
+														</fragment>
+														<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_6-dF0Kf5EdyWztKvO-eigA" name="MessageOccurrenceSpecification18" covered="_Cl55AqfyEdyy8P4OYI-5Dg" event="_I8PBkqf1Edyy8P4OYI-5Dg" message="_6-gwMKf5EdyWztKvO-eigA"/>
+														<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_6-cewKf5EdyWztKvO-eigA" name="MessageOccurrenceSpecification17" covered="_9uYwcKfxEdyy8P4OYI-5Dg" event="_I8PBkqf1Edyy8P4OYI-5Dg" message="_6-gwMKf5EdyWztKvO-eigA"/>
+														<fragment xmi:type="uml:CombinedFragment" xmi:id="_lbwj8Kf6EdyWztKvO-eigA" name="Alt2" covered="_Cl55AqfyEdyy8P4OYI-5Dg _9uYwcKfxEdyy8P4OYI-5Dg" interactionOperator="alt">
+															<operand xmi:id="_lbxLAKf6EdyWztKvO-eigA" name="alt_card">
+																<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_8DHn0Kf5EdyWztKvO-eigA" name="MessageOccurrenceSpecification20" covered="_Cl55AqfyEdyy8P4OYI-5Dg" event="_8DHn0af5EdyWztKvO-eigA" message="_8DL5QKf5EdyWztKvO-eigA"/>
+																<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_8DHAw6f5EdyWztKvO-eigA" name="MessageOccurrenceSpecification19" covered="_9uYwcKfxEdyy8P4OYI-5Dg" event="_8DHn0af5EdyWztKvO-eigA" message="_8DL5QKf5EdyWztKvO-eigA"/>
+															</operand>
+															<operand xmi:id="_NJGnsGqiEd2B759oPko6Pg" name="alt_cash">
+																<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_86qT0Kf5EdyWztKvO-eigA" name="MessageOccurrenceSpecification22" covered="_Cl55AqfyEdyy8P4OYI-5Dg" event="_JdIIIKf1Edyy8P4OYI-5Dg" message="_86xokKf5EdyWztKvO-eigA"/>
+																<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_86psw6f5EdyWztKvO-eigA" name="MessageOccurrenceSpecification21" covered="_9uYwcKfxEdyy8P4OYI-5Dg" event="_JdIIIKf1Edyy8P4OYI-5Dg" message="_86xokKf5EdyWztKvO-eigA"/>
+															</operand>
+														</fragment>
+													</operand>
+												</fragment>
+											</operand>
+										</fragment>
+										<fragment xmi:type="uml:CombinedFragment" xmi:id="_ohP4wKf7EdyWztKvO-eigA" name="CombinedFragment2" covered="_Cl55AqfyEdyy8P4OYI-5Dg _9uYwcKfxEdyy8P4OYI-5Dg">
+											<operand xmi:id="_ohP4waf7EdyWztKvO-eigA">
+												<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_LrY20KfyEdyy8P4OYI-5Dg" name="MessageOccurrenceSpecification1" covered="_9uYwcKfxEdyy8P4OYI-5Dg" event="_LrY20qfyEdyy8P4OYI-5Dg" message="_LrZd4KfyEdyy8P4OYI-5Dg"/>
+												<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_LrY20afyEdyy8P4OYI-5Dg" name="MessageOccurrenceSpecification2" covered="_Cl55AqfyEdyy8P4OYI-5Dg" event="_LrY20qfyEdyy8P4OYI-5Dg" message="_LrZd4KfyEdyy8P4OYI-5Dg"/>
+												<fragment xmi:type="uml:CombinedFragment" xmi:id="_BmOOkKf7EdyWztKvO-eigA" name="L2" covered="_Cl55AqfyEdyy8P4OYI-5Dg _9uYwcKfxEdyy8P4OYI-5Dg" interactionOperator="loop">
+													<operand xmi:id="_BmOOkaf7EdyWztKvO-eigA">
+														<guard xmi:id="_ksllgGq1Ed2B759oPko6Pg">
+															<specification xmi:type="uml:LiteralString" xmi:id="_ntP6IGq1Ed2B759oPko6Pg" value="+"/>
+														</guard>
+														<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_NE4ZU6fyEdyy8P4OYI-5Dg" name="MessageOccurrenceSpecification3" covered="_9uYwcKfxEdyy8P4OYI-5Dg" event="_NE5AYKfyEdyy8P4OYI-5Dg" message="_NE5AYafyEdyy8P4OYI-5Dg"/>
+														<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_NE4ZVKfyEdyy8P4OYI-5Dg" name="MessageOccurrenceSpecification4" covered="_Cl55AqfyEdyy8P4OYI-5Dg" event="_NE5AYKfyEdyy8P4OYI-5Dg" message="_NE5AYafyEdyy8P4OYI-5Dg"/>
+														<fragment xmi:type="uml:CombinedFragment" xmi:id="_7QVDgKf6EdyWztKvO-eigA" name="max" covered="_Cl55AqfyEdyy8P4OYI-5Dg _9uYwcKfxEdyy8P4OYI-5Dg" interactionOperator="loop">
+															<operand xmi:id="_7QVDgaf6EdyWztKvO-eigA" name="loopMaxOp">
+																<guard xmi:id="_sxny8Gq1Ed2B759oPko6Pg" name="loopMaxConstr">
+																	<specification xmi:type="uml:Interval" xmi:id="_xXuegPHEEd28tPuXqVv65Q" min="_KN4_UMJ8Ed2jus1xG-SOBQ" max="_KN4_UMJ8Ed2jus1xG-SOBQ"/>
+																	<minint xmi:type="uml:LiteralInteger" xmi:id="_Hdy2QMJ8Ed2jus1xG-SOBQ" name="lit1" value="1"/>
+																	<maxint xmi:type="uml:LiteralString" xmi:id="_KN4_UMJ8Ed2jus1xG-SOBQ" name="litmax" value="max"/>
+																</guard>
+																<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_BTGtBKf1Edyy8P4OYI-5Dg" name="MessageOccurrenceSpecification6" covered="_Cl55AqfyEdyy8P4OYI-5Dg" event="_BTGtBaf1Edyy8P4OYI-5Dg" message="_BTHUEKf1Edyy8P4OYI-5Dg"/>
+																<fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_BTGtA6f1Edyy8P4OYI-5Dg" name="MessageOccurrenceSpecification5" covered="_9uYwcKfxEdyy8P4OYI-5Dg" event="_BTGtBaf1Edyy8P4OYI-5Dg" message="_BTHUEKf1Edyy8P4OYI-5Dg"/>
+															</operand>
+														</fragment>
+													</operand>
+												</fragment>
+											</operand>
+										</fragment>
+									</operand>
+									<operand xmi:id="_zrLGsGqfEd2B759oPko6Pg" name="exMode">
+										<guard xmi:id="_pxe9kGrHEd2B759oPko6Pg">
+											<specification xmi:type="uml:LiteralString" xmi:id="_q-tlsGrHEd2B759oPko6Pg" value="not exmode"/>
+										</guard>
+									</operand>
+								</fragment>
+							</operand>
+						</fragment>
+						<message xmi:id="_LrZd4KfyEdyy8P4OYI-5Dg" name="enableExpress" receiveEvent="_LrY20afyEdyy8P4OYI-5Dg" sendEvent="_LrY20KfyEdyy8P4OYI-5Dg"/>
+						<message xmi:id="_NE5AYafyEdyy8P4OYI-5Dg" name="startSale" receiveEvent="_NE4ZVKfyEdyy8P4OYI-5Dg" sendEvent="_NE4ZU6fyEdyy8P4OYI-5Dg"/>
+						<message xmi:id="_BTHUEKf1Edyy8P4OYI-5Dg" name="enterItem-ex" receiveEvent="_BTGtBKf1Edyy8P4OYI-5Dg" sendEvent="_BTGtA6f1Edyy8P4OYI-5Dg">
+							<argument xmi:type="uml:LiteralString" xmi:id="_BhK3UBvqEd22DrSVAKwcNQ" name="code" type="_GgfNUKf0Edyy8P4OYI-5Dg"/>
+							<argument xmi:type="uml:LiteralString" xmi:id="_empYsBvqEd22DrSVAKwcNQ" name="qty">
+								<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Integer"/>
+							</argument>
+						</message>
+						<message xmi:id="_I8QPsKf1Edyy8P4OYI-5Dg" name="finishSale" receiveEvent="_I8PBkaf1Edyy8P4OYI-5Dg" sendEvent="_I8PBkKf1Edyy8P4OYI-5Dg"/>
+						<message xmi:id="_JdMZkKf1Edyy8P4OYI-5Dg" name="cashPay" receiveEvent="_JdHhEaf1Edyy8P4OYI-5Dg" sendEvent="_JdHhEKf1Edyy8P4OYI-5Dg">
+							<argument xmi:type="uml:LiteralString" xmi:id="_Wvu0YKf6EdyWztKvO-eigA" name="a">
+								<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Double"/>
+							</argument>
+							<argument xmi:type="uml:LiteralString" xmi:id="_WvvbcKf6EdyWztKvO-eigA" name="c">
+								<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Double"/>
+							</argument>
+						</message>
+						<message xmi:id="_4nsp0Kf5EdyWztKvO-eigA" name="disableExpress" receiveEvent="_4nIpIKf5EdyWztKvO-eigA" sendEvent="_4nDwoKf5EdyWztKvO-eigA"/>
+						<message xmi:id="_5iNxUKf5EdyWztKvO-eigA" name="startSale" receiveEvent="_5iDZQKf5EdyWztKvO-eigA" sendEvent="_5iCyM6f5EdyWztKvO-eigA"/>
+						<message xmi:id="_6F6UQKf5EdyWztKvO-eigA" name="enterItem" receiveEvent="_6F1bwKf5EdyWztKvO-eigA" sendEvent="_6F00s6f5EdyWztKvO-eigA">
+							<argument xmi:type="uml:LiteralString" xmi:id="_cELwkKf6EdyWztKvO-eigA" name="code" type="_GgfNUKf0Edyy8P4OYI-5Dg"/>
+							<argument xmi:type="uml:LiteralString" xmi:id="_6mzbUBvrEd2Rr5-TrUq3Bw" name="qty">
+								<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Integer"/>
+							</argument>
+						</message>
+						<message xmi:id="_6-gwMKf5EdyWztKvO-eigA" name="finishSale" receiveEvent="_6-dF0Kf5EdyWztKvO-eigA" sendEvent="_6-cewKf5EdyWztKvO-eigA"/>
+						<message xmi:id="_8DL5QKf5EdyWztKvO-eigA" name="cardPay" receiveEvent="_8DHn0Kf5EdyWztKvO-eigA" sendEvent="_8DHAw6f5EdyWztKvO-eigA">
+							<argument xmi:type="uml:LiteralString" xmi:id="_ztuDoBvrEd2Rr5-TrUq3Bw" name="c" type="_4oUjoKfzEdyy8P4OYI-5Dg"/>
+						</message>
+						<message xmi:id="_86xokKf5EdyWztKvO-eigA" name="cashPay" receiveEvent="_86qT0Kf5EdyWztKvO-eigA" sendEvent="_86psw6f5EdyWztKvO-eigA">
+							<argument xmi:type="uml:LiteralString" xmi:id="_iaPTsKf6EdyWztKvO-eigA" name="a">
+								<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Double"/>
+							</argument>
+							<argument xmi:type="uml:LiteralString" xmi:id="_iaPTsaf6EdyWztKvO-eigA" name="c">
+								<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Double"/>
+							</argument>
+						</message>
+						<message xmi:id="_hJ1aIN8bEd-FF7h0e22Cmg" name="find" receiveEvent="_hKT7Qd8bEd-FF7h0e22Cmg" sendEvent="_hKT7QN8bEd-FF7h0e22Cmg">
+							<argument xmi:type="uml:InstanceValue" xmi:id="_9aIfoN8eEd-FF7h0e22Cmg" name="code" type="_GgfNUKf0Edyy8P4OYI-5Dg"/>
+							<argument xmi:type="uml:LiteralString" xmi:id="_XCpK4N8fEd-FF7h0e22Cmg" name="itm" type="_2RtRkKfzEdyy8P4OYI-5Dg"/>
+						</message>
+						<message xmi:id="_oSh-UN8fEd-FF7h0e22Cmg" name="getPrice" receiveEvent="_oTAfcN8fEd-FF7h0e22Cmg" sendEvent="_oS6Y0N8fEd-FF7h0e22Cmg">
+							<argument xmi:type="uml:InstanceValue" xmi:id="_qocs0d8fEd-FF7h0e22Cmg" name="code" type="_GgfNUKf0Edyy8P4OYI-5Dg"/>
+							<argument xmi:type="uml:LiteralString" xmi:id="_qocs0N8fEd-FF7h0e22Cmg" name="prc">
+								<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Double"/>
+							</argument>
+						</message>
+						<message xmi:id="_LbsgcN8gEd-FF7h0e22Cmg" name="addSale" receiveEvent="_LcRIMd8gEd-FF7h0e22Cmg" sendEvent="_LcRIMN8gEd-FF7h0e22Cmg">
+							<argument xmi:type="uml:InstanceValue" xmi:id="_Nt5MkN8gEd-FF7h0e22Cmg" name="sale" type="_unMc8KfzEdyy8P4OYI-5Dg"/>
+						</message>
+						<message xmi:id="_VmAYUd8gEd-FF7h0e22Cmg" name="find" receiveEvent="_VmlAEd8gEd-FF7h0e22Cmg" sendEvent="_VmlAEN8gEd-FF7h0e22Cmg">
+							<argument xmi:type="uml:InstanceValue" xmi:id="_XXBC8N8gEd-FF7h0e22Cmg" name="code" type="_GgfNUKf0Edyy8P4OYI-5Dg"/>
+							<argument xmi:type="uml:InstanceValue" xmi:id="_XXBC8d8gEd-FF7h0e22Cmg" name="itm" type="_2RtRkKfzEdyy8P4OYI-5Dg"/>
+						</message>
+						<message xmi:id="_Z6kk0d8gEd-FF7h0e22Cmg" name="getPrice" receiveEvent="_Z7JMkd8gEd-FF7h0e22Cmg" sendEvent="_Z7JMkN8gEd-FF7h0e22Cmg">
+							<argument xmi:type="uml:InstanceValue" xmi:id="_bMHFMN8gEd-FF7h0e22Cmg" name="code" type="_GgfNUKf0Edyy8P4OYI-5Dg"/>
+							<argument xmi:type="uml:LiteralString" xmi:id="_bMA-kN8gEd-FF7h0e22Cmg" name="prc">
+								<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Double"/>
+							</argument>
+						</message>
+						<message xmi:id="_gXm5sd8gEd-FF7h0e22Cmg" name="addSale" receiveEvent="_gYXusN8gEd-FF7h0e22Cmg" sendEvent="_gYRoEN8gEd-FF7h0e22Cmg">
+							<argument xmi:type="uml:InstanceValue" xmi:id="_hzu5cN8gEd-FF7h0e22Cmg" name="sale" type="_unMc8KfzEdyy8P4OYI-5Dg"/>
+						</message>
+						<message xmi:id="_mzMw8AH6EeCm0ubwz_LAXQ" name="Makeface" receiveEvent="_m0ULQAH6EeCm0ubwz_LAXQ" sendEvent="_m0MPcAH6EeCm0ubwz_LAXQ">
+							<argument xmi:type="uml:LiteralString" xmi:id="_oeEXUAH6EeCm0ubwz_LAXQ" name="out">
+								<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#String"/>
+							</argument>
+						</message>
+					</ownedBehavior>
+				</packagedElement>
+				<packagedElement xmi:type="uml:CallEvent" xmi:id="_LrY20qfyEdyy8P4OYI-5Dg" name="enableExpress" operation="_MAPtFYtuEd29vaKB72n5RA"/>
+				<packagedElement xmi:type="uml:CallEvent" xmi:id="_NE5AYKfyEdyy8P4OYI-5Dg" name="startSale" operation="_MAPtF4tuEd29vaKB72n5RA"/>
+				<packagedElement xmi:type="uml:CallEvent" xmi:id="_BTGtBaf1Edyy8P4OYI-5Dg" name="enterItem" operation="_MAPtGotuEd29vaKB72n5RA"/>
+				<packagedElement xmi:type="uml:CallEvent" xmi:id="_I8PBkqf1Edyy8P4OYI-5Dg" name="finishSale" operation="_MAPtH4tuEd29vaKB72n5RA"/>
+				<packagedElement xmi:type="uml:CallEvent" xmi:id="_JdIIIKf1Edyy8P4OYI-5Dg" name="cashPay" operation="_MAPtIotuEd29vaKB72n5RA"/>
+				<packagedElement xmi:type="uml:CallEvent" xmi:id="_4nJQMKf5EdyWztKvO-eigA" name="disableExpress" operation="_MAPtFotuEd29vaKB72n5RA"/>
+				<packagedElement xmi:type="uml:CallEvent" xmi:id="_8DHn0af5EdyWztKvO-eigA" name="cardPay" operation="_MAPtIItuEd29vaKB72n5RA"/>
+				<packagedElement xmi:type="uml:StateMachine" xmi:id="_t-2sIKhXEdy68NGOHotkeQ" name="Cashdesk_StateMachine">
+					<region xmi:id="_t-3TMKhXEdy68NGOHotkeQ" name="Cashdesk_StateMachine_Region">
+						<subvertex xmi:type="uml:Pseudostate" xmi:id="_pD9GsIG7EdyJz_VqQD58FQ" name="Pseudostate1">
+							<eAnnotations xmi:id="_DqsssO9VEdyG0t1Yvpg2uw" source="CSP">
+								<details xmi:id="_KXjmQO9VEdyG0t1Yvpg2uw" key="init" value="0,8"/>
+							</eAnnotations>
+						</subvertex>
+						<subvertex xmi:type="uml:State" xmi:id="_qEn5gIG7EdyJz_VqQD58FQ" name="Init"/>
+						<subvertex xmi:type="uml:State" xmi:id="_q8WywoG7EdyJz_VqQD58FQ" name="NExmode"/>
+						<subvertex xmi:type="uml:State" xmi:id="_rfOPQIG7EdyJz_VqQD58FQ" name="Exmode"/>
+						<subvertex xmi:type="uml:State" xmi:id="_yJP3QoG7EdyJz_VqQD58FQ" name="NCNE"/>
+						<subvertex xmi:type="uml:State" xmi:id="_y-cZ4oG7EdyJz_VqQD58FQ" name="NCNE'"/>
+						<subvertex xmi:type="uml:State" xmi:id="_1AFhgoG7EdyJz_VqQD58FQ" name="CNE"/>
+						<subvertex xmi:type="uml:State" xmi:id="_1qGu4IG7EdyJz_VqQD58FQ" name="CNE'"/>
+						<subvertex xmi:type="uml:State" xmi:id="_2y0qcoG7EdyJz_VqQD58FQ" name="NCE"/>
+						<subvertex xmi:type="uml:State" xmi:id="_4LLkgoG7EdyJz_VqQD58FQ" name="CE'"/>
+						<subvertex xmi:type="uml:State" xmi:id="_5A0zEIG7EdyJz_VqQD58FQ" name="NCE'"/>
+						<subvertex xmi:type="uml:State" xmi:id="_5zyhEoG7EdyJz_VqQD58FQ" name="CE"/>
+						<transition xmi:id="_7C6mo4G7EdyJz_VqQD58FQ" name="init" source="_pD9GsIG7EdyJz_VqQD58FQ" target="_qEn5gIG7EdyJz_VqQD58FQ"/>
+						<transition xmi:id="_89_zRIG7EdyJz_VqQD58FQ" name="disableExpress" source="_qEn5gIG7EdyJz_VqQD58FQ" target="_q8WywoG7EdyJz_VqQD58FQ">
+							<trigger xmi:id="_20o34O9iEdysAaB4n5ugiw" name="t5" event="_4nJQMKf5EdyWztKvO-eigA"/>
+						</transition>
+						<transition xmi:id="_9PvDhIG7EdyJz_VqQD58FQ" name="enableExpress" source="_qEn5gIG7EdyJz_VqQD58FQ" target="_rfOPQIG7EdyJz_VqQD58FQ">
+							<trigger xmi:id="_3m3mEO9iEdysAaB4n5ugiw" name="t6" event="_LrY20qfyEdyy8P4OYI-5Dg"/>
+						</transition>
+						<transition xmi:id="_90FtxIG7EdyJz_VqQD58FQ" name="startSale" source="_rfOPQIG7EdyJz_VqQD58FQ" target="_2y0qcoG7EdyJz_VqQD58FQ">
+							<trigger xmi:id="_fmzyQO9VEdyG0t1Yvpg2uw" name="t1" event="_NE5AYKfyEdyy8P4OYI-5Dg"/>
+						</transition>
+						<transition xmi:id="_-RcYJIG7EdyJz_VqQD58FQ" name="enterItem_express1" source="_2y0qcoG7EdyJz_VqQD58FQ" target="_5A0zEIG7EdyJz_VqQD58FQ">
+							<trigger xmi:id="_QEgFgO9WEdysAaB4n5ugiw" name="t3" event="_BTGtBaf1Edyy8P4OYI-5Dg"/>
+						</transition>
+						<transition xmi:id="_-skN5IG7EdyJz_VqQD58FQ" name="finishSale" source="_5A0zEIG7EdyJz_VqQD58FQ" target="_5zyhEoG7EdyJz_VqQD58FQ">
+							<trigger xmi:id="_AijusO9jEdysAaB4n5ugiw" name="t7" event="_I8PBkqf1Edyy8P4OYI-5Dg"/>
+						</transition>
+						<transition xmi:id="_-8qfZIG7EdyJz_VqQD58FQ" name="enterItem_express" source="_5A0zEIG7EdyJz_VqQD58FQ" target="_5A0zEIG7EdyJz_VqQD58FQ" guard="_eLYhArnqEdy2xZ6hEFn-7g">
+							<ownedRule xmi:id="_eLYhArnqEdy2xZ6hEFn-7g" name="guard">
+								<specification xmi:type="uml:OpaqueExpression" xmi:id="_3pjHwOteEdy4ro15AmEHFQ">
+									<body>itemCounter&lt;max</body>
+								</specification>
+							</ownedRule>
+							<trigger xmi:id="_XMyW0O9WEdysAaB4n5ugiw" name="t4" event="_BTGtBaf1Edyy8P4OYI-5Dg"/>
+						</transition>
+						<transition xmi:id="__WvMRIG7EdyJz_VqQD58FQ" name="cashPay" source="_5zyhEoG7EdyJz_VqQD58FQ" target="_4LLkgoG7EdyJz_VqQD58FQ">
+							<trigger xmi:id="_pNnMEO9jEdysAaB4n5ugiw" name="t8" event="_JdIIIKf1Edyy8P4OYI-5Dg"/>
+						</transition>
+						<transition xmi:id="__rc4A4G7EdyJz_VqQD58FQ" name="startSale" source="_4LLkgoG7EdyJz_VqQD58FQ" target="_2y0qcoG7EdyJz_VqQD58FQ">
+							<trigger xmi:id="_LayvcO9WEdysAaB4n5ugiw" name="t2" event="_NE5AYKfyEdyy8P4OYI-5Dg"/>
+						</transition>
+						<transition xmi:id="_AMYa1IG8EdyJz_VqQD58FQ" name="startSale" source="_q8WywoG7EdyJz_VqQD58FQ" target="_yJP3QoG7EdyJz_VqQD58FQ">
+							<trigger xmi:id="_sbJfEO9jEdysAaB4n5ugiw" name="t9" event="_NE5AYKfyEdyy8P4OYI-5Dg"/>
+						</transition>
+						<transition xmi:id="_AXQ1JIG8EdyJz_VqQD58FQ" name="enterItem1" source="_yJP3QoG7EdyJz_VqQD58FQ" target="_y-cZ4oG7EdyJz_VqQD58FQ">
+							<trigger xmi:id="_u_g5QO9jEdysAaB4n5ugiw" name="t10" event="_BTGtBaf1Edyy8P4OYI-5Dg"/>
+						</transition>
+						<transition xmi:id="_AivFVIG8EdyJz_VqQD58FQ" name="finishSale" source="_y-cZ4oG7EdyJz_VqQD58FQ" target="_1AFhgoG7EdyJz_VqQD58FQ">
+							<trigger xmi:id="_v-jUYO9jEdysAaB4n5ugiw" name="t11" event="_I8PBkqf1Edyy8P4OYI-5Dg"/>
+						</transition>
+						<transition xmi:id="_Ayh01IG8EdyJz_VqQD58FQ" name="enterItem" source="_y-cZ4oG7EdyJz_VqQD58FQ" target="_y-cZ4oG7EdyJz_VqQD58FQ">
+							<trigger xmi:id="_xCvVQO9jEdysAaB4n5ugiw" name="t12" event="_BTGtBaf1Edyy8P4OYI-5Dg"/>
+						</transition>
+						<transition xmi:id="_BAibo4G8EdyJz_VqQD58FQ" name="cashPay" source="_1AFhgoG7EdyJz_VqQD58FQ" target="_1qGu4IG7EdyJz_VqQD58FQ">
+							<trigger xmi:id="_yFt1MO9jEdysAaB4n5ugiw" name="t13" event="_JdIIIKf1Edyy8P4OYI-5Dg"/>
+						</transition>
+						<transition xmi:id="_BLtw44G8EdyJz_VqQD58FQ" name="startSale" source="_1qGu4IG7EdyJz_VqQD58FQ" target="_yJP3QoG7EdyJz_VqQD58FQ">
+							<trigger xmi:id="_y8bawO9jEdysAaB4n5ugiw" name="t14" event="_NE5AYKfyEdyy8P4OYI-5Dg"/>
+						</transition>
+						<transition xmi:id="_cEFFA4G9EdyJz_VqQD58FQ" name="cardPay" source="_1AFhgoG7EdyJz_VqQD58FQ" target="_1qGu4IG7EdyJz_VqQD58FQ">
+							<trigger xmi:id="_z2Rz4O9jEdysAaB4n5ugiw" name="t15" event="_8DHn0af5EdyWztKvO-eigA"/>
+						</transition>
+						<transition xmi:id="_twuF44G9EdyJz_VqQD58FQ" name="enableExpress" source="_1qGu4IG7EdyJz_VqQD58FQ" target="_rfOPQIG7EdyJz_VqQD58FQ">
+							<trigger xmi:id="_0xmzsO9jEdysAaB4n5ugiw" name="t16" event="_LrY20qfyEdyy8P4OYI-5Dg"/>
+						</transition>
+						<transition xmi:id="_H2TDcLnsEdyQ0fJuT1K__A" name="disableExpress" source="_4LLkgoG7EdyJz_VqQD58FQ" target="_q8WywoG7EdyJz_VqQD58FQ">
+							<trigger xmi:id="_2ADj0O9jEdysAaB4n5ugiw" name="t17" event="_4nJQMKf5EdyWztKvO-eigA"/>
+						</transition>
+					</region>
+				</packagedElement>
+				<packagedElement xmi:type="uml:CallEvent" xmi:id="_hI4X4N8bEd-FF7h0e22Cmg" name="CallEvent1" operation="_IB4BwN8cEd-FF7h0e22Cmg"/>
+				<packagedElement xmi:type="uml:CallEvent" xmi:id="_oSb3sN8fEd-FF7h0e22Cmg" name="CallEvent2" operation="_OL4Qct8dEd-FF7h0e22Cmg"/>
+				<packagedElement xmi:type="uml:CallEvent" xmi:id="_LbmZ0N8gEd-FF7h0e22Cmg" name="CallEvent3" operation="_qq09Ut8dEd-FF7h0e22Cmg"/>
+				<packagedElement xmi:type="uml:CallEvent" xmi:id="_VmAYUN8gEd-FF7h0e22Cmg" name="CallEvent4" operation="_IB4BwN8cEd-FF7h0e22Cmg"/>
+				<packagedElement xmi:type="uml:CallEvent" xmi:id="_Z6kk0N8gEd-FF7h0e22Cmg" name="CallEvent5" operation="_OL4Qct8dEd-FF7h0e22Cmg"/>
+				<packagedElement xmi:type="uml:CallEvent" xmi:id="_gXm5sN8gEd-FF7h0e22Cmg" name="CallEvent6" operation="_qq09Ut8dEd-FF7h0e22Cmg"/>
+				<packagedElement xmi:type="uml:CallEvent" xmi:id="_mzJtoAH6EeCm0ubwz_LAXQ" name="CallEvent11" operation="_bPOM4AH5EeCm0ubwz_LAXQ"/>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Component" xmi:id="_FxPegKfwEdyy8P4OYI-5Dg" name="ProcessSale" clientDependency="_rKh5MLUiEdyWtsDBZM24Pw _x5EUUH2BEd2_Ef9ZQv9eYQ">
+				<ownedAttribute xmi:type="uml:Port" xmi:id="_S_HOAKfwEdyy8P4OYI-5Dg" name="Port1" clientDependency="_x5EUUH2BEd2_Ef9ZQv9eYQ" type="_V0k_QKfwEdyy8P4OYI-5Dg" aggregation="composite"/>
+				<interfaceRealization xmi:id="_x5EUUH2BEd2_Ef9ZQv9eYQ" name="InterfaceRealization1" supplier="_fSaLoKfwEdyy8P4OYI-5Dg" client="_S_HOAKfwEdyy8P4OYI-5Dg _FxPegKfwEdyy8P4OYI-5Dg _V0k_QKfwEdyy8P4OYI-5Dg" contract="_fSaLoKfwEdyy8P4OYI-5Dg"/>
+				<realization xmi:id="_rKh5MLUiEdyWtsDBZM24Pw" name="ClassRealization" supplier="_vs1YALUoEdyxAq315t1iyQ _3rIioKfzEdyy8P4OYI-5Dg _GgfNUKf0Edyy8P4OYI-5Dg _4oUjoKfzEdyy8P4OYI-5Dg _zYOjAKfzEdyy8P4OYI-5Dg _V0k_QKfwEdyy8P4OYI-5Dg _0cD-kKfzEdyy8P4OYI-5Dg _5eL0oKfzEdyy8P4OYI-5Dg _2RtRkKfzEdyy8P4OYI-5Dg _ohBI4KfzEdyy8P4OYI-5Dg _yoiygKfzEdyy8P4OYI-5Dg _unMc8KfzEdyy8P4OYI-5Dg _scop4KfzEdyy8P4OYI-5Dg" client="_FxPegKfwEdyy8P4OYI-5Dg" realizingClassifier="_V0k_QKfwEdyy8P4OYI-5Dg"/>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Interface" xmi:id="_fSaLoKfwEdyy8P4OYI-5Dg" name="Ctr_CD">
+				<ownedAttribute xmi:id="_7gUO8HNbEd2_DMnigNKoKA" name="itemCounter" visibility="private">
+					<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Integer"/>
+					<defaultValue xmi:type="uml:LiteralString" xmi:id="_sqvEwH8iEd2psaZVwuFotB" value="0"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:id="_qe108H8iEd2psaZVwuFotA" name="max" visibility="private">
+					<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Integer"/>
+					<defaultValue xmi:type="uml:LiteralString" xmi:id="_sqvEwH8iEd2psaZVwuFotA" value="8"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:id="_wElt8I3zEd2yPZ_XeECZpg" name="exmode">
+					<eAnnotations xmi:id="_rUMSgI4eEd2yPZ_XeECZpg" source="CSP">
+						<details xmi:id="_s_3xMI4eEd2yPZ_XeECZpg" key="init" value="{true,false}"/>
+					</eAnnotations>
+					<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Boolean"/>
+					<defaultValue xmi:type="uml:LiteralString" xmi:id="_ZHVpQL-HEd6eN_I7yXDV4g" value="exmode || !exmode"/>
+				</ownedAttribute>
+				<ownedOperation xmi:id="_hWTgkKfxEdyy8P4OYI-5Dg" name="enableExpress">
+					<ownedRule xmi:id="_GxB3YI35Ed2yPZ_XeECZpg" name="design">
+						<specification xmi:type="uml:OpaqueExpression" xmi:id="_C1ls0I4KEd2NpP9ZkkqJdA" name="">
+							<body>exmode := true</body>
+						</specification>
+					</ownedRule>
+				</ownedOperation>
+				<ownedOperation xmi:id="_jJRTAKfxEdyy8P4OYI-5Dg" name="disableExpress">
+					<ownedRule xmi:id="_NqozgI35Ed2yPZ_XeECZpg" name="design">
+						<specification xmi:type="uml:OpaqueExpression" xmi:id="_MWh3kI4KEd2NpP9ZkkqJdA">
+							<body>exmode := false</body>
+						</specification>
+					</ownedRule>
+				</ownedOperation>
+				<ownedOperation xmi:id="_k8BDAKfxEdyy8P4OYI-5Dg" name="startSale">
+					<ownedRule xmi:id="_AN7gAH5REd2psaZVwuFotA" name="design">
+						<specification xmi:type="uml:OpaqueExpression" xmi:id="_8c1QIH5UEd2psaZVwuFotA">
+							<language>rCOS</language>
+							<body>itemCounter := 0</body>
+						</specification>
+					</ownedRule>
+				</ownedOperation>
+				<ownedOperation xmi:id="_oZz_kKfxEdyy8P4OYI-5Dg" name="finishSale"/>
+				<ownedOperation xmi:id="_p_HwgKfxEdyy8P4OYI-5Dg" name="cardPay">
+					<ownedParameter xmi:id="_o5kMsKisEdy0yNJAv3xxzQ" name="c" type="_4oUjoKfzEdyy8P4OYI-5Dg"/>
+				</ownedOperation>
+				<ownedOperation xmi:id="_rYZQkKfxEdyy8P4OYI-5Dg" name="cashPay">
+					<ownedParameter xmi:id="_sde_YKisEdy0yNJAv3xxzQ" name="a">
+						<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Double"/>
+					</ownedParameter>
+					<ownedParameter xmi:id="_u0U68KisEdy0yNJAv3xxzQ" name="c" direction="out">
+						<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Double"/>
+					</ownedParameter>
+				</ownedOperation>
+				<ownedOperation xmi:id="_QjzpQJjfEd2aDNzVRx3ITA" name="enterItem">
+					<eAnnotations xmi:id="_lhuJ0EtpEd6PRNSw7mGD7w" source="CSP">
+						<details xmi:id="_m27pQEtpEd6PRNSw7mGD7w" key="hint"/>
+					</eAnnotations>
+					<ownedRule xmi:id="_mB1-4H5WEd2psaZVwuFotA" name="design">
+						<specification xmi:type="uml:OpaqueExpression" xmi:id="_nzs-EH5WEd2psaZVwuFotA">
+							<language>rCOS</language>
+							<body>{itemCounter := itemCounter + 1}⊲exmode⊳{skip}</body>
+						</specification>
+					</ownedRule>
+					<ownedParameter xmi:id="_R2fZIJjfEd2aDNzVRx3ITA" name="code" type="_GgfNUKf0Edyy8P4OYI-5Dg"/>
+					<ownedParameter xmi:id="_YIFTAJjfEd2aDNzVRx3ITA" name="qty">
+						<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Integer"/>
+					</ownedParameter>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Interface" xmi:id="_MAPtEItuEd29vaKB72n5RA" name="Cashdesk">
+				<ownedOperation xmi:id="_MAPtFYtuEd29vaKB72n5RA" name="enableExpress"/>
+				<ownedOperation xmi:id="_MAPtFotuEd29vaKB72n5RA" name="disableExpress"/>
+				<ownedOperation xmi:id="_MAPtF4tuEd29vaKB72n5RA" name="startSale"/>
+				<ownedOperation xmi:id="_MAPtGotuEd29vaKB72n5RA" name="enterItem">
+					<ownedParameter xmi:id="_MAPtHYtuEd29vaKB72n5RA" name="code" type="_GgfNUKf0Edyy8P4OYI-5Dg"/>
+					<ownedParameter xmi:id="_MAPtHotuEd29vaKB72n5RA" name="qty">
+						<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Integer"/>
+					</ownedParameter>
+				</ownedOperation>
+				<ownedOperation xmi:id="_MAPtH4tuEd29vaKB72n5RA" name="finishSale"/>
+				<ownedOperation xmi:id="_MAPtIItuEd29vaKB72n5RA" name="cardPay">
+					<ownedParameter xmi:id="_MAPtIYtuEd29vaKB72n5RA" name="c" type="_4oUjoKfzEdyy8P4OYI-5Dg"/>
+				</ownedOperation>
+				<ownedOperation xmi:id="_MAPtIotuEd29vaKB72n5RA" name="cashPay">
+					<ownedParameter xmi:id="_MAPtI4tuEd29vaKB72n5RA" name="a">
+						<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Double"/>
+					</ownedParameter>
+					<ownedParameter xmi:id="_MAQUIItuEd29vaKB72n5RA" name="c" direction="out">
+						<type xmi:type="uml:PrimitiveType" href="pathmap://RCOS_LIBRARIES/RCOSPrimitiveTypes.library.uml#Double"/>
+					</ownedParameter>
+				</ownedOperation>
+			</packagedElement>
+		</packagedElement>
+		<packagedElement xmi:type="uml:Package" xmi:id="__amvMF74Ed6C-7pOehB0_w" name="Transformations">
+			<packagedElement xmi:type="uml:Class" xmi:id="_90A3IFzPEd6FXq1e-qSeJA" name="AutorefineCashDesk"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="_pKTNAH2QEd6UV8acxsK88Q" name="refineForall_enterItem"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="_cEYIgH2kEd6yV_HbtxhdVw" name="Refine"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="_OKfYsIGjEd6grdT1Wbh5CQ" name="refineForall_cashPay"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="_PqM38IGjEd6grdT1Wbh5CQ" name="refineForall_cardPay"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="_wAVs8PzJEd2Bw8-gzpyqaA" name="Integrate"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="_xBdywPzJEd2Bw8-gzpyqaA" name="Abstract"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="_x-ATgPzJEd2Bw8-gzpyqaA" name="IntegrateAndAbstract"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="_zGvdMPzJEd2Bw8-gzpyqaA" name="ToCSP"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="_s1T18MgdEd6Xl--qp5PAsA" name="cspAfter"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="_w3mmsMgdEd6Xl--qp5PAsA" name="cspDoCheck"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="_JEZh4MgeEd6Xl--qp5PAsA" name="refineAndCheck"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="_3AtyoMggEd6wkYKfGuNwLg" name="chaos_finishSale"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="_i0JRMMhYEd6OxpvHw3AcgQ" name="chaos_enterItem"/>
+			<packagedElement xmi:type="uml:Package" xmi:id="_md4doNtUEd6lReLZ7za1pw" name="saleTotal">
+				<packagedElement xmi:type="uml:Class" xmi:id="_5E5YsNsrEd6orex_2Yz5mg" name="UpdateTotal"/>
+				<packagedElement xmi:type="uml:Class" xmi:id="_yTjuINszEd6sv8oL2nXdUQ" name="AddSaleFinishSale"/>
+				<packagedElement xmi:type="uml:Class" xmi:id="__NE-QNszEd6sv8oL2nXdUQ" name="UpdateSaleFinishSale"/>
+				<packagedElement xmi:type="uml:Class" xmi:id="_034JYNtREd6lReLZ7za1pw" name="saleTotal"/>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="_CeC_oKAMEd-b-65YVdtgiA" name="saleTotal"/>
+		</packagedElement>
+		<profileApplication xmi:id="_0profileApplicationData">
+			<eAnnotations xmi:id="_Iae4p6M7EdybGf786DclwQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+				<references xmi:type="ecore:EPackage" href="http://rcos.iist.unu.edu/rCOS.profile.uml#/"/>
+			</eAnnotations>
+			<appliedProfile href="pathmap://RCOS_PROFILES/rCOS.profile.uml#_0"/>
+		</profileApplication>
+	</uml:Model>
+	<rCOS:ContractInterface xmi:id="KfzEdyy8P4OYI-5DgL_Store_scop4" base_Interface="N8bEd-FF7h0e22CmgL_Store_Dynog"/>
+	<rCOS:ContractInterface xmi:id="op4KfzEdyy8P4OYI-5DgL_Store_sc" base_Interface="nogN8bEd-FF7h0e22CmgL_Store_Dy" interface="ogN8bEd-FF7h0e22CmgL_Store_Dyn"/>
+	<rCOS:ServiceComponent xmi:id="cop4KfzEdyy8P4OYI-5DgL_Store_s" base_Component="ynogN8bEd-FF7h0e22CmgL_Store_D"/>
+	<rCOS:RCOSModel xmi:id="_IaiikKM7EdybGf786DclwQ" base_Model="eee_1045467100313_135436_1" UsecaseModel="_IajJoaM7EdybGf786DclwQ" ComponentModel="_IajJoqM7EdybGf786DclwQ" ClassModel="_IajJoKM7EdybGf786DclwQ"/>
+	<rCOS:ClassModel xmi:id="_IajJoKM7EdybGf786DclwQ" base_Package="_15_0EAPbeta1_2a80154_1193283365296_998310_568"/>
+	<rCOS:UsecaseModel xmi:id="_IajJoaM7EdybGf786DclwQ" base_Package="_15_0EAPbeta1_2a80154_1193283517515_360825_600"/>
+	<rCOS:ComponentModel xmi:id="_IajJoqM7EdybGf786DclwQ" base_Package="_15_0EAPbeta1_2a80154_1195159555218_419200_877"/>
+	<rCOS:RCOSUseCase xmi:id="_8qXZkKfvEdyy8P4OYI-5Dg" base_UseCase="_8qVkYKfvEdyy8P4OYI-5Dg" Component="_FxPegKfwEdyy8P4OYI-5Dg"/>
+	<rCOS:ServiceComponent xmi:id="_FxQsoKfwEdyy8P4OYI-5Dg" base_Component="_FxPegKfwEdyy8P4OYI-5Dg"/>
+	<rCOS:ContractInterface xmi:id="Ctr_CD-CIF" base_Interface="_fSaLoKfwEdyy8P4OYI-5Dg" protocol="protocol" interface="_MAPtEItuEd29vaKB72n5RA"/>
+	<rCOS:Protocol xmi:id="protocol" base_Package="_8cj8MKfxEdyy8P4OYI-5Dg" statemachine="_t-2sIKhXEdy68NGOHotkeQ" sequencediagram="_8clKUKfxEdyy8P4OYI-5Dg"/>
+	<rCOS:DesignOperation xmi:id="_rO9_oI3vEd2GwL0PJVxyXw" base_Operation="_hWTgkKfxEdyy8P4OYI-5Dg"/>
+	<rCOS:DesignOperation xmi:id="_syj5UI3vEd2GwL0PJVxyXw" base_Operation="_jJRTAKfxEdyy8P4OYI-5Dg"/>
+	<rCOS:DesignOperation xmi:id="_t9cYEI3vEd2GwL0PJVxyXw" base_Operation="_k8BDAKfxEdyy8P4OYI-5Dg"/>
+	<rCOS:DesignOperation xmi:id="_viFaoI3vEd2GwL0PJVxyXw" base_Operation="_oZz_kKfxEdyy8P4OYI-5Dg"/>
+	<rCOS:DesignOperation xmi:id="_wge8kI3vEd2GwL0PJVxyXw" base_Operation="_p_HwgKfxEdyy8P4OYI-5Dg"/>
+	<rCOS:DesignOperation xmi:id="_xIySsI3vEd2GwL0PJVxyXw" base_Operation="_rYZQkKfxEdyy8P4OYI-5Dg"/>
+	<rCOS:Autorefine xmi:id="__jB9sFzPEd6FXq1e-qSeJA" base_Class="_90A3IFzPEd6FXq1e-qSeJA" operations="_jmjPcqfyEdyy8P4OYI-5Dg _k0sdkKfyEdyy8P4OYI-5Dg _VCOqYKfyEdyy8P4OYI-5Dg _TgH-cKfyEdyy8P4OYI-5Dg _2j9KQDrrEd6Nu_oB6txIuQ _frGtkKfyEdyy8P4OYI-5Dg _eyVSgKfyEdyy8P4OYI-5Dg"/>
+	<rCOS:Manualrefine xmi:id="_tkdEIH2QEd6UV8acxsK88Q" base_Class="_pKTNAH2QEd6UV8acxsK88Q" operation="_0_nb4NzMEd6w2IeCTAJTmA" oldDesign="var Item j;&#xA;var boolean b;&#xA;b := false;&#xA;for (Item i : store.catalog) {&#xA;{&#x9;b := true}⊲i.barcode = code⊳{&#x9;skip}&#xA;};&#xA;{skip}⊲b⊳{chaos};&#xA;end b;&#xA;[ ⊢∃ Item i:store.catalog.contains(i) ∧ ((i.barcode = code) ∧ (j' = i)) ];&#xA;{skip}⊲(j != null) ∧ ((qty &gt; 0) ∧ (sale != null))⊳{chaos};&#xA;line := LineItem.new(code, qty);&#xA;line.subtotal := j.price * qty;&#xA;sale.lines.add(line)" newDesign="var Item j;&#xA;var boolean b;&#xA;b := false;&#xA;for (Item i : store.catalog) {&#xA;{&#x9;b := true}⊲i.barcode = code⊳{&#x9;skip}&#xA;};&#xA;{skip}⊲b⊳{chaos};&#xA;end b;&#xA;for (Item i : store.catalog) {&#xA;{&#x9;j:=i }⊲i.barcode = code ⊳{&#x9;skip}&#xA;};&#xA;{skip}⊲(j != null) ∧ ((qty &gt; 0) ∧ (sale != null))⊳{chaos};&#xA;line := LineItem.new(code, qty);&#xA;line.subtotal := j.price * qty;&#xA;sale.lines.add(line)">
+		<mine xmi:type="rCOS:OperationQ_Operation" xmi:id="_0_nb4NzMEd6w2IeCTAJTmA" operation="_2j9KQDrrEd6Nu_oB6txIuQ"/>
+	</rCOS:Manualrefine>
+	<rCOS:ExecutionList xmi:id="_d-YXEH2kEd6yV_HbtxhdVw" base_Class="_cEYIgH2kEd6yV_HbtxhdVw" list="__jB9sFzPEd6FXq1e-qSeJA _tkdEIH2QEd6UV8acxsK88Q _c9WwEIGjEd6grdT1Wbh5CQ _ejpYcIGjEd6grdT1Wbh5CQ"/>
+	<rCOS:Manualrefine xmi:id="_c9WwEIGjEd6grdT1Wbh5CQ" base_Class="_OKfYsIGjEd6grdT1Wbh5CQ" operation="_5f2F0NzMEd6w2IeCTAJTmA" oldDesign="{skip}⊲sale != null⊳{chaos};&#xA;{skip}⊲a &gt;= sale.total⊳{chaos};&#xA;sale.pay := CashPayment.new(a, a - sale.total);&#xA;store.sales.add(sale);&#xA;[ ⊢∀ LineItem l:∀ Item p:sale.lines.contains(l) ⇒ (store.catalog.contains(p) ⇒ ((p.barcode = l.barcode) ⇒ (p.stock' = (p.stock - l.quantity)))) ];&#xA;c := a - sale.total" newDesign="if (((this.sale != null) AND (a &gt;= this.sale.total))) then {  &#x9;skip  } else { &#x9;chaos  }; this.sale.pay := CashPayment.new(a, (a - this.sale.total)); this.store.sales.add(this.sale); for (LineItem l : this.sale.lines) {          for (Item p : this.store.catalog) {                   if (p.barcode = l.barcode) then {                           p.stock := p.stock - l.quantity                   } else {                           skip                   }          } }; c := (a - this.sale.total)">
+		<mine xmi:type="rCOS:OperationQ_Operation" xmi:id="_5f2F0NzMEd6w2IeCTAJTmA" operation="_k0sdkKfyEdyy8P4OYI-5Dg"/>
+	</rCOS:Manualrefine>
+	<rCOS:Manualrefine xmi:id="_ejpYcIGjEd6grdT1Wbh5CQ" base_Class="_PqM38IGjEd6grdT1Wbh5CQ" operation="_6hrWQNzMEd6w2IeCTAJTmA" oldDesign="{skip}⊲sale != null⊳{chaos};&#xA;var boolean auth;&#xA;auth := bank.authorize(c, sale.total);&#xA;{skip}⊲auth⊳{chaos};&#xA;sale.pay := CardPayment.new(c);&#xA;store.sales.add(sale);&#xA;[ ⊢∀ LineItem l:∀ Item p:sale.lines.contains(l) ⇒ (store.catalog.contains(p) ⇒ ((p.barcode = l.barcode) ⇒ (p.stock' = (p.stock - l.quantity)))) ]" newDesign="if (((this.sale != null) AND this.bank.authorize(c, this.sale.total))) then {  &#x9;skip  } else { &#x9;chaos  }; this.sale.pay := CardPayment.new(c); this.store.sales.add(this.sale);for (LineItem l : this.sale.lines) {          for (Item p : this.store.catalog) {                   if (p.barcode = l.barcode) then {                           p.stock := p.stock - l.quantity                   } else {                           skip                   }          } }">
+		<mine xmi:type="rCOS:OperationQ_Operation" xmi:id="_6hrWQNzMEd6w2IeCTAJTmA" operation="_jmjPcqfyEdyy8P4OYI-5Dg"/>
+	</rCOS:Manualrefine>
+	<rCOS:ClassToCSPParameters xmi:id="_1WOzkPzJEd2Bw8-gzpyqaA" base_Class="_zGvdMPzJEd2Bw8-gzpyqaA" class="_V0k_QKfwEdyy8P4OYI-5Dg">
+		<attrMap xmi:id="_4ZH80PzJEd2Bw8-gzpyqaA" value="{true,false}">
+			<attr xmi:type="rCOS:SOP_Property" xmi:id="_6gZyYPzJEd2Bw8-gzpyqaA" key="_6QhK8LjSEdyX44DA38FixQ"/>
+		</attrMap>
+		<attrMap xmi:id="_97dkAPzJEd2Bw8-gzpyqaA">
+			<attr xmi:type="rCOS:SOP_String" xmi:id="_-v21YPzJEd2Bw8-gzpyqaA" key="itemCounter"/>
+		</attrMap>
+		<attrMap xmi:id="_A5CvcPzKEd2Bw8-gzpyqaA">
+			<attr xmi:type="rCOS:SOP_String" xmi:id="_BgUK0PzKEd2Bw8-gzpyqaA" key="max"/>
+		</attrMap>
+		<attrMap xmi:id="_DdTb8PzKEd2Bw8-gzpyqaA">
+			<attr xmi:type="rCOS:SOP_String" xmi:id="_EEWN0PzKEd2Bw8-gzpyqaA" key="state"/>
+		</attrMap>
+	</rCOS:ClassToCSPParameters>
+	<rCOS:ClassToCSPParameters xmi:id="toCSPAfter" base_Class="_s1T18MgdEd6Xl--qp5PAsA" class="_V0k_QKfwEdyy8P4OYI-5Dg">
+		<attrMap xmi:id="X_4ZH80PzJEd2Bw8-gzpyqaA" value="{true,false}">
+			<attr xmi:type="rCOS:SOP_Property" xmi:id="X_6gZyYPzJEd2Bw8-gzpyqaA" key="_6QhK8LjSEdyX44DA38FixQ"/>
+		</attrMap>
+		<attrMap xmi:id="X_97dkAPzJEd2Bw8-gzpyqaA">
+			<attr xmi:type="rCOS:SOP_String" xmi:id="X_-v21YPzJEd2Bw8-gzpyqaA" key="itemCounter"/>
+		</attrMap>
+		<attrMap xmi:id="X_A5CvcPzKEd2Bw8-gzpyqaA">
+			<attr xmi:type="rCOS:SOP_String" xmi:id="X_BgUK0PzKEd2Bw8-gzpyqaA" key="max"/>
+		</attrMap>
+		<attrMap xmi:id="X_DdTb8PzKEd2Bw8-gzpyqaA">
+			<attr xmi:type="rCOS:SOP_String" xmi:id="X_EEWN0PzKEd2Bw8-gzpyqaA" key="state"/>
+		</attrMap>
+	</rCOS:ClassToCSPParameters>
+	<rCOS:MangleParameters xmi:id="_F0-d8PzKEd2Bw8-gzpyqaA" base_Class="_wAVs8PzJEd2Bw8-gzpyqaA" ci="Ctr_CD-CIF" sm="_t-2sIKhXEdy68NGOHotkeQ" class="_V0k_QKfwEdyy8P4OYI-5Dg" stateVar="state"/>
+	<rCOS:AbstractionParameters xmi:id="_MKyJcPzKEd2Bw8-gzpyqaA" base_Class="_xBdywPzJEd2Bw8-gzpyqaA" class="_V0k_QKfwEdyy8P4OYI-5Dg">
+		<attrs xmi:type="rCOS:SOP_String" xmi:id="_TuShsPzLEd2Bw8-gzpyqaA" key="max"/>
+		<attrs xmi:type="rCOS:SOP_String" xmi:id="_WAspMPzLEd2Bw8-gzpyqaA" key="itemCounter"/>
+		<attrs xmi:type="rCOS:SOP_String" xmi:id="_XzuGAPzLEd2Bw8-gzpyqaA" key="state"/>
+		<attrs xmi:type="rCOS:SOP_String" xmi:id="_nvRwoCJjEd66Ypk8d0-Q0A" key="exmode"/>
+	</rCOS:AbstractionParameters>
+	<rCOS:ExecutionList xmi:id="_P6vNAPzKEd2Bw8-gzpyqaA" base_Class="_x-ATgPzJEd2Bw8-gzpyqaA" list="_F0-d8PzKEd2Bw8-gzpyqaA _MKyJcPzKEd2Bw8-gzpyqaA"/>
+	<rCOS:CSPRefinementCheck xmi:id="_2ebsUMgdEd6Xl--qp5PAsA" base_Class="_w3mmsMgdEd6Xl--qp5PAsA" csp1="_1WOzkPzJEd2Bw8-gzpyqaA" csp2="toCSPAfter" prefix="C2_">
+		<assertions>InitCashdesk [FD= C2_InitCashdesk</assertions>
+		<assertions>C2_InitCashdesk [FD= InitCashdesk</assertions>
+		<assertions>InitCashdesk :[ deadlock free [FD] ]</assertions>
+		<assertions>C2_InitCashdesk :[ deadlock free [FD] ]</assertions>
+	</rCOS:CSPRefinementCheck>
+	<rCOS:ExecutionList xmi:id="_KdVDsMgeEd6Xl--qp5PAsA" base_Class="_JEZh4MgeEd6Xl--qp5PAsA" list="_d-YXEH2kEd6yV_HbtxhdVw _P6vNAPzKEd2Bw8-gzpyqaA _1WOzkPzJEd2Bw8-gzpyqaA _5MUHgMggEd6wkYKfGuNwLg _kgqdYMhYEd6OxpvHw3AcgQ toCSPAfter _2ebsUMgdEd6Xl--qp5PAsA"/>
+	<rCOS:Manualrefine xmi:id="_5MUHgMggEd6wkYKfGuNwLg" base_Class="_3AtyoMggEd6wkYKfGuNwLg" operation="_BnPqwNzNEd6w2IeCTAJTmA" oldDesign="chaos" newDesign="skip \/  return; if ((this.state = 7)) then {  &#x9;this.state := 0  } else { &#x9;if ((this.state = 9)) then {  &#x9;&#x9;this.state := 2  &#x9;} else { &#x9;&#x9;skip  &#x9;}  }">
+		<mine xmi:type="rCOS:OperationQ_Operation" xmi:id="_BnPqwNzNEd6w2IeCTAJTmA" operation="_frGtkKfyEdyy8P4OYI-5Dg"/>
+	</rCOS:Manualrefine>
+	<rCOS:Manualrefine xmi:id="_kgqdYMhYEd6OxpvHw3AcgQ" base_Class="_i0JRMMhYEd6OxpvHw3AcgQ" operation="_CjIEMNzNEd6w2IeCTAJTmA" oldDesign="chaos" newDesign="var boolean b; skip \/  return; end b; if (this.exmode) then {  &#x9;this.itemCounter := (this.itemCounter + 1)  } else { &#x9;skip  }; if ((this.state = 6)) then {  &#x9;this.state := 7  } else { &#x9;if ((this.state = 7)) then {  &#x9;&#x9;this.state := 7  &#x9;} else { &#x9;&#x9;if ((this.state = 8)) then {  &#x9;&#x9;&#x9;this.state := 9  &#x9;&#x9;} else { &#x9;&#x9;&#x9;if ((this.state = 9)) then {  &#x9;&#x9;&#x9;&#x9;this.state := 9  &#x9;&#x9;&#x9;} else { &#x9;&#x9;&#x9;&#x9;skip  &#x9;&#x9;&#x9;}  &#x9;&#x9;}  &#x9;}  }">
+		<mine xmi:type="rCOS:OperationQ_Operation" xmi:id="_CjIEMNzNEd6w2IeCTAJTmA" operation="_2j9KQDrrEd6Nu_oB6txIuQ"/>
+	</rCOS:Manualrefine>
+	<rCOS:Manualrefine xmi:id="_8w6XcNsrEd6orex_2Yz5mg" base_Class="_5E5YsNsrEd6orex_2Yz5mg" operation="_H1IJUNzNEd6w2IeCTAJTmA" oldDesign="[ sale != null |- true]; [ |- sale.complete' = true]; var double sum = 0; for (LineItem l : sale.lines) { [ |- sum' = sum + l.subtotal] }; [|- sale.total' = sum]; end sum" newDesign="[ sale != null |- sale.finishSale()]">
+		<mine xmi:type="rCOS:OperationQ_Operation" xmi:id="_H1IJUNzNEd6w2IeCTAJTmA" operation="_frGtkKfyEdyy8P4OYI-5Dg"/>
+	</rCOS:Manualrefine>
+	<rCOS:CreateOperationParameter xmi:id="createSaleFinishSaleCommand" base_Class="_yTjuINszEd6sv8oL2nXdUQ" class="_unMc8KfzEdyy8P4OYI-5Dg" methodName="finishSale"/>
+	<rCOS:Manualrefine xmi:id="_CeazMNs0Ed6sv8oL2nXdUQ" base_Class="__NE-QNszEd6sv8oL2nXdUQ" operation="createSaleFinishSaleCommand" oldDesign="" newDesign="[ |- complete' = true]; var double sum = 0; for (LineItem l : lines) { [ |- sum' = sum + l.subtotal] }; [|- total' = sum]; end sum"/>
+	<rCOS:ExecutionList xmi:id="_2toxINtREd6lReLZ7za1pw" base_Class="_034JYNtREd6lReLZ7za1pw" list="createSaleFinishSaleCommand _CeazMNs0Ed6sv8oL2nXdUQ _8w6XcNsrEd6orex_2Yz5mg"/>
+	<rCOS:DesignDelegationParameter xmi:id="_FNrOoKAMEd-b-65YVdtgiA" base_Class="_CeC_oKAMEd-b-65YVdtgiA" targetPath="sale" designWithChoke="[ sale != null ⊢true]; CHOKE" sourceOperation="_NGN4MKAMEd-b-65YVdtgiA" targetOperationName="finishSale">
+		<mine xmi:type="rCOS:OperationQ_Operation" xmi:id="_NGN4MKAMEd-b-65YVdtgiA" operation="_frGtkKfyEdyy8P4OYI-5Dg"/>
+	</rCOS:DesignDelegationParameter>
+	<rCOS:Manualrefine xmi:id="_Lig-kMryEd-MdPKbXHYGwQ" operation="_Lig-kcryEd-MdPKbXHYGwQ" oldDesign="var Item j;&#xA;[ ∃ Item i:store.catalog.contains(i) ∧ i.barcode = code ⊢ ∃ Item i:store.catalog.contains(i) ∧ i.barcode = code ∧ j' = i];&#xA;[ j != null ∧ qty &gt; 0 ∧ sale != null ⊢ line' = LineItem.new(code, qty) ];&#xA;[ ⊢line.subtotal' = j.price * qty ];&#xA;[ ⊢sale.lines.add(line) ]" newDesign="var Item j;&#xA;var boolean b;&#xA;b := false;&#xA;for (Item i : store.catalog) {&#xA;{&#x9;b := true}⊲i.barcode = code⊳{&#x9;skip}&#xA;};&#xA;{skip}⊲b⊳{chaos};&#xA;end b;&#xA;[ ⊢∃ Item i:store.catalog.contains(i) ∧ ((i.barcode = code) ∧ (j' = i)) ];&#xA;{skip}⊲(j != null) ∧ ((qty &gt; 0) ∧ (sale != null))⊳{chaos};&#xA;line := LineItem.new(code, qty);&#xA;line.subtotal := j.price * qty;&#xA;sale.lines.add(line)&#xA;;;;;;&#xA;var Item j;&#xA;[ ∃ Item i:store.catalog.contains(i) ∧ i.barcode = code ⊢ ∃ Item i:store.catalog.contains(i) ∧ i.barcode = code ∧ j' = i];&#xA;[ j != null ∧ qty &gt; 0 ∧ sale != null ⊢ line' = LineItem.new(code, qty) ];&#xA;[ ⊢line.subtotal' = j.price * qty ];&#xA;[ ⊢sale.lines.add(line) ]">
+		<mine xmi:type="rCOS:OperationQ_Operation" xmi:id="_Lig-kcryEd-MdPKbXHYGwQ" operation="_2j9KQDrrEd6Nu_oB6txIuQ"/>
+	</rCOS:Manualrefine>
+	<rCOS:Manualrefine xmi:id="_cNZngMryEd-MdPKbXHYGwQ" operation="_cNZngcryEd-MdPKbXHYGwQ" oldDesign="var Item j;&#xA;var boolean b;&#xA;b := false;&#xA;for (Item i : store.catalog) {&#xA;{&#x9;b := true}⊲i.barcode = code⊳{&#x9;skip}&#xA;};&#xA;{skip}⊲b⊳{chaos};&#xA;end b;&#xA;[ ⊢∃ Item i:store.catalog.contains(i) ∧ ((i.barcode = code) ∧ (j' = i)) ];&#xA;{skip}⊲(j != null) ∧ ((qty &gt; 0) ∧ (sale != null))⊳{chaos};&#xA;line := LineItem.new(code, qty);&#xA;line.subtotal := j.price * qty;&#xA;sale.lines.add(line)&#xA;;;;;;&#xA;var Item j;&#xA;[ ∃ Item i:store.catalog.contains(i) ∧ i.barcode = code ⊢ ∃ Item i:store.catalog.contains(i) ∧ i.barcode = code ∧ j' = i];&#xA;[ j != null ∧ qty &gt; 0 ∧ sale != null ⊢ line' = LineItem.new(code, qty) ];&#xA;[ ⊢line.subtotal' = j.price * qty ];&#xA;[ ⊢sale.lines.add(line) ]" newDesign="var Item j;&#xA;var boolean b;&#xA;b := false;&#xA;for (Item i : store.catalog) {&#xA;{&#x9;b := true}⊲i.barcode = code⊳{&#x9;skip}&#xA;};&#xA;{skip}⊲b⊳{chaos};&#xA;end b;&#xA;for (Item i : store.catalog) {&#xA;{&#x9;b := true}⊲i.barcode = code⊳{&#x9;skip}&#xA;};&#xA;[ ⊢∃ Item i:store.catalog.contains(i) ∧ ((i.barcode = code) ∧ (j' = i)) ];&#xA;{skip}⊲(j != null) ∧ ((qty &gt; 0) ∧ (sale != null))⊳{chaos};&#xA;line := LineItem.new(code, qty);&#xA;line.subtotal := j.price * qty;&#xA;sale.lines.add(line)&#xA;;;;;;&#xA;var Item j;&#xA;[ ∃ Item i:store.catalog.contains(i) ∧ i.barcode = code ⊢ ∃ Item i:store.catalog.contains(i) ∧ i.barcode = code ∧ j' = i];&#xA;[ j != null ∧ qty &gt; 0 ∧ sale != null ⊢ line' = LineItem.new(code, qty) ];&#xA;[ ⊢line.subtotal' = j.price * qty ];&#xA;[ ⊢sale.lines.add(line) ]">
+		<mine xmi:type="rCOS:OperationQ_Operation" xmi:id="_cNZngcryEd-MdPKbXHYGwQ" operation="_2j9KQDrrEd6Nu_oB6txIuQ"/>
+	</rCOS:Manualrefine>
+	<rCOS:Manualrefine xmi:id="_iB58wMryEd-MdPKbXHYGwQ" operation="_iB6j0MryEd-MdPKbXHYGwQ" oldDesign="var Item j;&#xA;var boolean b;&#xA;b := false;&#xA;for (Item i : store.catalog) {&#xA;{&#x9;b := true}⊲i.barcode = code⊳{&#x9;skip}&#xA;};&#xA;{skip}⊲b⊳{chaos};&#xA;end b;&#xA;for (Item i : store.catalog) {&#xA;{&#x9;b := true}⊲i.barcode = code⊳{&#x9;skip}&#xA;};&#xA;[ ⊢∃ Item i:store.catalog.contains(i) ∧ ((i.barcode = code) ∧ (j' = i)) ];&#xA;{skip}⊲(j != null) ∧ ((qty &gt; 0) ∧ (sale != null))⊳{chaos};&#xA;line := LineItem.new(code, qty);&#xA;line.subtotal := j.price * qty;&#xA;sale.lines.add(line)&#xA;;;;;;&#xA;var Item j;&#xA;[ ∃ Item i:store.catalog.contains(i) ∧ i.barcode = code ⊢ ∃ Item i:store.catalog.contains(i) ∧ i.barcode = code ∧ j' = i];&#xA;[ j != null ∧ qty &gt; 0 ∧ sale != null ⊢ line' = LineItem.new(code, qty) ];&#xA;[ ⊢line.subtotal' = j.price * qty ];&#xA;[ ⊢sale.lines.add(line) ]" newDesign="var boolean b; b := false; for (Item i : this.store.catalog) {  &#x9;if (((i.barcode = code) AND ((qty &gt; 0) AND (this.sale != null)))) then {  &#x9;&#x9;b := true  &#x9;} else { &#x9;&#x9;skip  &#x9;} }; if (b) then {  &#x9;skip  } else { &#x9;chaos  }; end b; this.line := LineItem.new(code, qty); for (Item j : this.store.catalog) {          if (j.barcode = code) then {                 this.line.subtotal := j.price * qty          } else {                 skip          } }; this.sale.lines.add(this.line)&#xA;;;;;;&#xA;var Item j;&#xA;[ ∃ Item i:store.catalog.contains(i) ∧ i.barcode = code ⊢ ∃ Item i:store.catalog.contains(i) ∧ i.barcode = code ∧ j' = i];&#xA;[ j != null ∧ qty &gt; 0 ∧ sale != null ⊢ line' = LineItem.new(code, qty) ];&#xA;[ ⊢line.subtotal' = j.price * qty ];&#xA;[ ⊢sale.lines.add(line) ]">
+		<mine xmi:type="rCOS:OperationQ_Operation" xmi:id="_iB6j0MryEd-MdPKbXHYGwQ" operation="_2j9KQDrrEd6Nu_oB6txIuQ"/>
+	</rCOS:Manualrefine>
+	<rCOS:Manualrefine xmi:id="_0wC24MryEd-MdPKbXHYGwQ" operation="_0wC24cryEd-MdPKbXHYGwQ" oldDesign="var Item j;&#xA;var boolean b;&#xA;b := false;&#xA;for (Item i : store.catalog) {&#xA;{&#x9;b := true}⊲i.barcode = code⊳{&#x9;skip}&#xA;};&#xA;{skip}⊲b⊳{chaos};&#xA;end b;&#xA;[ ⊢∃ Item i:store.catalog.contains(i) ∧ ((i.barcode = code) ∧ (j' = i)) ];&#xA;{skip}⊲(j != null) ∧ ((qty &gt; 0) ∧ (sale != null))⊳{chaos};&#xA;line := LineItem.new(code, qty);&#xA;line.subtotal := j.price * qty;&#xA;sale.lines.add(line)&#xA;;;;;;&#xA;var Item j;&#xA;[ ∃ Item i:store.catalog.contains(i) ∧ i.barcode = code ⊢ ∃ Item i:store.catalog.contains(i) ∧ i.barcode = code ∧ j' = i];&#xA;[ j != null ∧ qty &gt; 0 ∧ sale != null ⊢ line' = LineItem.new(code, qty) ];&#xA;[ ⊢line.subtotal' = j.price * qty ];&#xA;[ ⊢sale.lines.add(line) ]" newDesign="var Item j;&#xA;var boolean b;&#xA;b := false;&#xA;for (Item i : store.catalog) {&#xA;{&#x9;b := true}⊲i.barcode = code⊳{&#x9;skip}&#xA;};&#xA;{skip}⊲b⊳{chaos};&#xA;end b;&#xA;for (Item i : store.catalog) {&#xA;{&#x9;j:=i }⊲i.barcode = code ⊳{&#x9;skip}&#xA;};&#xA;{skip}⊲(j != null) ∧ ((qty &gt; 0) ∧ (sale != null))⊳{chaos};&#xA;line := LineItem.new(code, qty);&#xA;line.subtotal := j.price * qty;&#xA;sale.lines.add(line)">
+		<mine xmi:type="rCOS:OperationQ_Operation" xmi:id="_0wC24cryEd-MdPKbXHYGwQ" operation="_2j9KQDrrEd6Nu_oB6txIuQ"/>
+	</rCOS:Manualrefine>
+</xmi:XMI>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graph2:Graph xmlns:graph2="graph2" xmlns:xmi="http://www.omg.org/XMI">
+   <gcs xmi:type="graph2:Node" text="n1" xmi:id="_0.@nodes.0"/>
+   <gcs xmi:type="graph2:Node" text="n2" xmi:id="_0.@nodes.1"/>
+   <gcs xmi:type="graph2:Node" text="n3" xmi:id="_0.@nodes.2"/>
+   <gcs xmi:type="graph2:Node" text="n4" xmi:id="_0.@nodes.3"/>
+   <gcs xmi:type="graph2:Node" text="n5" xmi:id="_0.@nodes.4"/>
+   <gcs xmi:type="graph2:Node" text="n6" xmi:id="_0.@nodes.5"/>
+   <gcs xmi:type="graph2:Node" text="n7" xmi:id="_0.@nodes.6"/>
+   <gcs xmi:type="graph2:Node" text="n8" xmi:id="_0.@nodes.7"/>
+   <gcs xmi:type="graph2:Edge" text="" xmi:id="_0.@edges.0" src="_0.@nodes.0"
+        trg="_0.@nodes.1"/>
+   <gcs xmi:type="graph2:Edge" text="" xmi:id="_0.@edges.1" src="_0.@nodes.1"
+        trg="_0.@nodes.2"/>
+   <gcs xmi:type="graph2:Edge" text="" xmi:id="_0.@edges.2" src="_0.@nodes.2"
+        trg="_0.@nodes.0"/>
+   <gcs xmi:type="graph2:Edge" text="" xmi:id="_0.@edges.3" src="_0.@nodes.2"
+        trg="_0.@nodes.3"/>
+   <gcs xmi:type="graph2:Edge" text="" xmi:id="_0.@edges.4" src="_0.@nodes.3"
+        trg="_0.@nodes.4"/>
+   <gcs xmi:type="graph2:Edge" text="" xmi:id="_0.@edges.5" src="_0.@nodes.4"
+        trg="_0.@nodes.2"/>
+   <gcs xmi:type="graph2:Edge" text="" xmi:id="_0.@edges.6" src="_0.@nodes.7"
+        trg="_0.@nodes.7"/>
+</graph2:Graph>

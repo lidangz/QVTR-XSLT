@@ -1,0 +1,387 @@
+﻿<html lang="en-gb" xml:lang="en-gb" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>QVTR-XSLT example</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta content="index, follow" name="robots">
+<meta content="rCOS, MDA, MDD, UML, verification" name="keywords">
+<meta content="QVTR-XSLT example" name="title">
+<meta content="Li Dan" name="author">
+<meta content="rCOS - Refinement of Component and Object Systems" name="description">
+<meta content="MSHTML 6.00.6000.17063" name="GENERATOR">
+<link href="/templates/ja_purity/favicon.ico" type="image/x-icon" rel="shortcut icon">
+<link href="include_files/system.css" type="text/css" rel="stylesheet">
+<link href="include_files/general.css" type="text/css" rel="stylesheet">
+<link href="include_files/template.css" type="text/css" rel="stylesheet">
+<link href="include_files/menu.css" type="text/css" rel="stylesheet">
+<link href="include_files/style.css" type="text/css" rel="stylesheet">
+<link href="include_files/style(1).css" type="text/css" rel="stylesheet">
+<link href="include_files/style(2).css" type="text/css" rel="stylesheet">
+<!--[if IE 7.0]>
+<style type="text/css">.clearfix {
+	DISPLAY: inline-block
+}
+</style>
+<![endif]-->
+<style type="text/css">#ja-header {
+	MARGIN: 0px auto; WIDTH: 97%
+}
+#ja-mainnav {
+	MARGIN: 0px auto; WIDTH: 97%
+}
+#ja-container {
+	MARGIN: 0px auto; WIDTH: 97%
+}
+#ja-botsl {
+	MARGIN: 0px auto; WIDTH: 97%
+}
+#ja-footer {
+	MARGIN: 0px auto; WIDTH: 97%
+}
+#ja-wrapper {
+	MIN-WIDTH: 100%
+}
+</style>
+</head>
+
+<body class="fs3 IE7" id="bd">
+
+<div id="ja-wrapper">
+	<!-- BEGIN: HEADER -->
+	<div id="ja-headerwrap">
+		<div class="clearfix" id="ja-header" style="BACKGROUND: url(http://rcos.iist.unu.edu/templates/ja_purity/images/header/header2.jpg) no-repeat right top">
+			<div class="ja-headermask">
+			</div>
+			<h1 class="logo-text">
+			<a title="rCOS" href="http://rcos.iist.unu.edu/index.php"><span>rCOS</span></a>
+			</h1>
+			<p class="site-slogan">Refinement of Component and Object Systems</p>
+			<ul class="ja-usertools-font">
+				<li>
+				<img id="ja-tool-increase" title="Increase font size" style="CURSOR: pointer" onclick="switchFontSize('ja_purity_ja_font','inc'); return false;" alt="Increase font size" src="include_files/user-increase.png">
+				</li>
+				<li>
+				<img id="ja-tool-reset" title="Default font size" style="CURSOR: pointer" onclick="switchFontSize('ja_purity_ja_font',3); return false;" alt="Default font size" src="include_files/user-reset.png">
+				</li>
+				<li>
+				<img id="ja-tool-decrease" title="Decrease font size" style="CURSOR: pointer" onclick="switchFontSize('ja_purity_ja_font','dec'); return false;" alt="Decrease font size" src="include_files/user-decrease.png">
+				</li>
+			</ul>
+			</div>
+	</div>
+	<!-- END: HEADER -->
+	<!-- BEGIN: MAIN NAVIGATION -->
+	<!-- END: MAIN NAVIGATION -->
+	<div id="ja-containerwrap-fr">
+		<div id="ja-containerwrap2">
+			<div id="ja-container">
+				<div class="clearfix" id="ja-container2">
+					<div class="clearfix" id="ja-mainbody-fr">
+						<!-- BEGIN: CONTENT -->
+						<div id="ja-contentwrap">
+							<div id="ja-content">
+								<div id="ja-pathway">
+								</div>
+								<h2 class="contentheading">Examples of Model 
+								Querying with Graphical Notation of QVT-R</h2>
+								<div class="article-tools">
+									<div class="buttonheading">
+										<span>&nbsp;&nbsp; </span></div>
+								</div>
+								<div class="article-content">
+									<p>These querying examples demonstrate how 
+									to use the QVT-R graphical query facility. 
+									We design a QVT-R transformation to collect 
+									and execute these queries.<br>
+									This transformation takes the
+									<a href="http://www.omg.org/spec/UML/20110701/Superstructure.xmi">
+									UML superstructure model</a> as the source 
+									model, and outputs a html file to show the 
+									query results.</p><p>
+									<a target="_blank" href="QueryUML.xml">QVT-R model</a>&nbsp;&nbsp;
+									for the transformation.</p>
+									</p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: ; mso-bidi-font-size: 10.5pt; font-size:12px">
+									<span style="mso-list: Ignore">
+									&nbsp;</span><b>Source Metamodel</b>: a 
+									slight variant of EMOF model, here all classes 
+									are sub-class of <i>NamedElement, </i>which 
+									has attributes <i>xmi:id</i> and <i>
+									name</i>.</span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">
+									<img border="0" src="pics/EMOFModel.jpg" width="713" height="468"><br>
+									&nbsp;</span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<b>Target</b><span style="FONT-FAMILY: ; mso-bidi-font-size: 10.5pt; font-size:12px"><b> Metamodel</b>: 
+									a simple html model </span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<img border="0" src="pics/HtmlModel.jpg" width="162" height="171"><span style="FONT-FAMILY: ; mso-bidi-font-size: 10.5pt; font-size:12px">.</span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<font face="Arial, sans-serif">The 
+									transformation includes two relations: the 
+									top-level relation <b>QueryUML</b>&nbsp; 
+									that starts the transformation,&nbsp; 
+									creates an empty html model, invokes the 
+									queries from the <i>where</i> clause, and 
+									sends the results to relation <b>Display</b>.</font></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">
+									<img height="383" src="pics/QueryUML.jpg" width="441" border="0"><br>
+									The relation&nbsp; <b>Display</b> creates a 
+									new row in the html table in the html model 
+									to put the query result<b>.</b></span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">
+									<img height="223" src="pics/Display.jpg" width="335" border="0"><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<font face="Arial, sans-serif">The query <b>
+									CountClass</b> counts the number of classes 
+									contained in all packages.</font></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<img border="0" src="pics/CountClass.jpg" width="165" height="209"></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									The XSLT function generated for query
+									<font face="Arial, sans-serif"><b>CountClass</b> 
+									:</font></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<font face="Arial, sans-serif">&nbsp;&lt;<font color="#CC0000"><b>xsl:function</b></font>
+									<font color="#FF0000">name</font>=&quot;my:CountClass&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<b><font color="#CC0000">xsl:variable</font>
+									</b>
+									<font color="#FF0000" face="Arial, sans-serif">
+									name</font>=&quot;cls&quot;
+									<font color="#FF0000" face="Arial, sans-serif">
+									select</font>=&quot;$xmiXMI//packagedElement[@xmi:type=&#39;uml:Class&#39;]&quot;/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<b><font color="#CC0000">xsl:variable</font></b>
+									<font color="#FF0000" face="Arial, sans-serif">
+									name</font>=&quot;result&quot;
+									<font color="#FF0000" face="Arial, sans-serif">
+									select</font>=&quot;count($cls)&quot;/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<b><font color="#CC0000">xsl:sequence</font></b>
+									<font color="#FF0000" face="Arial, sans-serif">
+									select</font>=&quot;$result&quot;/&gt;<br>
+									&lt;<b>/<font color="#CC0000">xsl:function</font></b>&gt;</font></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<font face="Arial, sans-serif">Query <b>
+									GetClsWithAssoNum</b> obtains a list of 
+									classes with a given number of associations.</font></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<img border="0" src="pics/GetClsWithAssoNum.jpg" width="439" height="237"></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									The XSLT function generated for query
+									<font face="Arial, sans-serif"><b>
+									GetClsWithAssoNum</b> :</font></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<font face="Arial, sans-serif">&nbsp;&lt;<b><font color="#CC0000">xsl:function
+									</font></b>
+									<font color="#FF0000" face="Arial, sans-serif">
+									name</font>=&quot;my:GetClsWithAssoNum&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<font color="#CC0000" face="Arial, sans-serif"><b>xsl</b></font>:<font color="#CC0000" face="Arial, sans-serif"><b>param</b></font>
+									<font color="#FF0000" face="Arial, sans-serif">
+									name</font>=&quot;assoNum&quot;/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<font color="#CC0000"><b>xsl:variable</b></font>
+									<font color="#FF0000" face="Arial, sans-serif">
+									name</font>=&quot;cls&quot;
+									<font color="#FF0000" face="Arial, sans-serif">
+									select</font>=&quot;$xmiXMI//packagedElement[@xmi:type=&#39;uml:Class&#39;]&quot;/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<font color="#CC0000"><b>xsl:variable</b></font>
+									<font color="#FF0000" face="Arial, sans-serif">
+									name</font>=&quot;result&quot;
+									<font color="#FF0000" face="Arial, sans-serif">
+									select</font>=&quot;$cls[count(ownedAttribute[@xmi:type=&#39;uml:Property&#39;]/@association)=$assoNum]&quot;/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<font color="#CC0000"><b>xsl:sequence</b></font>
+									<font color="#FF0000" face="Arial, sans-serif">
+									select</font>=&quot;$result&quot;/&gt;<br>
+									&lt;/<font color="#CC0000"><b>xsl:function</b></font>&gt;</font></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<font face="Arial, sans-serif">Query <b>
+									GetMaxDepth</b> gets the maximal depth of 
+									class inheritancespecified in the graphical 
+									notation.&nbsp; It iteratively calls query
+									<b>CountSuper</b> to get a collect of depth 
+									numbers.</font></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<img border="0" src="pics/GetMaxDepth.jpg" width="284" height="202"></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									The XSLT function generated for query
+									<font face="Arial, sans-serif"><b>
+									GetMaxDepth</b> :</font></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<font face="Arial, sans-serif">&nbsp;&lt;<font color="#CC0000"><b>xsl:function</b></font>
+									<font color="#FF0000" face="Arial, sans-serif">
+									name</font>=&quot;my:GetMaxDepth&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<font color="#CC0000"><b>xsl:variable</b></font>
+									<font color="#FF0000" face="Arial, sans-serif">
+									name</font>=&quot;cls&quot;
+									<font color="#FF0000" face="Arial, sans-serif">
+									select</font>=&quot;$xmiXMI//packagedElement[@xmi:type=&#39;uml:Class&#39;]&quot;/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<font color="#CC0000"><b>xsl:variable</b></font>
+									<font color="#FF0000" face="Arial, sans-serif">
+									name</font>=&quot;depths&quot;
+									<font color="#FF0000" face="Arial, sans-serif">
+									select</font>=&quot;(for $c in $cls return 
+									my:CountSuper($c,0))&quot;/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<font color="#CC0000"><b>xsl:variable</b></font>
+									<font color="#FF0000" face="Arial, sans-serif">
+									name</font>=&quot;result&quot;
+									<font color="#FF0000" face="Arial, sans-serif">
+									select</font>=&quot;max($depths)&quot;/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<font color="#CC0000"><b>xsl:sequence
+									</b></font>
+									<font color="#FF0000" face="Arial, sans-serif">
+									select</font>=&quot;$result&quot;/&gt;<br>
+									&lt;/<font color="#CC0000"><b>xsl:function</b></font>&gt;</font></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<font face="Arial, sans-serif">Query <b>
+									CountSuper</b> recursively calls itself to 
+									count the number of its super classes.</font></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<img border="0" src="pics/CountSuper.jpg" width="550" height="279"></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									The XSLT function generated for query
+									<font face="Arial, sans-serif"><b>CountSuper</b> 
+									:</font></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<font face="Arial, sans-serif">&nbsp;&lt;<font color="#CC0000"><b>xsl:function</b></font>
+									<font color="#FF0000" face="Arial, sans-serif">
+									name</font>=&quot;my:CountSuper&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<font color="#CC0000"><b>xsl:param</b></font>
+									<font color="#FF0000" face="Arial, sans-serif">
+									name</font>=&quot;c&quot;/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<font color="#CC0000"><b>xsl:param</b></font>
+									<font color="#FF0000" face="Arial, sans-serif">
+									name</font>=&quot;num&quot;/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<font color="#CC0000"><b>xsl:variable</b></font>
+									<font color="#FF0000" face="Arial, sans-serif">
+									name</font>=&quot;sc&quot;
+									<font color="#FF0000" face="Arial, sans-serif">
+									select</font>=&quot;my:xmiXMIrefs($c/generalization[@xmi:type=&#39;uml:Generalization&#39;]/@general)[@xmi:type=&#39;uml:Class&#39;]&quot;/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<font color="#CC0000"><b>xsl:variable</b></font>
+									<font color="#FF0000" face="Arial, sans-serif">
+									name</font>=&quot;cnum&quot;
+									<font color="#FF0000" face="Arial, sans-serif">
+									select</font>=&quot;$num + 1&quot;/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<font color="#CC0000"><b>xsl:variable</b></font>
+									<font color="#FF0000" face="Arial, sans-serif">
+									name</font>=&quot;supers&quot;
+									<font color="#FF0000" face="Arial, sans-serif">
+									select</font>=&quot; if (not(exists($sc))) then 
+									$cnum else (for $s in $sc return 
+									my:CountSuper($s,$cnum)) &quot;/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<b><font color="#CC0000">xsl:varia</font></b><font color="#CC0000"><b>ble</b></font>
+									<font color="#FF0000" face="Arial, sans-serif">
+									name</font>=&quot;result&quot;
+									<font color="#FF0000" face="Arial, sans-serif">
+									select</font>=&quot;max($supers)&quot;/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<font color="#CC0000"><b>xsl:sequence</b></font>
+									<font color="#FF0000" face="Arial, sans-serif">
+									select</font>=&quot;$result&quot;/&gt;<br>
+									&lt;/<font color="#CC0000"><b>xsl:function</b></font>&gt;<br>
+&nbsp;</font></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<font face="Arial, sans-serif">Query&nbsp;
+									<b>FindName</b> finds all model elements 
+									whose names begins with &#39;&#39;Action&#39;&#39; in a 
+									given package:</font></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<img border="0" src="pics/FindName.jpg" width="188" height="258"></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									The XSLT function generated for query
+									<font face="Arial, sans-serif"><b>FindName</b> 
+									:</font></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<font face="Arial, sans-serif">&nbsp;&lt;<font color="#CC0000"><b>xsl:function</b></font>
+									<font color="#FF0000" face="Arial, sans-serif">
+									name</font>=&quot;my:FindName&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<font color="#CC0000"><b>xsl:param</b></font>
+									<font color="#FF0000" face="Arial, sans-serif">
+									name</font>=&quot;p&quot;/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<font color="#CC0000"><b>xsl:variable
+									</b></font>
+									<font color="#FF0000" face="Arial, sans-serif">
+									name</font>=&quot;result&quot;
+									<font color="#FF0000" face="Arial, sans-serif">
+									select</font>=&quot;$p//*[matches(@name,&#39;Action*&#39;)]&quot;/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<font color="#CC0000"><b>xsl:sequence
+									</b></font>
+									<font color="#FF0000" face="Arial, sans-serif">
+									select</font>=&quot;$result&quot;/&gt;<br>
+									&lt;/<font color="#CC0000"><b>xsl:function</b></font>&gt;</font></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<font face="Arial, sans-serif">Query <b>
+									GettAttributeName</b>&nbsp; gets a set of 
+									names of primitive attributes in a given 
+									class. The query selects a primitive 
+									attribute by (1) it owns an element of <i>
+									DataType</i>; (2) it does not have an 
+									association link; (3) its visibility is <i>
+									public</i>.</font></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<img border="0" src="pics/GetAttributeName.jpg" width="265" height="265"></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									The XSLT function generated for query
+									<font face="Arial, sans-serif"><b>
+									GettAttributeName</b> :</font></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<font face="Arial, sans-serif">&nbsp;&lt;<font color="#CC0000"><b>xsl:function</b></font>
+									<font color="#FF0000" face="Arial, sans-serif">
+									name</font>=&quot;my:GetAttributeName&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<font color="#CC0000"><b>xsl:param</b></font>
+									<font color="#FF0000" face="Arial, sans-serif">
+									name</font>=&quot;c&quot;/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<font color="#CC0000"><b>xsl:variable</b></font>
+									<font color="#FF0000" face="Arial, sans-serif">
+									name</font>=&quot;result&quot;
+									<font color="#FF0000" face="Arial, sans-serif">
+									select</font>=&quot;$c/ownedAttribute[@xmi:type=&#39;uml:Property&#39;][@visibility=&#39;public&#39;][type[@xmi:type=&#39;uml:PrimitiveType&#39;] 
+									and 
+									not(my:xmiXMIrefs(@association)[@xmi:type=&#39;uml:Association&#39;])]/@name&quot;/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<font color="#CC0000"><b>xsl:sequence</b></font>
+									<font color="#FF0000" face="Arial, sans-serif">
+									select</font>=&quot;$result&quot;/&gt;<br>
+									&lt;/<font color="#CC0000"><b>xsl:function</b></font>&gt;</font></p>
+									<p class="MsoNormal"><span lang="EN-US">
+									<a target="_blank" href="queryUML.xslt">
+									The generated XSLT stylesheet
+									</a>&nbsp; (include
+									<a target="_blank" href="my_XMI_Merge.xslt">XSLT stylesheet</a>) 
+									for the transformation.</span></p>
+									<p class="MsoNormal"><span lang="EN-US">
+									input model :
+									<a target="_blank" href="Superstructure.xmi">
+									&nbsp;UML superstructure.xmi</a></span></p>
+									<p class="MsoNormal">
+									<a target="_blank" href="result--Superstructure.htm">output 
+									html 
+									model</a></p>
+									<p>(<a href="QVTR-XSLT_tool.zip">Download 
+									of the QVTR-XSLT tool</a>)</p>
+								</div>
+								<span class="modifydate">Last Updated on 23 
+								Jan..2012</span><span class="article_separator">&nbsp;</span>
+							</div>
+						</div>
+						<!-- END: CONTENT -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- BEGIN: FOOTER -->
+	<div id="ja-footerwrap">
+		<div class="clearfix" id="ja-footer">
+			<div id="ja-footnav">
+			</div>
+			<div class="copyright">
+			</div>
+			<br>
+		</div>
+	</div>
+	<!-- END: FOOTER --></div>
+
+</body>
+
+</html>

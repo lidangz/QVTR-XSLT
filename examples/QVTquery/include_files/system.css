@@ -1,0 +1,45 @@
+INPUT.system-openid {
+	PADDING-LEFT: 18px; BACKGROUND: url(http://openid.net/images/login-bg.gif) #fff no-repeat 0px 50%; COLOR: #000
+}
+INPUT.com-system-openid {
+	PADDING-LEFT: 18px; BACKGROUND: url(http://openid.net/images/login-bg.gif) #fff no-repeat 0px 50%; COLOR: #000
+}
+.system-unpublished {
+	BORDER-TOP: #c4d3df 4px solid; BACKGROUND: #e8edf1; BORDER-BOTTOM: #c4d3df 4px solid
+}
+#system-message {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; MARGIN-BOTTOM: 10px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+#system-message DT {
+	FONT-WEIGHT: bold
+}
+#system-message DD {
+	FONT-WEIGHT: bold; MARGIN: 0px; TEXT-INDENT: 30px
+}
+#system-message DD UL {
+	PADDING-RIGHT: 10px; BORDER-TOP: #84a7db 3px solid; PADDING-LEFT: 10px; MARGIN-BOTTOM: 10px; PADDING-BOTTOM: 10px; COLOR: #0055bb; PADDING-TOP: 10px; BORDER-BOTTOM: #84a7db 3px solid; LIST-STYLE-TYPE: none
+}
+#system-message DT.message {
+	DISPLAY: none
+}
+#system-message DD.message {
+	
+}
+#system-message DT.error {
+	DISPLAY: none
+}
+#system-message DD.error UL {
+	BORDER-TOP: #de7a7b 3px solid; COLOR: #c00; BORDER-BOTTOM: #de7a7b 3px solid; BACKGROUND-COLOR: #e6c0c0
+}
+#system-message DT.notice {
+	DISPLAY: none
+}
+#system-message DD.notice UL {
+	BORDER-TOP: #f0dc7e 3px solid; BACKGROUND: #efe7b8; COLOR: #c00; BORDER-BOTTOM: #f0dc7e 3px solid
+}
+#system-debug {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; MARGIN: 10px; COLOR: #ccc; PADDING-TOP: 10px; BACKGROUND-COLOR: #fff
+}
+#system-debug DIV {
+	FONT-SIZE: 11px
+}

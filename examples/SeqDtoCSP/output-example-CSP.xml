@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CSP name="SeqD-example">
+	<Channel name="o1_o2_m1" from="O1" to="O2"/>
+	<Channel name="o1_o2_m2" from="O1" to="O2"/>
+	<Channel name="o2_o1_m3" from="O2" to="O1"/>
+	<Channel name="o1_o2_m3_rt" from="O1" to="O2"/>
+	<Channel name="o2_o1_m4" from="O2" to="O1"/>
+	<Channel name="o2_o1_m1_rt" from="O2" to="O1"/>
+	<Process name="O1">
+		<SubProcess target="O1_451"/>
+		<Prefix name="O1_451" target="O1_465">
+			<Event name="m1" direction="!" passBy="o1_o2_m1"/>
+		</Prefix>
+		<IfThenElse name="O1_465">
+			<bExp>c1</bExp>
+			<SubProcess type="then">
+				<Prefix name="O1_481" target="O1_499">
+					<Event name="m2" direction="!" passBy="o1_o2_m2"/>
+				</Prefix>
+				<IfThenElse name="O1_499">
+					<bExp>c2</bExp>
+					<SubProcess type="else">
+						<Prefix name="O1_538" target="O1_465">
+							<Event name="m4" direction="?" passBy="o2_o1_m4"/>
+						</Prefix>
+					</SubProcess>
+					<SubProcess type="then">
+						<Prefix name="O1_19" target="O1_528">
+							<Event name="m3" direction="?" passBy="o2_o1_m3"/>
+						</Prefix>
+						<Prefix name="O1_528" target="O1_465">
+							<Event name="m3_rt" direction="!" passBy="o1_o2_m3_rt"/>
+						</Prefix>
+					</SubProcess>
+				</IfThenElse>
+			</SubProcess>
+			<SubProcess type="else" target="O1_549"/>
+		</IfThenElse>
+		<Prefix name="O1_549" target="SKIP">
+			<Event name="m1_rt" direction="?" passBy="o2_o1_m1_rt"/>
+		</Prefix>
+	</Process>
+	<Process name="O2">
+		<SubProcess target="O2_452"/>
+		<Prefix name="O2_452" target="O2_465">
+			<Event name="m1" direction="?" passBy="o1_o2_m1"/>
+		</Prefix>
+		<IfThenElse name="O2_465">
+			<bExp>c1</bExp>
+			<SubProcess type="then">
+				<Prefix name="O2_482" target="O2_499">
+					<Event name="m2" direction="?" passBy="o1_o2_m2"/>
+				</Prefix>
+				<IfThenElse name="O2_499">
+					<bExp>c2</bExp>
+					<SubProcess type="else">
+						<Prefix name="O2_537" target="O2_465">
+							<Event name="m4" direction="!" passBy="o2_o1_m4"/>
+						</Prefix>
+					</SubProcess>
+					<SubProcess type="then">
+						<Prefix name="O2_518" target="O2_529">
+							<Event name="m3" direction="!" passBy="o2_o1_m3"/>
+						</Prefix>
+						<Prefix name="O2_529" target="O2_465">
+							<Event name="m3_rt" direction="?" passBy="o1_o2_m3_rt"/>
+						</Prefix>
+					</SubProcess>
+				</IfThenElse>
+			</SubProcess>
+			<SubProcess type="else" target="O2_548"/>
+		</IfThenElse>
+		<Prefix name="O2_548" target="SKIP">
+			<Event name="m1_rt" direction="!" passBy="o2_o1_m1_rt"/>
+		</Prefix>
+	</Process>
+	<CSP>
+		<Process name="O1_O2">
+			<Parallel>
+				<SubProcess type="left" target="O1"/>
+				<SubProcess type="right" target="O2"/>
+				<Channel name="o1_o2_m1" from="O1" to="O2"/>
+				<Channel name="o1_o2_m2" from="O1" to="O2"/>
+				<Channel name="o2_o1_m3" from="O2" to="O1"/>
+				<Channel name="o1_o2_m3_rt" from="O1" to="O2"/>
+				<Channel name="o2_o1_m4" from="O2" to="O1"/>
+				<Channel name="o2_o1_m1_rt" from="O2" to="O1"/>
+			</Parallel>
+		</Process>
+	</CSP>
+</CSP>

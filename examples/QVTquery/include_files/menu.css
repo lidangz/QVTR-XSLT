@@ -1,0 +1,51 @@
+#ja-container2 UL.menu {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(../images/hdot2.gif) repeat-x 50% top; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 1px; LIST-STYLE-TYPE: none
+}
+#ja-container2 UL.menu LI {
+	PADDING-RIGHT: 0px! important; PADDING-LEFT: 0px! important; BACKGROUND: none transparent scroll repeat 0% 0%; PADDING-BOTTOM: 0px! important; MARGIN: 0px; PADDING-TOP: 0px! important
+}
+#ja-container2 UL.menu LI A {
+	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; BACKGROUND: url(../images/hdot2.gif) repeat-x 50% bottom; PADDING-BOTTOM: 2px; COLOR: #333333; PADDING-TOP: 2px; TEXT-DECORATION: none; outline: none
+}
+#ja-container2 UL.menu LI A SPAN {
+	PADDING-LEFT: 16px; BACKGROUND: url(../images/bullet.gif) no-repeat 5px 5px
+}
+#ja-container2 UL.menu LI A:hover {
+	BACKGROUND: url(../images/hdot2.gif) #dddddd repeat-x 50% bottom; COLOR: #333333; TEXT-DECORATION: none
+}
+#ja-container2 UL.menu LI A:active {
+	BACKGROUND: url(../images/hdot2.gif) #dddddd repeat-x 50% bottom; COLOR: #333333; TEXT-DECORATION: none
+}
+#ja-container2 UL.menu LI A:focus {
+	BACKGROUND: url(../images/hdot2.gif) #dddddd repeat-x 50% bottom; COLOR: #333333; TEXT-DECORATION: none
+}
+#ja-container2 UL.menu LI.active A {
+	FONT-WEIGHT: bold; BACKGROUND: url(../images/hdot2.gif) #ffffff repeat-x 50% bottom; COLOR: #7ba566; TEXT-DECORATION: none
+}
+#ja-container2 UL.menu LI.active A SPAN {
+	BACKGROUND: url(../images/bullet3.gif) no-repeat 5px 5px
+}
+#ja-container2 UL.menu LI LI A SPAN {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+#ja-container2 UL.menu LI UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+#ja-container2 UL.menu LI LI {
+	PADDING-RIGHT: 0px! important; PADDING-LEFT: 15px! important; PADDING-BOTTOM: 0px! important; PADDING-TOP: 0px! important; LIST-STYLE-TYPE: none
+}
+#ja-container2 UL.menu LI LI A {
+	FONT-WEIGHT: normal; FONT-SIZE: 92%; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #333333
+}
+#ja-container2 UL.menu LI LI A:hover {
+	COLOR: #006699
+}
+#ja-container2 UL.menu LI LI A:active {
+	COLOR: #006699
+}
+#ja-container2 UL.menu LI LI A:focus {
+	COLOR: #006699
+}
+#ja-container2 UL.menu LI LI A SPAN {
+	FONT-WEIGHT: normal; BACKGROUND: url(../images/bullet.gif) no-repeat 5px 50%
+}

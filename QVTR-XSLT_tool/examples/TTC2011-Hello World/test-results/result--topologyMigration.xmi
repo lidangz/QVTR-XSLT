@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graph3:Graph xmlns:graph3="graph3" xmlns:xmi="http://www.omg.org/XMI">
+   <nodes text="n1" xmi:id="_0.@nodes.0" linksTo="_0.@nodes.1"/>
+   <nodes text="n2" xmi:id="_0.@nodes.1" linksTo="_0.@nodes.2"/>
+   <nodes text="n3" xmi:id="_0.@nodes.2" linksTo="_0.@nodes.0 _0.@nodes.3"/>
+   <nodes text="n4" xmi:id="_0.@nodes.3" linksTo="_0.@nodes.4"/>
+   <nodes text="n5" xmi:id="_0.@nodes.4" linksTo="_0.@nodes.2"/>
+   <nodes text="n6" xmi:id="_0.@nodes.5"/>
+   <nodes text="n7" xmi:id="_0.@nodes.6"/>
+   <nodes text="n8" xmi:id="_0.@nodes.7" linksTo="_0.@nodes.7"/>
+</graph3:Graph>

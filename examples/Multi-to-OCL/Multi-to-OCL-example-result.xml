@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmlns:xmi="http://schema.omg.org/spec/XMI/2.1">
+	<uml:Model xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" viewpoint="" xmi:id="eee_1045467100313_135436_1" name="NewLibrary">
+		<packagedElement xmi:type="uml:Class" name="Reservation" xmi:id="_9_5_add02cd_1121160269083_417175_53" visibility="">
+			<ownedRule name="I_Reservation_hold_size" xmi:id="5_add02cd_1126770323829_805828_151_9_" constrainedElement="_9_5_add02cd_1121160269083_417175_53">
+				<specification xmi:type="uml:OpaqueExpression" xmi:id="add02cd_1126770323829_805828_151_9_5_">
+					<body>self.hold-&gt;size()= 1</body>
+					<language>OCL 2.0</language>
+				</specification>
+			</ownedRule>
+			<ownedRule name="I_Reservation_reserve_size" xmi:id="5_add02cd_1126770275289_50736_109_9_" constrainedElement="_9_5_add02cd_1121160269083_417175_53">
+				<specification xmi:type="uml:OpaqueExpression" xmi:id="add02cd_1126770275289_50736_109_9_5_">
+					<body>self.reserve-&gt;size()= 1</body>
+					<language>OCL 2.0</language>
+				</specification>
+			</ownedRule>
+			<ownedRule name="I_Reservation_makedBy_size" xmi:id="5_add02cd_1121160420971_791923_237_9_" constrainedElement="_9_5_add02cd_1121160269083_417175_53">
+				<specification xmi:type="uml:OpaqueExpression" xmi:id="add02cd_1121160420971_791923_237_9_5_">
+					<body>self.makedBy-&gt;size()= 1</body>
+					<language>OCL 2.0</language>
+				</specification>
+			</ownedRule>
+		</packagedElement>
+		<packagedElement xmi:type="uml:Class" name="Loan" xmi:id="_9_5_add02cd_1120797657158_403819_639" visibility="">
+			<ownedRule name="I_Loan_borrow_size" xmi:id="5_add02cd_1120797684217_383297_698_9_" constrainedElement="_9_5_add02cd_1120797657158_403819_639">
+				<specification xmi:type="uml:OpaqueExpression" xmi:id="add02cd_1120797684217_383297_698_9_5_">
+					<body>self.borrow-&gt;size()= 1</body>
+					<language>OCL 2.0</language>
+				</specification>
+			</ownedRule>
+			<ownedRule name="I_Loan_takenBy_size" xmi:id="5_add02cd_1120797743532_909702_781_9_" constrainedElement="_9_5_add02cd_1120797657158_403819_639">
+				<specification xmi:type="uml:OpaqueExpression" xmi:id="add02cd_1120797743532_909702_781_9_5_">
+					<body>self.takenBy-&gt;size()= 1</body>
+					<language>OCL 2.0</language>
+				</specification>
+			</ownedRule>
+		</packagedElement>
+		<packagedElement xmi:type="uml:Class" name="User" xmi:id="_9_5_add02cd_1120797567039_397866_578" visibility="">
+			<ownedRule name="I_User_take_size" xmi:id="5_add02cd_1120797743532_880800_782_9_" constrainedElement="_9_5_add02cd_1120797567039_397866_578">
+				<specification xmi:type="uml:OpaqueExpression" xmi:id="add02cd_1120797743532_880800_782_9_5_">
+					<body>self.take-&gt;size()&lt;=10</body>
+					<language>OCL 2.0</language>
+				</specification>
+			</ownedRule>
+			<ownedRule name="I_User_make_size" xmi:id="5_add02cd_1121160420971_981824_238_9_" constrainedElement="_9_5_add02cd_1120797567039_397866_578">
+				<specification xmi:type="uml:OpaqueExpression" xmi:id="add02cd_1121160420971_981824_238_9_5_">
+					<body>self.make-&gt;size()&gt;=1 and self.make-&gt;size()&lt;=3</body>
+					<language>OCL 2.0</language>
+				</specification>
+			</ownedRule>
+		</packagedElement>
+		<packagedElement xmi:type="uml:Class" name="Publication" xmi:id="_9_5_add02cd_1120797475657_830216_546" visibility=""/>
+		<packagedElement xmi:type="uml:Class" name="Copy" xmi:id="_9_5_add02cd_1120797492331_429474_562" visibility="">
+			<ownedRule name="I_Copy_borrowedBy_size" xmi:id="5_add02cd_1120797684217_384734_697_9_" constrainedElement="_9_5_add02cd_1120797492331_429474_562">
+				<specification xmi:type="uml:OpaqueExpression" xmi:id="add02cd_1120797684217_384734_697_9_5_">
+					<body>self.borrowedBy-&gt;size()&lt;=1</body>
+					<language>OCL 2.0</language>
+				</specification>
+			</ownedRule>
+			<ownedRule name="I_Copy_copyOf_size" xmi:id="5_add02cd_1120797608909_973435_597_9_" constrainedElement="_9_5_add02cd_1120797492331_429474_562">
+				<specification xmi:type="uml:OpaqueExpression" xmi:id="add02cd_1120797608909_973435_597_9_5_">
+					<body>self.copyOf-&gt;size()= 1</body>
+					<language>OCL 2.0</language>
+				</specification>
+			</ownedRule>
+			<ownedRule name="I_Copy_heldBy_size" xmi:id="5_add02cd_1126770323829_697663_150_9_" constrainedElement="_9_5_add02cd_1120797492331_429474_562">
+				<specification xmi:type="uml:OpaqueExpression" xmi:id="add02cd_1126770323829_697663_150_9_5_">
+					<body>self.heldBy-&gt;size()&lt;=1</body>
+					<language>OCL 2.0</language>
+				</specification>
+			</ownedRule>
+		</packagedElement>
+	</uml:Model>
+</xmi:XMI>

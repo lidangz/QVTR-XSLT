@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Result of Activity to CSP transformation</title>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td>S1 =  serverReceiveAlert -&gt; S2</td>
+			</tr>
+			<tr>
+				<td>S2 =  getDriverPhoneData -&gt; S3</td>
+			</tr>
+			<tr>
+				<td>S3 =  callDriver -&gt; S4</td>
+			</tr>
+			<tr>
+				<td>S4 =  D2 &lt;| askhelp |&gt; (M1 &lt;| nohelp |&gt; D1a)</td>
+			</tr>
+			<tr>
+				<td>D1b =  DM</td>
+			</tr>
+			<tr>
+				<td>D2 =  DM</td>
+			</tr>
+			<tr>
+				<td>DM =  D3 &lt;| real |&gt; M2</td>
+			</tr>
+			<tr>
+				<td>M1 =  C1</td>
+			</tr>
+			<tr>
+				<td>D1a =  assessDescription -&gt; D1b</td>
+			</tr>
+			<tr>
+				<td>C1 =  cancelAlert -&gt; C2</td>
+			</tr>
+			<tr>
+				<td>C2 =   SKIP </td>
+			</tr>
+			<tr>
+				<td>M2 =  C1</td>
+			</tr>
+			<tr>
+				<td>F1 =  getMapLocation -&gt; J1</td>
+			</tr>
+			<tr>
+				<td>F2 =  processAlert -&gt; J2</td>
+			</tr>
+			<tr>
+				<td>F3 =  getServiceFormat -&gt; J3</td>
+			</tr>
+			<tr>
+				<td>J1 =  processJoin -&gt; E1</td>
+			</tr>
+			<tr>
+				<td>J2 =  processJoin -&gt; SKIP </td>
+			</tr>
+			<tr>
+				<td>J3 =  processJoin -&gt; SKIP </td>
+			</tr>
+			<tr>
+				<td>E1 =  createServiceDescription -&gt; E2</td>
+			</tr>
+			<tr>
+				<td>E2 =   SKIP </td>
+			</tr>
+			<tr>
+				<td>D3 =  F1 || (F2 || F3)</td>
+			</tr>
+		</table>
+	</body>
+</html>

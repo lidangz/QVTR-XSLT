@@ -1,0 +1,259 @@
+﻿<html lang="en-gb" xml:lang="en-gb" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>QVTR-XSLT example</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta content="index, follow" name="robots">
+<meta content="rCOS, MDA, MDD, UML, verification" name="keywords">
+<meta content="QVTR-XSLT example" name="title">
+<meta content="Li Dan" name="author">
+<meta content="rCOS - Refinement of Component and Object Systems" name="description">
+<meta content="MSHTML 6.00.6000.17063" name="GENERATOR">
+<link href="/templates/ja_purity/favicon.ico" type="image/x-icon" rel="shortcut icon">
+<link href="include_files/system.css" type="text/css" rel="stylesheet">
+<link href="include_files/general.css" type="text/css" rel="stylesheet">
+<link href="include_files/template.css" type="text/css" rel="stylesheet">
+<link href="include_files/menu.css" type="text/css" rel="stylesheet">
+<link href="include_files/style.css" type="text/css" rel="stylesheet">
+<link href="include_files/style(1).css" type="text/css" rel="stylesheet">
+<link href="include_files/style(2).css" type="text/css" rel="stylesheet">
+<!--[if IE 7.0]>
+<style type="text/css">.clearfix {
+	DISPLAY: inline-block
+}
+</style>
+<![endif]-->
+<style type="text/css">#ja-header {
+	MARGIN: 0px auto; WIDTH: 97%
+}
+#ja-mainnav {
+	MARGIN: 0px auto; WIDTH: 97%
+}
+#ja-container {
+	MARGIN: 0px auto; WIDTH: 97%
+}
+#ja-botsl {
+	MARGIN: 0px auto; WIDTH: 97%
+}
+#ja-footer {
+	MARGIN: 0px auto; WIDTH: 97%
+}
+#ja-wrapper {
+	MIN-WIDTH: 100%
+}
+</style>
+</head>
+
+<body class="fs3 IE7" id="bd">
+
+<div id="ja-wrapper">
+	<!-- BEGIN: HEADER -->
+	<div id="ja-headerwrap">
+		<div class="clearfix" id="ja-header" style="BACKGROUND: url(http://rcos.iist.unu.edu/templates/ja_purity/images/header/header2.jpg) no-repeat right top">
+			<div class="ja-headermask">
+			</div>
+			<h1 class="logo-text">
+			<a title="rCOS" href="http://rcos.iist.unu.edu/index.php"><span>rCOS</span></a>
+			</h1>
+			<p class="site-slogan">Refinement of Component and Object Systems</p>
+			<ul class="ja-usertools-font">
+				<li>
+				<img id="ja-tool-increase" title="Increase font size" style="CURSOR: pointer" onclick="switchFontSize('ja_purity_ja_font','inc'); return false;" alt="Increase font size" src="include_files/user-increase.png">
+				</li>
+				<li>
+				<img id="ja-tool-reset" title="Default font size" style="CURSOR: pointer" onclick="switchFontSize('ja_purity_ja_font',3); return false;" alt="Default font size" src="include_files/user-reset.png">
+				</li>
+				<li>
+				<img id="ja-tool-decrease" title="Decrease font size" style="CURSOR: pointer" onclick="switchFontSize('ja_purity_ja_font','dec'); return false;" alt="Decrease font size" src="include_files/user-decrease.png">
+				</li>
+			</ul>
+			</div>
+	</div>
+	<!-- END: HEADER -->
+	<!-- BEGIN: MAIN NAVIGATION -->
+	<!-- END: MAIN NAVIGATION -->
+	<div id="ja-containerwrap-fr">
+		<div id="ja-containerwrap2">
+			<div id="ja-container">
+				<div class="clearfix" id="ja-container2">
+					<div class="clearfix" id="ja-mainbody-fr">
+						<!-- BEGIN: CONTENT -->
+						<div id="ja-contentwrap">
+							<div id="ja-content">
+								<div id="ja-pathway">
+								</div>
+								<h2 class="contentheading">Class to Component 
+								transformation</h2>
+								<div class="article-tools">
+									<div class="buttonheading">
+										<span>&nbsp;&nbsp; </span></div>
+								</div>
+								<div class="article-content">
+									<p>The example demonstrates how to implement 
+									an in-place transformation in the QVTR-XSLT 
+									tool.&nbsp; An in-place transformation means 
+									the source model and the target&nbsp; model 
+									is the same one at the time of the 
+									transformation running. The basic idea is 
+									that we specify the changed part of a model, and then merge the changed part into 
+									the original source model.<br>
+&nbsp;</p>
+									<p>To do that, every class in the metamodel 
+									should have two attributes: a &quot;<i>targetId</i>&quot; 
+									and a &quot;<i>xmiDiff</i>&quot;. The &quot;<i>targetId</i>&quot; 
+									indicates the ID of the source model element 
+									which will going to be changed. And the &quot;<i>xmiDiff</i>&quot; 
+									is an enumeration of changing operators, 
+									they are: &quot;<b>insertTo</b>&quot;, &quot;<b>insertNext</b>&quot;, 
+									&quot;<b>insertBefore</b>&quot;, &quot;<b>replace</b>&quot; and 
+									&quot;<b>remove</b>&quot;. The &quot;<b>insertTo</b>&quot; 
+									operator will insert the element as a child 
+									of <i>targetId</i> element, and the other 
+									operators will insert before or after the <i>
+									targetId </i>&nbsp;element, replace or 
+									remove the <i>targetId</i> element.</p>
+									<p>The class to component transformation 
+									example generates a component&nbsp; from a 
+									class in rCOS model structure. It gets a 
+									class by name (though the function <i>
+									GetToComClass</i> ) from the class model, 
+									and produces a component in the component 
+									model. The following operations described in 
+									an abstract way are performed&nbsp; by the 
+									transformation:</p>
+									<ol>
+										<li>clz = getClassByName();</li>
+										<li>com = createEmptyComponent();</li>
+										<li>com.setName(&quot;Com_From_&quot;, clz.Name);</li>
+										<li>iface = createEmptyInterface();</li>
+										<li>
+										iface.setName(&quot;Inter_From_&quot;+clz.Name);</li>
+										<li>iface.addOpAndParaFrom(clz);</li>
+										<li>reali = 
+										createEmptyInterfaceRealization();</li>
+										<li>reali.setSupplier(iface);</li>
+										<li>reali.setClient(com);</li>
+										<li>reali.setImplementingClass(clz);</li>
+										<li>com.setinterfaceRealization(reali);</li>
+									</ol>
+									<p>The transformation is specified as six QVT
+relations with their respective diagrams&nbsp;:<p>
+									<a target="_blank" href="examples/ClassToComponent/ClassToComponent.xml">
+									QVTR model</a>&nbsp;&nbsp;
+									</p>
+									</p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: ; mso-bidi-font-size: 10.5pt; font-size:12px">
+									<span style="mso-list: Ignore">
+									&nbsp;</span><b>Metamodel</b>: all classes 
+									are sub-class of <i>UMLElement, </i>which 
+									has attributes <i>xmiDiff</i> and <i>
+									targetId</i>.</span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">
+									<img border="0" src="examples/ClassToComponent/pics/SimpleMetamodel.jpg" width="673" height="514"><br>
+									&nbsp;</span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">
+									relation:<b> RootTrans, </b>staring rule of 
+									the transformation and creating the model 
+									root.</span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">
+									<img height="314" src="examples/ClassToComponent/pics/RootTrans.jpg" width="405" border="0"><br>
+									&nbsp;&nbsp;
+									</span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">
+									relation : <b>ClassMToComM, </b>creating the 
+									component model</span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">
+									<img height="349" src="examples/ClassToComponent/pics/ClassMToComM.jpg" width="419" border="0"><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">
+									relation: <b>ClassToCom,&nbsp; </b>the main 
+									rule, creating component, interface, 
+									interface realization and setting the 
+									attributes and links. The interface <i>if</i>&nbsp; 
+									and component <i>com </i>are new elements, 
+									and will be inserted as the children of <i>
+									comm</i> , so their <i>xmiDiff</i> and <i>
+									targetId </i>attributes are set. The <i>
+									InterfaceRealization</i> is contained in <i>
+									com</i>, so it also be inserted into the 
+									target model without setting the </span>
+									<span style="FONT-FAMILY: Arial, sans-serif">
+									<i>xmiDiff</i> and <i>
+									targetId </i>attributes.</span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">
+									<img height="524" src="examples/ClassToComponent/pics/ClassToCom.jpg" width="573" border="0"><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">
+									relation: <b>OperToOper, </b>copying 
+									operations from class to interface</span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">
+									<img src="examples/ClassToComponent/pics/OperToOper.jpg" border="0" width="391" height="272"><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="font-family: Arial, sans-serif">&nbsp;
+									</span>
+									<span style="FONT-FAMILY: Arial, sans-serif">
+									relation: <b>ParaToPara, </b>copying 
+									parameters of primitive types</span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="FONT-FAMILY: Arial, sans-serif">
+									<img height="342" src="examples/ClassToComponent/pics/ParaToPara.jpg" width="377" border="0"><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<span style="font-family: Arial, sans-serif">&nbsp; </span>
+									<span style="FONT-FAMILY: Arial, sans-serif">
+									relation: <b>ParaToPara1, </b>copying 
+									parameters of class types</span></p>
+									<p class="MsoNormal" style="TEXT-ALIGN: left; mso-layout-grid-align: none" align="left">
+									<img border="0" src="examples/ClassToComponent/pics/_ParaToPara1.jpg" width="391" height="349"></p>
+									<p class="MsoNormal">&nbsp;</p>
+									<p class="MsoNormal"><span lang="EN-US">
+									<a target="_blank" href="examples/ClassToComponent/ClassToComponent.xslt">generated XSLT stylesheet
+									</a>&nbsp; (include
+									<a target="_blank" href="examples/ClassToComponent/my_XMI_Merge.xslt">
+									XSLT stylesheet</a>)</span></p>
+									<p class="MsoNormal"><span lang="EN-US">
+									input model :
+									<a target="_blank" href="examples/ClassToComponent/CoCoME.uml">&nbsp;CoCoME.uml</a></span></p>
+									<p class="MsoNormal">
+									<a target="_blank" href="examples/ClassToComponent/output-CoCoME.uml">output 
+									model</a></p>
+									<p>&nbsp;</p>
+								</div>
+								<span class="modifydate">Last Updated on 13 May..2011</span><span class="article_separator">&nbsp;</span>
+							</div>
+						</div>
+						<!-- END: CONTENT -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- BEGIN: FOOTER -->
+	<div id="ja-footerwrap">
+		<div class="clearfix" id="ja-footer">
+			<div id="ja-footnav">
+			</div>
+			<div class="copyright">
+			</div>
+			<br>
+		</div>
+	</div>
+	<!-- END: FOOTER --></div>
+
+</body>
+
+</html>

@@ -1,0 +1,276 @@
+PRE {
+	BACKGROUND: #f6f6f6; BORDER-LEFT: #999999 5px solid
+}
+.code {
+	BACKGROUND: #f6f6f6; BORDER-LEFT: #999999 5px solid
+}
+BLOCKQUOTE SPAN.open {
+	BACKGROUND: url(images/so-q.gif) no-repeat left top
+}
+BLOCKQUOTE SPAN.close {
+	BACKGROUND: url(images/sc-q.gif) no-repeat right bottom
+}
+.quote-hilite {
+	BORDER-RIGHT: #cacacc 1px solid; BORDER-TOP: #cacacc 1px solid; BACKGROUND: #ffffff; BORDER-LEFT: #cacacc 1px solid; BORDER-BOTTOM: #cacacc 1px solid
+}
+.small-quote SPAN.open-quote {
+	BACKGROUND: url(images/so-q.gif) no-repeat left center
+}
+.small-quote SPAN.close-quote {
+	BACKGROUND: url(images/sc-q.gif) no-repeat right center
+}
+.small-quote SPAN.author {
+	BORDER-TOP: #dcdde0 1px solid; BACKGROUND: url(../.../.../images/author.gif) #eaebee no-repeat 5px 4px
+}
+.dropcap {
+	COLOR: #999999
+}
+.error {
+	BACKGROUND: url(../.../.../images/icon-error.gif) no-repeat left top; COLOR: #666666
+}
+.message {
+	BACKGROUND: url(../.../.../images/icon-info.gif) no-repeat left top; COLOR: #999999
+}
+.tips {
+	BACKGROUND: url(../.../.../images/icon-tips.gif) no-repeat left top; COLOR: #666666
+}
+.highlight {
+	BACKGROUND: #ffffcc
+}
+P.stickynote {
+	BORDER-RIGHT: #cacacc 1px solid; BORDER-TOP: #cacacc 1px solid; BACKGROUND: url(images/sticky-bg.gif) #ffffff no-repeat 5px center; BORDER-LEFT: #cacacc 1px solid; BORDER-BOTTOM: #cacacc 1px solid
+}
+P.download {
+	BORDER-RIGHT: #cacacc 1px solid; BORDER-TOP: #cacacc 1px solid; BACKGROUND: url(images/download-bg.gif) #ffffff no-repeat 5px center; BORDER-LEFT: #cacacc 1px solid; BORDER-BOTTOM: #cacacc 1px solid
+}
+UL.checklist LI {
+	BACKGROUND: url(images/checklist-bg.gif) no-repeat 0px 3px
+}
+UL.small-checklist LI {
+	BACKGROUND: url(images/icon_list.gif) no-repeat 0px 3px
+}
+UL.stars LI {
+	BACKGROUND: url(images/star-bg.gif) no-repeat 0px 3px
+}
+.bignumber {
+	BACKGROUND: url(images/ol-bg.gif) no-repeat left top; COLOR: #7ba566
+}
+DIV.bubble1 SPAN.author {
+	
+}
+DIV.bubble2 SPAN.author {
+	
+}
+DIV.bubble3 SPAN.author {
+	
+}
+DIV.bubble4 SPAN.author {
+	
+}
+DIV.bubble1 DIV {
+	BACKGROUND: url(images/bub1-br.gif) no-repeat right bottom
+}
+DIV.bubble1 DIV DIV {
+	BACKGROUND: url(images/bub1-bl.gif) no-repeat left bottom
+}
+DIV.bubble1 DIV DIV DIV {
+	BACKGROUND: url(images/bub1-tr.gif) no-repeat right top
+}
+DIV.bubble1 DIV DIV DIV DIV {
+	BACKGROUND: url(images/bub1-tl.gif) no-repeat left top
+}
+DIV.bubble2 DIV {
+	BACKGROUND: url(images/bub2-br.gif) no-repeat right bottom
+}
+DIV.bubble2 DIV DIV {
+	BACKGROUND: url(images/bub2-bl.gif) no-repeat left bottom
+}
+DIV.bubble2 DIV DIV DIV {
+	BACKGROUND: url(images/bub2-tr.gif) no-repeat right top
+}
+DIV.bubble2 DIV DIV DIV DIV {
+	BACKGROUND: url(images/bub2-tl.gif) no-repeat left top
+}
+DIV.bubble3 DIV {
+	BACKGROUND: url(images/bub3-br.gif) no-repeat right bottom
+}
+DIV.bubble3 DIV DIV {
+	BACKGROUND: url(images/bub3-bl.gif) no-repeat left bottom
+}
+DIV.bubble3 DIV DIV DIV {
+	BACKGROUND: url(images/bub3-tr.gif) no-repeat right top
+}
+DIV.bubble3 DIV DIV DIV DIV {
+	BACKGROUND: url(images/bub3-tl.gif) no-repeat left top
+}
+DIV.bubble4 DIV {
+	BACKGROUND: url(images/bub4-br.gif) no-repeat right bottom
+}
+DIV.bubble4 DIV DIV {
+	BACKGROUND: url(images/bub4-bl.gif) no-repeat left bottom
+}
+DIV.bubble4 DIV DIV DIV {
+	BACKGROUND: url(images/bub4-tr.gif) no-repeat right top
+}
+DIV.bubble4 DIV DIV DIV DIV {
+	BACKGROUND: url(images/bub4-tl.gif) no-repeat left top
+}
+.legend-title {
+	BACKGROUND: #ffffff
+}
+.legend {
+	BORDER-RIGHT: #cacacc 1px solid; BORDER-TOP: #cacacc 1px solid; BACKGROUND: #ffffff; BORDER-LEFT: #cacacc 1px solid; BORDER-BOTTOM: #cacacc 1px solid
+}
+#ja-wrapper {
+	BACKGROUND: #ffffff
+}
+#ja-containerwrap {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+#ja-containerwrap2 {
+	BACKGROUND: url(images/cwf-bg.gif) repeat-x left top
+}
+#ja-container {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(images/cwf-bg.gif) repeat-x left top; PADDING-BOTTOM: 20px; PADDING-TOP: 20px
+}
+#ja-container2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(images/c-bg1.gif) repeat-y 18% 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+#ja-containerwrap-f {
+	BACKGROUND: url(images/cwf-bg.gif) #ffffff repeat-x left top
+}
+#ja-containerwrap-fl {
+	BACKGROUND: url(images/cwf-bg.gif) #ffffff repeat-x left top
+}
+#ja-containerwrap-fr {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+#ja-containerwrap-fr #ja-containerwrap2 {
+	BACKGROUND: url(images/cwf-bg.gif) repeat-x left top
+}
+DIV.module H3 {
+	COLOR: #7ba566; BORDER-BOTTOM: #e9e9e9 1px solid
+}
+DIV.module_black {
+	BACKGROUND: url(images/b-br.gif) #ffffff no-repeat right bottom
+}
+DIV.module_green {
+	BACKGROUND: url(images/b-br.gif) #ffffff no-repeat right bottom
+}
+DIV.module_blue {
+	BACKGROUND: url(images/b-br.gif) #ffffff no-repeat right bottom
+}
+DIV.module_red {
+	BACKGROUND: url(images/b-br.gif) #ffffff no-repeat right bottom
+}
+DIV.module {
+	BACKGROUND: url(images/b-br.gif) #ffffff no-repeat right bottom
+}
+DIV.module DIV {
+	BACKGROUND: url(images/b-bl.gif) no-repeat left bottom
+}
+DIV.module DIV DIV {
+	BACKGROUND: url(images/b-tr.gif) no-repeat right top
+}
+DIV.module DIV DIV DIV {
+	BACKGROUND: url(images/b-tl.gif) no-repeat left top
+}
+DIV.module_text SPAN {
+	BACKGROUND: #ffffff
+}
+DIV.module_text {
+	BACKGROUND: url(images/bt-br.gif) #f6f6f6 no-repeat right bottom
+}
+DIV.module_text DIV {
+	BACKGROUND: url(images/bt-bl.gif) no-repeat left bottom
+}
+DIV.module_text DIV DIV {
+	BACKGROUND: url(images/bt-tr.gif) no-repeat right top
+}
+DIV.module_text DIV DIV DIV {
+	BACKGROUND: url(images/bt-tl.gif) no-repeat left top
+}
+DIV.module_black H3 {
+	COLOR: #ffffff; BORDER-BOTTOM: #f6f6f6 1px solid
+}
+DIV.module_green H3 {
+	COLOR: #ffffff; BORDER-BOTTOM: #f6f6f6 1px solid
+}
+DIV.module_blue H3 {
+	COLOR: #ffffff; BORDER-BOTTOM: #f6f6f6 1px solid
+}
+DIV.module_red H3 {
+	COLOR: #ffffff; BORDER-BOTTOM: #f6f6f6 1px solid
+}
+DIV.module_red {
+	BACKGROUND: url(images/br-br.gif) #bf0000 no-repeat right bottom; COLOR: #ffffff
+}
+DIV.module_red DIV {
+	BACKGROUND: url(images/br-bl.gif) no-repeat left bottom
+}
+DIV.module_red DIV DIV {
+	BACKGROUND: url(images/br-tr.gif) no-repeat right top
+}
+DIV.module_red DIV DIV DIV {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 15px; BACKGROUND: url(images/br-tl.gif) no-repeat left top; PADDING-BOTTOM: 10px; PADDING-TOP: 0px
+}
+DIV.module_blue {
+	BACKGROUND: url(images/bb-br.gif) #025291 no-repeat right bottom; COLOR: #ffffff
+}
+DIV.module_blue DIV {
+	BACKGROUND: url(images/bb-bl.gif) no-repeat left bottom
+}
+DIV.module_blue DIV DIV {
+	BACKGROUND: url(images/bb-tr.gif) no-repeat right top
+}
+DIV.module_blue DIV DIV DIV {
+	BACKGROUND: url(images/bb-tl.gif) no-repeat left top
+}
+DIV.module_green {
+	BACKGROUND: url(images/bg-br.gif) #7ba566 no-repeat right bottom; COLOR: #ffffff
+}
+DIV.module_green DIV {
+	BACKGROUND: url(images/bg-bl.gif) no-repeat left bottom
+}
+DIV.module_green DIV DIV {
+	BACKGROUND: url(images/bg-tr.gif) no-repeat right top
+}
+DIV.module_green DIV DIV DIV {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 15px; BACKGROUND: url(images/bg-tl.gif) no-repeat left top; PADDING-BOTTOM: 10px; PADDING-TOP: 0px
+}
+DIV.module_black {
+	BACKGROUND: url(images/bl-br.gif) #333333 no-repeat right bottom; COLOR: #ffffff
+}
+DIV.module_black DIV {
+	BACKGROUND: url(images/bl-bl.gif) no-repeat left bottom
+}
+DIV.module_black DIV DIV {
+	BACKGROUND: url(images/bl-tr.gif) no-repeat right top
+}
+DIV.module_black DIV DIV DIV {
+	BACKGROUND: url(images/bl-tl.gif) no-repeat left top
+}
+A.readon {
+	BORDER-RIGHT: #ececec 1px solid; BORDER-TOP: #ececec 1px solid; BACKGROUND: url(images/arrow.png) no-repeat 5px 48%; BORDER-LEFT: #ececec 1px solid; COLOR: #006699; BORDER-BOTTOM: #ececec 1px solid
+}
+A.readon:hover {
+	BORDER-RIGHT: #dddddd 1px solid; BORDER-TOP: #dddddd 1px solid; BACKGROUND: url(images/arrow.png) #f6f6f6 no-repeat 5px 48%; BORDER-LEFT: #dddddd 1px solid; BORDER-BOTTOM: #dddddd 1px solid
+}
+A.readon:active {
+	BORDER-RIGHT: #dddddd 1px solid; BORDER-TOP: #dddddd 1px solid; BACKGROUND: url(images/arrow.png) #f6f6f6 no-repeat 5px 48%; BORDER-LEFT: #dddddd 1px solid; BORDER-BOTTOM: #dddddd 1px solid
+}
+A.readon:focus {
+	BORDER-RIGHT: #dddddd 1px solid; BORDER-TOP: #dddddd 1px solid; BACKGROUND: url(images/arrow.png) #f6f6f6 no-repeat 5px 48%; BORDER-LEFT: #dddddd 1px solid; BORDER-BOTTOM: #dddddd 1px solid
+}
+UL.menu LI.active A {
+	BACKGROUND-COLOR: #ececec
+}
+UL.menu LI A:hover {
+	BACKGROUND-COLOR: #f6f6f6
+}
+UL.menu LI A:active {
+	BACKGROUND-COLOR: #f6f6f6
+}
+UL.menu LI A:focus {
+	BACKGROUND-COLOR: #f6f6f6
+}
